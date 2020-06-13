@@ -1,0 +1,1183 @@
+-- phpMyAdmin SQL Dump
+-- version 2.9.1.1
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tempo de Geração: Set 14, 2013 as 12:53 PM
+-- Versão do Servidor: 5.0.27
+-- Versão do PHP: 5.2.0
+-- 
+-- Banco de Dados: `anto`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `clientes`
+-- 
+
+CREATE TABLE `clientes` (
+  `id_cliente` int(11) NOT NULL auto_increment,
+  `nm_cliente` varchar(255) collate latin1_general_ci NOT NULL,
+  `nm_razao` varchar(60) collate latin1_general_ci NOT NULL,
+  `te_email` varchar(100) collate latin1_general_ci NOT NULL,
+  `nm_contato` varchar(50) collate latin1_general_ci NOT NULL,
+  `nu_cnpj_cpf` varchar(255) collate latin1_general_ci NOT NULL,
+  `nu_inscricao` varchar(20) collate latin1_general_ci NOT NULL,
+  `nm_sexo` varchar(1) collate latin1_general_ci NOT NULL,
+  `dt_nascimento` date NOT NULL,
+  `nm_orgao` varchar(6) collate latin1_general_ci NOT NULL,
+  `nm_logradouro` varchar(100) collate latin1_general_ci NOT NULL,
+  `nu_logra` varchar(5) collate latin1_general_ci NOT NULL,
+  `nm_compl` varchar(256) collate latin1_general_ci NOT NULL,
+  `nm_bairro` varchar(256) collate latin1_general_ci NOT NULL,
+  `nu_cep` varchar(256) collate latin1_general_ci NOT NULL,
+  `nm_cidade` varchar(256) collate latin1_general_ci NOT NULL,
+  `nm_uf` varchar(256) collate latin1_general_ci NOT NULL,
+  `nu_telefone` varchar(256) collate latin1_general_ci NOT NULL,
+  `nu_fax` varchar(256) collate latin1_general_ci NOT NULL,
+  `nu_celular` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_status` int(11) NOT NULL default '3',
+  PRIMARY KEY  (`id_cliente`),
+  KEY `id_status` (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=813 ;
+
+-- 
+-- Extraindo dados da tabela `clientes`
+-- 
+
+INSERT INTO `clientes` VALUES (1, 'Coco Doce Moda Praia Ltda', '', '', '', '00435751000130', '', '', '0000-00-00', '', 'Rua Aristides Pereira, 20', '', 'Metropoli', 'Itinga', '40700000', 'Lauro de Freitas', 'BA', '3377-4329', '', '', 3);
+INSERT INTO `clientes` VALUES (2, 'Armarinho Popular Ltda.', '', '', '', '15232010000120', '', '', '0000-00-00', '', 'Rua Lima e Silva, 365', '', '', 'Liberdade', '40375011', 'Salvador', 'BA', '3242-2249/3243-3805', '3242-3805', '', 3);
+INSERT INTO `clientes` VALUES (3, 'Art & Embalagem- Fechou', '', '', '', '03378897000180', '', '', '0000-00-00', '', 'Rua Padre Luiz Silveira, 55', '', '', 'E Velho de Brot', '40243320', 'Salvador', 'BA', '3332-5378', '', '', 3);
+INSERT INTO `clientes` VALUES (4, 'Le Biscuit Feira de Santana', '', '', '', '16233389000236', '', '', '0000-00-00', '', 'Monsenhor Tertuliano Carneiro 136', '', '', 'Centro', '44010500', 'Feira de Santana', 'BA', '(75) 602-6900', '', '', 3);
+INSERT INTO `clientes` VALUES (5, 'Le Biscuit Nazar', '', '', '', '16233389000589', '', '', '0000-00-00', '', 'Rua Do Paraiso 291', '', '', 'Nazare', '40253480', 'Salvador', 'BA', '276-8000', '', '', 3);
+INSERT INTO `clientes` VALUES (6, 'Le Biscuit Bonoc?', '', '', '', '16233389000660', '', '', '0000-00-00', '', 'Rua Mario Leal Ferreira  1254', '', '', 'Bonoc?', '40253480', 'Salvador', 'BA', '276-8000', '', '', 3);
+INSERT INTO `clientes` VALUES (7, 'Sesc', '', '', '', '03591002000352', '', '', '0000-00-00', '', 'Av Joana Angelica', '', '', 'Nazare', '40050001', 'Salvador', 'BA', '243-7433', '', '', 3);
+INSERT INTO `clientes` VALUES (8, 'Bazar do Valter', '', '', '', '', '', '', '0000-00-00', '', 'Rua do Para?so 46', '', '', 'Nazar', '40000000', 'Salvador', 'BA', '3321-0567', '', '', 3);
+INSERT INTO `clientes` VALUES (9, 'Stillu Bolsas', '', '', '', '16351751000192', '', '', '0000-00-00', '', 'Rua do cabe?a , 108', '', '', 'Dois de Julho', '40060240', 'Salvador', 'BA', '3321-0452', '', '', 3);
+INSERT INTO `clientes` VALUES (10, 'Mariza Pereira dos Santos', '', '', '', '12295361591', '', '', '0000-00-00', '', 'Rua Pedro Luiz, 112', '', 'Prox. Jd.', 'Caetano', '', 'Salvador', 'BA', ' 71 3391-8405', '', '', 3);
+INSERT INTO `clientes` VALUES (11, 'S?o Luiz Armarinho', '', '', '', '14673214000133', '', '', '0000-00-00', '', 'Rua do Cabe?a, 112', '', '', 'S?o Pedro', '40060230', 'Salvador', 'BA', '3321-4420', '', '', 3);
+INSERT INTO `clientes` VALUES (12, 'Washington S? Menezes', '', '', '', '24794720604', '', '', '0000-00-00', '', 'Rua Miguel Calmom, 555, Sala 814', '', '', 'Com?rcio', '40015010', 'Salvador', 'BA', '241-4348', '', '', 3);
+INSERT INTO `clientes` VALUES (13, 'Arte & Manhas', '', '', '', '00257852000169', '', '', '0000-00-00', '', 'Rua Bandeirante,', '', '', 'Matatu', '40255390', 'Salvador', 'BA', '3244-6856', '', '', 3);
+INSERT INTO `clientes` VALUES (14, 'COUTINHO -  Claudionor Lopes Coutinho', '', '', '', '14749351504', '', '', '0000-00-00', '', 'Rua Direta das Pitangueira', '', '', 'Faz. Gran. Reti', '40000000', 'Salvador', 'BA', '3214-0758', '', '', 3);
+INSERT INTO `clientes` VALUES (15, 'AP - Abrasivos e Produtos Ltda.', '', '', '', '02930486000192', '', '', '0000-00-00', '', 'Av. M?rio Leal Ferreira, 28,', '', 'Loja 11', 'Bonoco', '40275240', 'Salvador', 'BA', '3382-2336/3362', '', '', 3);
+INSERT INTO `clientes` VALUES (16, 'Daimaru Magazine Ltda.', '', '', '', '34430678000126', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 74/76', '', 'T?rreo', 'Centro', '40000000', 'Salvador', 'BA', '3242-8595', '', '', 3);
+INSERT INTO `clientes` VALUES (17, 'LUCY ARMARINHO', '', '', '', '05197742000172', '', '', '0000-00-00', '', 'Rua do Cabeca, 118', '', '', 'Dois de Julho', '4000000', 'Salvador', 'BA', '713321-9879', '71 3242-8595', '', 3);
+INSERT INTO `clientes` VALUES (18, 'Multifardas Ind?stria e Com?rcio', '', '', '', '02777709000123', '', '', '0000-00-00', '', 'Rua Jos? Ferreira Dias, n? 8', '', '', 'Vasco da Gama', '40230330', 'Salvador', 'BA', '3334-9999', '', '', 3);
+INSERT INTO `clientes` VALUES (19, 'Koisas Mil', '', '', '', '04030209000159', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 68', '', '', 'Centro', '40060330', 'Salvador', 'BA', '321-8614', '', '', 3);
+INSERT INTO `clientes` VALUES (20, 'Gr?fica Trio Ltda.', '', '', '', '15218621000113', '', '', '0000-00-00', '', 'Rua da Imperatriz, 152', '', '', 'Bomfim', '40415180', 'Salvador', 'BA', '3172-2121', '3316 0290', '', 3);
+INSERT INTO `clientes` VALUES (21, 'Juliana Armarinho Ltda.', '', '', '', '15257179000140', '', '', '0000-00-00', '', 'Rua Santos Dumont, 10', '', '', 'Com?rcio', '40015180', 'Salvador', 'BA', '3319-6933/243-9493', '', '', 3);
+INSERT INTO `clientes` VALUES (22, 'Jorge Bijouterias', '', '', '', '02094580000159', '', '', '0000-00-00', '', 'Rua do Para?so, 13 - T?rreo', '', '', 'Centro', '40040060', 'Salvador', 'BA', '3321-0007', '', '', 3);
+INSERT INTO `clientes` VALUES (23, 'CORFEL / Top Plast', '', '', '', '00242995000105', '', '', '0000-00-00', '', 'Pra?a Jose de Alencar, 27', '', '', 'Pelourinho', '40025140', 'Salvador', 'BA', '3241-8194', '', '', 3);
+INSERT INTO `clientes` VALUES (24, 'O Pa?, ?', '', '', '', '', '', '', '0000-00-00', '', 'Rua Silva Jardim, 18/20', '', '', 'Tabo', '40025160', 'Salvador', 'BA', '3323 0076', '82022553', '', 3);
+INSERT INTO `clientes` VALUES (25, 'R?pido Brasil (comuniquei o aumento)', '', '', '', '15710924000230', '', '', '0000-00-00', '', 'Rua Silva Jardim, 10 (Tabu?o)', '', '', 'Com?rcio', '40025160', 'Salvador', 'BA', 'empresa fechou', '', '', 3);
+INSERT INTO `clientes` VALUES (26, 'Balc', '', '', '', '03064715000104', '', '', '0000-00-00', '', 'Ladeira da Ordem 3?, 6C', '', '', 'Pelourinho', '40000000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (27, 'Metalmo Estofados', '', '', '', '03092323000140', '', '', '0000-00-00', '', 'Av. Alberto Costa Matos, 342', '', '', 'km 3,5', '42700000', 'Lauro de Freitas', 'BA', '3379-1988', '', '', 3);
+INSERT INTO `clientes` VALUES (28, 'Adriana Modas Ind?stria e Conf. Ltda', '', '', '', '34084723000134', '', '', '0000-00-00', '', 'Rua Papa Jo?o XXIII, 795', '', '', 'Jardim Ac?cia', '', 'Feira de Santana', 'BA', '75 3221 5104', '', '', 3);
+INSERT INTO `clientes` VALUES (29, 'Lojas Bahia', '', '', '', '04377633000174', '', '', '0000-00-00', '', 'Rua da Mouraria, 58', '', '', 'Nazar', '40040000', 'Salvador', 'BA', '3322-5555', '', '', 3);
+INSERT INTO `clientes` VALUES (30, 'R 4 Industrial Ltda.', '', '', '', '15696289000100', '', '', '0000-00-00', '', 'Estrada do Coco, Km 5', '', '', 'Port', '42700000', 'Lauro de Freitas', 'BA', '3379-7621', '', '', 3);
+INSERT INTO `clientes` VALUES (31, 'Armarinho  Suzi', '', '', '', '13469093000140', '', '', '0000-00-00', '', 'Rua Augusto dos santos, 15', '', '', 'Dois de Julho', '40060230', 'Salvador', 'BA', '3323-0540', '', '', 3);
+INSERT INTO `clientes` VALUES (32, 'Leme', '', '', '', '33829177000154', '', '', '0000-00-00', '', 'Ladeira da Palma, 16', '', '3019-7968*', 'Nazar', '40040180', 'Salvador', 'BA', '3321-8664/escritorio<fabrica 3019-7968', '30197968', '', 3);
+INSERT INTO `clientes` VALUES (33, 'Casa de Couro Morais Ltda.', '', '', '', '16171837000214', '', '', '0000-00-00', '', 'Pra?a Fr?es da Mota, 31', '', '', 'Centro', '44010570', 'Feira de Santana', 'BA', '(75)3623-2076', '', '', 3);
+INSERT INTO `clientes` VALUES (34, 'Armarinho ?guia', '', '', '', '02685580000123', '', '', '0000-00-00', '', 'Rua Eng. Silva Lima, 133', '', '', 'Nazar', '', 'Salvador', 'BA', '3321-1858', '', '', 3);
+INSERT INTO `clientes` VALUES (35, 'James Arivaldo  (Antiga magel)', '', '', '', '', '', '', '0000-00-00', '', 'Av. Amarilho Tiago dos Santos, 21D', '', '', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '378-7902', '', '', 3);
+INSERT INTO `clientes` VALUES (36, 'M?rio Ricardo', '', '', '', '03845846000100', '', '', '0000-00-00', '', 'Rua Thomaz Gonzaga, 388', '', '', 'Pernambu', '40000000', 'Salvador', 'BA', '450-0922', '', '', 3);
+INSERT INTO `clientes` VALUES (37, 'Maria Luiza Cardoso Leal', '', '', '', '10574794549', '', '', '0000-00-00', '', 'Rua Leste, 5', '', '', 'Amaralina', '', 'Salvador', 'BA', '3012 4241', '', '', 3);
+INSERT INTO `clientes` VALUES (38, 'Casas Paraiba', '', '', '', '02612468000162', '', '', '0000-00-00', '', 'Rua Silva Jardim, 23', '', '', 'Tabu', '40025816', 'Salvador', 'BA', '3243-9958', '', '', 3);
+INSERT INTO `clientes` VALUES (39, 'Inalva Pereira Freitas', '', '', '', '13337858520', '', '', '0000-00-00', '', '1 ? Travessa Gercino Coelho, 3', '', '', 'Matatu', '40000000', 'Salvador', 'BA', '382-7949', '', '', 3);
+INSERT INTO `clientes` VALUES (40, 'CEFASA ARTEFATOS EM COURO', '', '', '', '07998752000132', '', '', '0000-00-00', '', 'Rua dos Marchantes ,N?35', '', '', 'Santo Ant?nio', '40301430', 'Salvador', 'BA', '32425350', '33196430', '', 3);
+INSERT INTO `clientes` VALUES (41, 'Mario Paparazzi', '', '', '', '33298939072', '', '', '0000-00-00', '', 'Rua da Vila, s/n', '', '', 'Praia do Forte', '', 'Mata de S?o Jo', 'BA', '8122-9609', '', '', 3);
+INSERT INTO `clientes` VALUES (42, 'Bahia Card', '', '', '', '', '', '', '0000-00-00', '', 'Rua das  Ac?cias , 470/406', '', 'Spazio Emp', 'Pituba', '40000000', 'Salvador', 'BA', '359-8000', '', '', 3);
+INSERT INTO `clientes` VALUES (43, 'Bigraf Sacolas', '', '', '', '04778872000136', '', '', '0000-00-00', '', 'Av. Heitor Dias ,197', '', '', 'Barro Reis', '40310010', 'Salvador', 'BA', '71 3369-9180', '71 3369-9181', '', 3);
+INSERT INTO `clientes` VALUES (44, 'Clema', '', '', '', '74178187000154', '', '', '0000-00-00', '', 'Av. Walter de Arag?o Souza,929', '', '', 'Km 25', '43700000', 'Sim?es Filho', 'BA', '3396-2175', '', '', 3);
+INSERT INTO `clientes` VALUES (45, 'JM EMBALAGEM (Fechou a empresa)', '', '', '', '', '', '', '0000-00-00', '', 'Av. Santo Antonio, 47', '', '', 'Liberdade', '40640000', 'Salvador', 'BA', '3312-8446', '', '', 3);
+INSERT INTO `clientes` VALUES (46, 'Gr?fica Falc', '', '', '', '96713383000114', '', '', '0000-00-00', '', 'Loteamento Varandas Tropicais, rua B,Q0 4', '', 'Lote 09', 'Vilas do Atl?ntico', '42700000', 'Lauro de Freitas', 'BA', '3379 5449', '', '', 3);
+INSERT INTO `clientes` VALUES (47, 'Bonnet', '', '', '', '03585347000131', '', '', '0000-00-00', '', 'Rua Jaime Guimar?es,12', '', '', 'Mac?bas', '40000000', 'Salvador', 'BA', '327-2727', '', '', 3);
+INSERT INTO `clientes` VALUES (48, 'G. Lacerda', '', '', '', '15106719000189', '', '', '0000-00-00', '', 'Rua Monsenhor Bas?lio, 10', '', 'Terreo', 'Roma', '40450770', 'Salvador', 'BA', '3313-8211', '', '', 3);
+INSERT INTO `clientes` VALUES (49, 'Confec??es Irm?s Valentim', '', '', '', '04474971000124', '', '', '0000-00-00', '', 'Rua do Iate Clube', '', '137', 'Aratu', '43700000', 'Sim?es Filho', 'BA', '3216-7250/7266', '', '', 3);
+INSERT INTO `clientes` VALUES (50, 'Bahia Id?ias', '', '', '', '05791071000173', '', '', '0000-00-00', '', 'P?a Martiniano maia ,12', '', '', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '3288-3356', '', '', 3);
+INSERT INTO `clientes` VALUES (51, 'Vinibahia', '', '', '', '63239461000131', '', '', '0000-00-00', '', 'Estrada da Mata Escura,193, Lote06/07', '', 'Quadra06', 'Brasilg', '41225000', 'Salvador', 'BA', '3398 0088', '', '', 3);
+INSERT INTO `clientes` VALUES (52, 'Riplas', '', '', '', '03345023000126', '', '', '0000-00-00', '', 'Tv. Xavier Sampaio, 09', '', '', 'Jardim Imperador', '03938090', 'S?o Paulo', 'BA', '  6712-2625', '', '', 3);
+INSERT INTO `clientes` VALUES (53, 'NCN Decora??es Ltda.', '', '', '', '03280467000120', '', '', '0000-00-00', '', 'Conselheiro Lafaiete, n? 1', '', '', 'Com?rcio', '40015300', 'Salvador', 'BA', '326-40863/2415995', '', '', 3);
+INSERT INTO `clientes` VALUES (54, 'KR Ind?stria e Com?rcio Ltda', '', '', '', '03400949000177', '', '', '0000-00-00', '', 'Rua do Zaire S/N L/32 galp?o 1', '', '', 'Piraj', '41290620', 'Salvador', 'BA', '3392-4649', '', '', 3);
+INSERT INTO `clientes` VALUES (55, 'Sprig Field', '', '', '', '96828440500019', '', '', '0000-00-00', '', 'Rua Santos Drumond 20', '', '', 'Com?rcio', '40015180', 'Salvador', 'BA', '241-5240', '', '', 3);
+INSERT INTO `clientes` VALUES (56, 'Via T & C', '', '', '', '02899062000102', '', '', '0000-00-00', '', 'Rua Irar?, 150', '', '', 'Rio Vermelho', '41940630', 'Salvador', 'BA', '3335-0117', '', '', 3);
+INSERT INTO `clientes` VALUES (57, 'Jograf', '', '', '', '01912524000111', '', '', '0000-00-00', '', 'Av Barros Reis,  164', '', '', 'Barros Reis', '40315000', 'Salvador', 'BA', '71 3234-8333', '', '', 3);
+INSERT INTO `clientes` VALUES (58, 'Eliarte', '', '', '', '03668961000167', '', '', '0000-00-00', '', 'Rua Silva Jardim 22/24', '', '', 'Tabo', '40025160', 'Salvador', 'BA', '3243-0096', '', '', 3);
+INSERT INTO `clientes` VALUES (59, 'Samplast', '', '', '', '', '', '', '0000-00-00', '', 'Av. Henrique Dias, 111B', '', '', 'Bomfim', '40000000', 'Salvador', 'BA', '226-0468', '', '', 3);
+INSERT INTO `clientes` VALUES (60, 'Castkle Embalagens', '', '', '', '05161748000190', '', '', '0000-00-00', '', 'Americano da Costa, n?01', '', 'T?rreo', 'Caminho de Areia', '40455070', 'Salvador', 'BA', '71 3303-2733', '71 3303-2733', '', 3);
+INSERT INTO `clientes` VALUES (61, 'Francelina (Celina) Alves de Carvalho Bastos', '', '', '', '08868506220', '', '', '0000-00-00', '', 'Setor A - Caminho 17 - Casa 13', '', '', 'Mussurunga', '40000000', 'Salvador', 'BA', '3252-2993', '', '', 3);
+INSERT INTO `clientes` VALUES (62, 'Do Piso ao Teto', '', '', '', '00898195000139', '', '', '0000-00-00', '', 'Rua Forte de S?o Pedro, 40', '', 'casa', 'Campo Grande', '40080010', 'Salvador', 'BA', '3328-2960', '', '', 3);
+INSERT INTO `clientes` VALUES (63, 'Essencial Bolsa e Acess?rios', '', '', '', '04528234000248', '', '', '0000-00-00', '', 'Rua Odilon Santos, 15A', '', '', 'Rio Vermelho', '41940350', 'Salvador', 'BA', '3334-2460/3492-8376', '', '', 3);
+INSERT INTO `clientes` VALUES (64, 'Multigr?fica', '', '', '', '01862488000129', '', '', '0000-00-00', '', 'Rua  A Balbino, 63', '', '', 'Itapo', '40000000', 'Salvador', 'BA', '286-9800', '', '', 3);
+INSERT INTO `clientes` VALUES (65, 'Milana Bijouterias e Armarinho', '', '', '', '00598340000166', '', '', '0000-00-00', '', 'Rua Carlos Gomes 54 Ed Uni', '', 'loja 1', 'centro', '40060330', 'Salvador', 'BA', '322-5352', '', '', 3);
+INSERT INTO `clientes` VALUES (66, 'Alessandro Cesar Pereira dos Santos', '', '', '', '23798092591', '', '', '0000-00-00', '', 'Estrada do c?coKm4,5 Vilas do Bosque Q-h', '', 'casa 10', 'Vilas do Atlantico', '40700000', 'Lauro de Freitas', 'BA', '3289-3310', '', '', 3);
+INSERT INTO `clientes` VALUES (67, 'Maje Estofados', '', '', '', '13841689000129', '', '', '0000-00-00', '', 'Rua Conselheiro Pedro Luis, 342', '', '', 'Rio Vermelho', '41950610', 'Salvador', 'BA', '3237-1003', '', '', 3);
+INSERT INTO `clientes` VALUES (68, 'Jos? Morais de Almeida', '', '', '', '79639561591', '', '', '0000-00-00', '', 'Rua Antero de Brito, 80', '', '', 'Sete Portas', '40300700', 'Salvador', 'BA', '234-1967', '', '', 3);
+INSERT INTO `clientes` VALUES (69, 'Chadi', '', '', '', '00215349000140', '', '', '0000-00-00', '', 'Rua Machado de Assis 45', '', '', 'Brotas', '40285280', 'Salvador', 'BA', '3357-7419', '', '', 3);
+INSERT INTO `clientes` VALUES (70, 'S?lvio Roberto da Concei??o Pinto', '', '', '', '37069349734', '', '', '0000-00-00', '', 'Rua Gon?alo Muniz, 24', '', '', 'Baixa de Quintas', '40320070', 'Salvador', 'BA', '3381-5234', '', '', 3);
+INSERT INTO `clientes` VALUES (71, 'DI BRITO', '', '', '', '01181454000179', '', '', '0000-00-00', '', 'Rua Queiroz Monteiro, 39', '', '', 'Almado Bahia', '48028000', 'Amado Bahia', 'BA', '(71)6354008', '', '', 3);
+INSERT INTO `clientes` VALUES (72, 'Cinele Galeria de Artes', '', '', '', '13489737000161', '', '', '0000-00-00', '', 'Rua Odilon Santos, 155', '', '', 'Rio Vermelho', '40000000', 'Salvador', 'BA', '3334-5213', '', '', 3);
+INSERT INTO `clientes` VALUES (73, 'Luis Santana dos Santos', '', '', '', '39082121549', '', '', '0000-00-00', '', 'Estrada Velha do Lobato,  Km, n? 16', '', '', 'Campinas de Piraj', '40000000', 'Salvador', 'BA', '215-1564', '', '', 3);
+INSERT INTO `clientes` VALUES (74, 'Multy Brindes Com?rcio e Representa??o Ltda.', '', '', '', '03432086000110', '', '', '0000-00-00', '', 'Jardim Sta Helena 5', '', '', 'Acupe de Brotas', '40290020', 'Salvador', 'BA', '357-1767', '', '', 3);
+INSERT INTO `clientes` VALUES (75, 'J B Santos', '', '', '', '', '', '', '0000-00-00', '', 'Via Local A, Quadra A, n? 67', '', '', 'Faz. Gran III', '41340030', 'Salvador', 'BA', '305-3394/3392', '', '', 3);
+INSERT INTO `clientes` VALUES (76, 'Pretty Cal?ados', '', '', '', '04246845000112', '', '', '0000-00-00', '', 'Rua Florisvaldo da Concei??o, 105', '', '', 'Port', '42700000', 'Salvador', 'BA', '369-3679', '', '', 3);
+INSERT INTO `clientes` VALUES (77, 'Alves e Cordeiro Ltda.', '', '', '', '15233984000128', '', '', '0000-00-00', '', 'Rua Jos? Gon?alves n? 4, sala 22 Ed. Churchil', '', '', 'S', '40030290', 'Salvador', 'BA', '3322-8181', '', '', 3);
+INSERT INTO `clientes` VALUES (78, 'Shopping Barra', '', '', '', '16188955000054', '', '', '0000-00-00', '', 'Av. Centen?rio, 2992', '', '', 'Barra', '', 'Salvador', 'BA', '339-8222', '', '', 3);
+INSERT INTO `clientes` VALUES (79, 'Carlito  Santana / Telma R. dos Reis', '', '', '', '23422122591', '', '', '0000-00-00', '', 'Rua Nova Esperan?a, 22', '', '', 'Alto do Coqueirinho', '41610240', 'Salvador', 'BA', '3285-9276', '', '', 3);
+INSERT INTO `clientes` VALUES (80, 'DEPLASTIL', '', '', '', '40610016000130', '', '', '0000-00-00', '', 'Rua Jardim Terra Nova, n.? 3050', '', '', 'Val?ria', '41305490', 'Salvador', 'BA', '3301-9308', '', '', 3);
+INSERT INTO `clientes` VALUES (81, 'Kompasso', '', '', '', '01513433000103', '', '', '0000-00-00', '', 'Rua Arthur Napole?o Rego,10', '', '', 'Pituba', '41910150', 'Salvador', 'BA', '3346-6376', '3344-2533', '', 3);
+INSERT INTO `clientes` VALUES (82, 'RCT Dias Com?rcio e Representa??es Ltda', '', '', '', '02231417000190', '', '', '0000-00-00', '', 'Rua Afonso Pena, Lote 21/22', '', '', 'Jardim Jaragua', '42700000', 'Lauro de Freitas', 'BA', '252-2061', '', '', 3);
+INSERT INTO `clientes` VALUES (83, 'Gramatt', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bevenuto Magalh?es, 133', '', '', 'Boca do Rio', '', 'Salvador', 'BA', '232-3417/461-5994', '', '', 3);
+INSERT INTO `clientes` VALUES (84, 'Mundo Tric?', '', '', '', '90187512515', '', '', '0000-00-00', '', 'Rua General Labatut, 462', '', '', 'Barris', '40000000', 'Salvador', 'BA', '3585800/270-6806', '', '', 3);
+INSERT INTO `clientes` VALUES (85, 'Comercial de Miudezas Ant?nio Dahia', '', '', '', '15108467000127', '', '', '0000-00-00', '', 'Rua Marc?lio Dias, 30', '', '', 'Com?rcio', '40015210', 'Salvador', 'BA', '242-0850', '', '', 3);
+INSERT INTO `clientes` VALUES (86, 'Edson Alves Rabelo', '', '', '', '87341972572', '', '', '0000-00-00', '', 'Rua Aroldo Bastos,  19', '', '', 'Boa Vista', '48110020', 'Catu', 'BA', '71-3649-0460', '', '', 3);
+INSERT INTO `clientes` VALUES (87, 'Ponto e Arte', '', '', '', '16262438000188', '', '', '0000-00-00', '', 'Rua  Ajax baleeiro , 67', '', 'casa', 'Pernambu', '40100190', 'Salvador', 'BA', '3431 6969', '', '', 3);
+INSERT INTO `clientes` VALUES (88, 'PAM DESIGN', '', '', '', '04194024000180', '', '', '0000-00-00', '', 'Pra?a dos Tupynamb?s, 02', '', '', 'Marina Contorno', '40015241', 'Salvador', 'BA', '242-9895/242-1572', '', '', 3);
+INSERT INTO `clientes` VALUES (89, 'Oberdan Alves da Silva', '', '', '', '33044082587', '', '', '0000-00-00', '', 'Av  Senhor dos Passos, 1062', '', '', 'Centro', '', 'Feira de Santana', 'BA', '75-224-3700', '(71) 9159 5099', '', 3);
+INSERT INTO `clientes` VALUES (90, 'Cencelado', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (91, 'Aqu?rios Brindes', '', '', '', '13295118000136', '', '', '0000-00-00', '', 'Jovino Nunes Pereira 412', '', '', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '3377-1618', '', '', 3);
+INSERT INTO `clientes` VALUES (92, 'Welington Silveira', '', '', '', '', '', '', '0000-00-00', '', 'Condominio Encontro das Aguas P 16', '', '', 'Port', '', 'Lauro de Freitas', 'BA', '3790020', '', '', 3);
+INSERT INTO `clientes` VALUES (93, 'Casa Baiana', '', '', '', '15123733000101', '', '', '0000-00-00', '', 'Rua Silva Jardim, 74', '', '', 'Ladeira do Tabo', '40025160', 'Salvador', 'BA', '3242-0294', '', '', 3);
+INSERT INTO `clientes` VALUES (94, 'Casa Pelourinho', '', '', '', '00550683000150', '', '', '0000-00-00', '', 'P?a Jose de Alencar n 30', '', '', 'Pelourinho', '40025140', 'Salvador', 'BA', '3242-4084', '', '', 3);
+INSERT INTO `clientes` VALUES (95, 'Afrobahia', '', '', '', '06233749000165', '', '', '0000-00-00', '', 'Largo de S?o Francisco, 10', '', '', 'Pelourinho', '40020370', 'Salvador', 'BA', '3322 3709', '', '', 3);
+INSERT INTO `clientes` VALUES (96, 'MMC Industria de Confec??es Ltda', '', '', '', '40461949000103', '', '', '0000-00-00', '', 'Vila Melo Morais Filho, trav. Uca, 2', '', 'terreo', 'Fazenda Grande do Retiro', '40352230', 'Salvador', 'BA', '303-3807', '303-4316', '', 3);
+INSERT INTO `clientes` VALUES (97, 'M e M Marcia Cleuma', '', '', '', '04020999900019', '', '', '0000-00-00', '', 'Rua Direta do Uruguai 67', '', '', 'Uruguai', '40454260', 'Salvador', 'BA', '3419 1717', '', '', 3);
+INSERT INTO `clientes` VALUES (98, '2 ABC', '2 ABC', '', '', '', '', '', '0000-00-00', '', '12 Av. Du General de Gaulle', '', '', 'Centro', '78360', 'Montesson', 'BA', '66-3234-6419', '9115-1552', '', 3);
+INSERT INTO `clientes` VALUES (99, 'Crie-arte', '', '', '', '04704098000119', '', '', '0000-00-00', '', 'Rua Carlos Gomes 42', '', '', 'Centro', '40060330', 'Salvador', 'BA', '3321-0153', '', '', 3);
+INSERT INTO `clientes` VALUES (100, 'Pack''s e Bag''s (n?o vender deve a empresa)', '', '', '', '03170504000148', '', '', '0000-00-00', '', 'Rua lauro de Freitas ,12', '', '', 'S?o Cristov', '40000000', 'Salvador', 'BA', '3377-4434', '8819-1022', '', 3);
+INSERT INTO `clientes` VALUES (101, 'Claudio Sandro', '', '', '', '', '', '', '0000-00-00', '', 'Rua Chile 28', '', '', 'Rua Chile', '40015200', 'Salvador', 'BA', '3241-4780', '', '', 3);
+INSERT INTO `clientes` VALUES (102, 'Al? Brindes', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'Rua Chile 28', '', '', 'Rua Chile', '40015200', 'Salvador', 'BA', '3241-4780', '', '', 3);
+INSERT INTO `clientes` VALUES (103, 'Armarinho S?o Jorge', '', '', '', '03957444000108', '', '', '0000-00-00', '', 'Rua Eng. Silva Lima', '', '', 'Nazar', '40040030', 'Salvador', 'BA', '3326-0505', '', '', 3);
+INSERT INTO `clientes` VALUES (104, 'Otero Materias de Constru?', '', '', '', '14579197000170', '', '', '0000-00-00', '', 'Av. Centen?rio, 39', '', '', 'Garcia', '', 'Salvador', 'BA', '245-3825/0567', '', '', 3);
+INSERT INTO `clientes` VALUES (105, 'Matos Artigos do Lar', '', '', '', '14539481000112', '', '', '0000-00-00', '', 'Rua Comendador Pereira da Silva, 42', '', '', 'Daniel Lisboa', '40283040', 'Salvador', 'BA', '3561-8426', '', '', 3);
+INSERT INTO `clientes` VALUES (106, 'Armarinho Elldorado Ltda.', '', '', '', '16461238000154', '', '', '0000-00-00', '', 'Rua Mamede Paes Mendon?a, 277', '', 'Centro', 'Centro', '49010620', 'Aracaju', 'SE', '79-3214-2532', '', '', 3);
+INSERT INTO `clientes` VALUES (107, 'Armarinho Oliveira Ltda.', '', '', '', '13369269000272', '', '', '0000-00-00', '', 'Rua Mamede Paes Mendon?a, 328', '', '', 'Aracaju', '49010620', 'Salvador', 'BA', '(79)214-1253', '', '', 3);
+INSERT INTO `clientes` VALUES (108, 'Casa Ruas (DR- Pituba)', '', '', '', '04827684000150', '', '', '0000-00-00', '', 'Av. Manoel Dias da Silva, 379', '', '', 'Pituba', '41820000', 'Salvador', 'BA', '3248-9944', '', '', 3);
+INSERT INTO `clientes` VALUES (109, 'Maria Soledade Silva Castro', '', '', '', '15281175572', '', '', '0000-00-00', '', 'Rua Maracas, 93,  ap. 201', '', '', 'Rio Vermelho', '41940050', 'Salvador', 'BA', '345-5207', '', '', 3);
+INSERT INTO `clientes` VALUES (110, 'Artezanato da Sereia', '', '', '', '', '', '', '0000-00-00', '', 'Rua Aristides Milton, 2', '', '', 'Itapu', '41610740', 'Salvador', 'BA', '357-1082', '', '', 3);
+INSERT INTO `clientes` VALUES (111, 'R & R Com?rcio de Pisos  e Pl?stico Ltda.', '', '', '', '04828027000209', '', '', '0000-00-00', '', 'Rua dos Colibris, 557', '', '', 'Imbu', '41720060', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (112, 'Casa Ruas - Imbu', '', '', '', '04828027000209', '', '', '0000-00-00', '', 'Rua dos Colibris , N 44,Lj1e2 Shopping Caboat', '', '', 'Imbu', '41720060', 'Salvador', 'BA', '3371-0316', '', '', 3);
+INSERT INTO `clientes` VALUES (113, 'Casa Ruas - Cal?ada', '', '', '', '04828090000245', '', '', '0000-00-00', '', 'Rua Bar?o de cotegipe, N137', '', '', 'Cal?ada', '40410000', 'Salvador', 'BA', '3312-3940', '', '', 3);
+INSERT INTO `clientes` VALUES (114, 'Casa Ruas Couros e Peles (Tabu?o)', '', '', '', '15126790000123', '', '', '0000-00-00', '', 'Rua do Tabo?o 17/21', '', '', 'Tabo', '40025160', 'Salvador', 'BA', '3241-5599', '', '', 3);
+INSERT INTO `clientes` VALUES (115, 'SCM Vit?ria Guerra', '', '', '', '05018804000131', '', '', '0000-00-00', '', 'Rua Monsenhor Tertuliano Carneiro', '', '', 'Centro', '44010500', 'Feira de Santana', 'BA', '(75) 221-3580', '', '', 3);
+INSERT INTO `clientes` VALUES (116, 'Arthurzo Armarinho Ltda.', '', '', '', '', '', '', '0000-00-00', '', 'Av ACM 656   shoping itaigara', '', '', 'Itaigara', '40000000', 'Salvador', 'BA', '3358-0421', '', '', 3);
+INSERT INTO `clientes` VALUES (117, 'Magazine Central', '', '', '', '02331887000126', '', '', '0000-00-00', '', 'Rua Santos Dumont, n? 15', '', '', 'Com?rcio', '40015180', 'Salvador', 'BA', '(71)3242-8892', '', '', 3);
+INSERT INTO `clientes` VALUES (118, 'Tas de Amorim', '', '', '', '02378634000108', '', '', '0000-00-00', '', 'Rua Boa Vista,  121', '', '', 'Centro', '57020110', 'Macei?', 'AL', '(82)223-8458', '', '', 3);
+INSERT INTO `clientes` VALUES (119, 'Maria Rita de F?tima Gomes de Souza', '', '', '', '78823447534', '', '', '0000-00-00', '', 'Rua 11 de Novembro, 341', '', '', 'Santa Cruz', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (120, 'Freitas Uniformes', '', '', '', '02713221000132', '', '', '0000-00-00', '', 'Rua do Uruguai Quadra 15 N?08 Conj. Santa Luzia', '', '', 'Uruguai', '40454260', 'Salvador', 'BA', '3312-5471', '', '', 3);
+INSERT INTO `clientes` VALUES (121, 'Pellis Artefatos', '', '', '', '04760730000141', '', '', '0000-00-00', '', 'Rua Arthur Orrico 118', '', '', 'Est.Velha de Pampinas.', '41200000', 'Salvador', 'BA', '211-6493', '', '', 3);
+INSERT INTO `clientes` VALUES (122, 'TECBRIN', '', '', '', '02062201000149', '', '', '0000-00-00', '', 'Rua Thomaz Gonzaga n?528', '', 'predio 2?', 'Pernanbu', '', 'Salvador', 'BA', '71 3492-7083', '71 3450-6660', '', 3);
+INSERT INTO `clientes` VALUES (123, 'Le Bouton (considerar o outro)', '', '', '', '13418215000330', '', '', '0000-00-00', '', 'Rua Gustavo dos Santos n? 32', '', '', 'Largo Dois de Julho', '40060230', 'Salvador', 'BA', '3011-3477', '', '', 3);
+INSERT INTO `clientes` VALUES (124, 'Amenaide Amorim Pereira Nascimento', '', '', '', '', '', '', '0000-00-00', '', 'Rua Clara Nunes, 466, ap. 201', '', '', 'Pituba', '', 'Salvador', 'BA', '272-6141', '', '', 3);
+INSERT INTO `clientes` VALUES (125, 'K?tia Maria Silva Castro', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Teixeira de Barros, 800 - ap. 1102', '', '', 'Brotas', '40000000', 'Salvador', 'BA', '3497-1311', '', '', 3);
+INSERT INTO `clientes` VALUES (126, 'Art?s Paper', '', '', '', '04953446000191', '', '', '0000-00-00', '', 'Rua Guindaste dos Padres 20', '', 'comercio', 'Comercio', '40015290', 'Salvador', 'BA', '242-6640/6706', '', '', 3);
+INSERT INTO `clientes` VALUES (127, 'Jade Bejouterias', '', '', '', '05322064000122', '', '', '0000-00-00', '', 'Rua do Paraiso, 15A', '', '', 'Nazar', '40040000', 'Salvador', 'BA', '266-1668/3558', '', '', 3);
+INSERT INTO `clientes` VALUES (128, 'Dedal de Ouro', '', '', '', '03591445000181', '', '', '0000-00-00', '', 'Carlos Gomes, 105', '', '', 'Centro', '40060330', 'Salvador', 'BA', '3266-5595', '', '', 3);
+INSERT INTO `clientes` VALUES (129, 'Maria Osmarina Lima (Marina)', '', '', '', '23252898349', '', '', '0000-00-00', '', 'Rua Luis Anselmo, 203A', '', '', 'Matatu', '', 'Salvador', 'BA', '382-1984', '', '', 3);
+INSERT INTO `clientes` VALUES (130, 'Amaro Bejouterias', '', '', '', '01710826000298', '', '', '0000-00-00', '', 'Rua do Paraiso 5', '', '', 'Centro', '40040000', 'Salvador', 'BA', '3321-0721', '', '', 3);
+INSERT INTO `clientes` VALUES (131, 'Mari Festas', '', '', '', '04216665000198', '', '', '0000-00-00', '', 'Rua do Para?so  34 loja 02', '', '', 'Nazar', '40040000', 'Salvador', 'BA', '321-5418', '', '', 3);
+INSERT INTO `clientes` VALUES (132, 'Armarinho A  Fofinha Ltda.', '', '', '', '163999330001', '', '', '0000-00-00', '', 'Rua Coqueiro da Piedade, 20', '', '', 'S?o Pedro', '4007020', 'Salvador', 'BA', '3329-3710', '', '', 3);
+INSERT INTO `clientes` VALUES (133, 'Gerv?sio Maciel de Almeida', '', '', '', '53761278500', '', '', '0000-00-00', '', 'Rua Teodomiro Batista 197/503', '', '', 'Rio Vermelho', '41940320', 'Salvador', 'BA', '248-6856', '', '', 3);
+INSERT INTO `clientes` VALUES (134, 'Ilene de Moraes Vila Flor', '', '', '', '', '', '', '0000-00-00', '', 'Rua Carlos Barbosa Romeu', '', 'Sussunga', 'S?o Caetano', '', 'Salvador', 'BA', '3303-0472', '', '', 3);
+INSERT INTO `clientes` VALUES (135, 'Volph Uniformes', '', '', '', '04974511000165', '', '', '0000-00-00', '', 'Rua B, n 196 Pq residencial ilha de s?o jo?o,ARATU', '', '', 'Arat?', '43700000', 'Sim?es Filho', 'BA', '3217-2368', '', '', 3);
+INSERT INTO `clientes` VALUES (136, 'Casa 10', '', '', '', '05513988000106', '', '', '0000-00-00', '', 'Rua do tabo?o , 10', '', '', 'Tabu', '40026170', 'Salvador', 'BA', '3241-3024', '', '', 3);
+INSERT INTO `clientes` VALUES (137, 'Cia de Festas', '', '', '', '32869968000307', '', '', '0000-00-00', '', 'Pra?a Jo?o XXIII, 72-A', '', '', 'Centro', '49010580', 'Aracaju', 'SE', '(79)3214-4255', '', '', 3);
+INSERT INTO `clientes` VALUES (138, 'SL Roupas Profissionais', '', '', '', '03813835000159', '', '', '0000-00-00', '', 'Rua Candeal Pequeno,61', '', '', 'Brotas', '40280390', 'Salvador', 'BA', '358-5224', '', '', 3);
+INSERT INTO `clientes` VALUES (139, 'Plumas e Brilhos', '', '', '', '33852880000183', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 14', '', '', 'Centro', '40060410', 'Salvador', 'BA', '322-5512', '', '', 3);
+INSERT INTO `clientes` VALUES (140, 'Izabela Santo', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '264-1442', '', '', 3);
+INSERT INTO `clientes` VALUES (141, 'CIA DE FESTAS', '', '', '', '32869968000307', '', '', '0000-00-00', '', 'P? Jo?o XXIII 72 A', '', '', 'centro', '49010580', 'Aracaju', 'SE', '(079)2144255/4261', '', '', 3);
+INSERT INTO `clientes` VALUES (142, 'L & L Comercial de Materiais', '', '', '', '05019438000135', '', '', '0000-00-00', '', 'Rua  dos Ourives n? 2', '', '', 'Com?rcio', '40015280', 'Salvador', 'BA', '242-3387', '', '', 3);
+INSERT INTO `clientes` VALUES (143, 'Sacola Mania', '', '', '', '', '', '', '0000-00-00', '', 'Rua  24 de agosto, 235', '', '', 'Piraj', '4129500', 'Salvador', 'BA', '215-0401', '', '', 3);
+INSERT INTO `clientes` VALUES (144, 'Ramon Arouca', '', '', '', '', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 868', '', '', 'Centro', '', 'Salvador', 'BA', '8748-0633', '', '', 3);
+INSERT INTO `clientes` VALUES (145, 'Alves Miudezas', '', '', '', '00838837000104', '', '', '0000-00-00', '', 'Pe Azevedo 512', '', '', 'centro', '', 'Jo?o Pessoa', 'PB', '(083)222-6525', '', '', 3);
+INSERT INTO `clientes` VALUES (146, 'Confec??es Hebert Ltda.(cancelado)', '', '', '', '15105844000174', '', '', '0000-00-00', '', 'Av. Vasco da Gama, 840', '', '', 'Rio Vermelho', '40230730', 'Salvador', 'BA', '3334-1700', '3525 2000', '', 3);
+INSERT INTO `clientes` VALUES (147, 'Max Bijoux', '', '', '', '05632613000165', '', '', '0000-00-00', '', 'Rua Aristides Milton, 8 loja 8 (Quiosque Janaina)', '', 'Shopping', 'Itap', '41610740', 'Salvador', 'BA', '3285-2646', '', '', 3);
+INSERT INTO `clientes` VALUES (148, 'Armarinho e Papelaria Bello Ltda', '', '', '', '04399489000177', '', '', '0000-00-00', '', 'Rua Pero Vaz N? 25', '', '', 'Pero Vaz', '40335000', 'Salvador', 'BA', '3256-9041', '71', '', 3);
+INSERT INTO `clientes` VALUES (149, 'A Imperatriz Armarinho', 'A Imperatriz Armarinho', '', '', '04251076000140', '', '', '0000-00-00', '', 'Cincinato Pinto 140', '', '', 'Centro', '57020050', 'Macei?', 'AL', '(82)3221-8081', '', '', 3);
+INSERT INTO `clientes` VALUES (150, 'Artes e Festas', '', '', '', '0564968900101', '', '', '0000-00-00', '', '', '', 'Entr. IPS', 'Nazar? - Joana Ang.', '40040030', 'Salvador', 'BA', '(71)322-5751', '', '', 3);
+INSERT INTO `clientes` VALUES (151, 'AM Embalagem', '', '', '', '13986401000295', '', '', '0000-00-00', '', 'Estr.do C?co, Km 1,5  Ed. Mons. Bic?lio', '', '', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '71-3252-2070', '3346-1020/1021', '', 3);
+INSERT INTO `clientes` VALUES (152, 'Grupo Equimaster', '', '', '', '', '', '', '0000-00-00', '', '', '', '', 'Largo do Tanque', '', '', 'BA', '241-7663', '', '', 3);
+INSERT INTO `clientes` VALUES (153, 'Alex Rog?rio da Silva Ara?jo', '', '', '', '', '', '', '0000-00-00', '', 'Lad. Da Ordem 3? de s?o Francisco 12', '', '', 'Pelourinho', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (154, 'Soramede do Nordeste', '', '', '', '', '', '', '0000-00-00', '', 'Rua Go?s Calmon, 3', '', '', 'S?o Caetano', '', 'Salvador', 'BA', '303-0218/214-7365', '', '', 3);
+INSERT INTO `clientes` VALUES (155, 'Loja Piraj', '', '', '', '34427799000119', '', '', '0000-00-00', '', 'Av. Eixo Urbano Central, 17', '', 'N? 17', 'Centro', '42800110', 'Cama?ari', 'BA', '(71)621-1160', '', '', 3);
+INSERT INTO `clientes` VALUES (156, 'Grafite', '', '', '', '', '', '', '0000-00-00', '', 'Rua Caitit?, 29', '', '', 'Rio Vermelho', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (157, 'Jos? Carlos Leone Rocha', '', '', '', '05033343000176', '', '', '0000-00-00', '', 'Ladeira da ?gua Brusca, 93', '', '', 'Barbalho', '40301296', 'Salvador', 'BA', '(71)-243-1825', '', '', 3);
+INSERT INTO `clientes` VALUES (158, 'Luis Carlos Silva Neves', '', '', '', '38164728500', '', '', '0000-00-00', '', 'Rua S?o Jos?, 45', '', '', 'Lobato', '4072099', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (159, 'MGD Confec??es', '', '', '', '00726753000189', '', '', '0000-00-00', '', 'Rua Alto do Saldanha 140', '', '', 'Brotas', '', 'Salvador', 'BA', '33536378', '33588423', '', 3);
+INSERT INTO `clientes` VALUES (160, 'Manuel Augusto da Silva Barral/Luciene Lima', '', '', '', '06218750582', '', '', '0000-00-00', '', 'Rua Visconde de Cabo Frio, 8', '', '', 'Bonfim', '40420320', 'Salvador', 'BA', '3161766', '', '', 3);
+INSERT INTO `clientes` VALUES (161, 'Marta Bijouterias', '', '', '', '05088953000177', '', '', '0000-00-00', '', 'P? Manoel Andrade,220-A', '', '', 'Centro', '57300005', 'Arapiraca', 'AL', '(82)522-6845', '', '', 3);
+INSERT INTO `clientes` VALUES (162, 'Vilsom Silva Oliveira', '', '', '', '0897802659', '', '', '0000-00-00', '', 'Caminho Ichu, 2', '', '', 'Cidade Nova', '44032480', 'Salvador', 'BA', '75 2262085', '', '', 3);
+INSERT INTO `clientes` VALUES (163, 'VPS Armarinhos Ltda -EPP', '', '', '', '10885069000101', '', '', '0000-00-00', '', 'Rua Moreira Lima, 458', '', '', 'Centro', '57020220', 'Macei?', 'AL', '(82)223-3667/2214831', '', '', 3);
+INSERT INTO `clientes` VALUES (164, 'Brinor', '', '', '', '15178999000130', '', '', '0000-00-00', '', 'Rua Cristov?o Fereira, 25', '', '', 'Boca do Rio', '41710030', 'Salvador', 'BA', '3230-3377', '', '', 3);
+INSERT INTO `clientes` VALUES (165, 'Vica Folhinhas e Calend?rios Ltda.', '', '', '', '02214615000146', '', '', '0000-00-00', '', 'Rua Padre Domingos, 58', '', '', 'Garcia', '', 'Salvador', 'BA', '3295130', '', '', 3);
+INSERT INTO `clientes` VALUES (166, 'Silva e Silva', '', '', '', '16179699000139', '', '', '0000-00-00', '', 'Conj. Mussurunga I - Rua B n? 45 - loja 01', '', '', 'Mussurunga', '41510190', 'Salvador', 'BA', '252-5369', '', '', 3);
+INSERT INTO `clientes` VALUES (167, 'Alencar Com. De Miudezas', '', '', '', '', '', '', '0000-00-00', '', 'Rua Eng? Silva Lima', '', '', 'Nazar', '40040030', 'Salvador', 'BA', '3326-0505', '', '', 3);
+INSERT INTO `clientes` VALUES (168, 'N R Embalagens', '', '', '', '02331968000126', '', '', '0000-00-00', '', 'Rua Bernardo Spectro, 12', '', '', 'Vila Laura', '40270220', 'Salvador', 'BA', '32440147', '', '', 3);
+INSERT INTO `clientes` VALUES (169, 'Bramay Comercial Ltda.', '', '', '', '03383339000102', '', '', '0000-00-00', '', 'Rua Luis Mendon?a, Lote B, 43', '', '', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '3378-9756/41131512', '4113-1512', '', 3);
+INSERT INTO `clientes` VALUES (170, 'Disign', '', '', '', '05841543000155', '', '', '0000-00-00', '', 'Rua Guary 95', '', '2? piso', 'Brotas', '40285790', 'Salvador', 'BA', '3247-0101', '', '', 3);
+INSERT INTO `clientes` VALUES (171, 'Planeta Art', '', '', '', '05581597000129', '', '', '0000-00-00', '', 'Rua Cavalheiro Basilio Jaf?, 38 sala 103', '', '', 'Centro', '01022020', 'S?o Paulo', 'SP', '(11)228-3718', '(11)228-3718', '', 3);
+INSERT INTO `clientes` VALUES (172, 'Luic Caillieux', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', 'Fran', '', '388-4526', '', '', 3);
+INSERT INTO `clientes` VALUES (173, 'Malibu Papelaria', '', '', '', '02769676000170', '', '', '0000-00-00', '', 'Rua Genebaldo Figueiredo, 48. Itapu', '', '', 'Itapu', '', 'Salvador', 'BA', '3285 0520', '', '', 3);
+INSERT INTO `clientes` VALUES (174, 'Daniel M?rio Gonzaga', '', '', '', '38881802520', '', '', '0000-00-00', '', 'Cj. Piraj? I, Cam 38, Casa 8', '', '', 'Piraj', '', 'Salvador', 'BA', '3211-2364', '', '', 3);
+INSERT INTO `clientes` VALUES (175, 'Joelma de S. Santos', '', '', '', '54220521534', '', '', '0000-00-00', '', 'CJ Nova Cidade I, 176. Bl 21, apt 13', '', '', 'Paralela', '41260300', 'Salvador', 'BA', '3462 -0559', '248 1044', '', 3);
+INSERT INTO `clientes` VALUES (176, 'Magazine Santo Antonio', '', '', '', '02603749000159', '', '', '0000-00-00', '', 'Av. Sete de setembro, 250', '', '', 'Centro', '49010620', 'Aracaju', 'SE', '(79) 214-2532', '', '', 3);
+INSERT INTO `clientes` VALUES (177, 'Mokitta', '', '', '', '42053595000193', '', '', '0000-00-00', '', 'Rua Marc?lio Dias, 16. Com?rcio', '', '', 'Com?rcio', '', 'Salvador', 'BA', '3243-9760', '', '', 3);
+INSERT INTO `clientes` VALUES (178, 'Brindeslay', '', '', '', '', '', '', '0000-00-00', '', 'Rua  Artur Catramb, 12i', '', 'T?rreo', 'Cal?ada', '', 'Salvador', 'BA', '312-0651', '', '', 3);
+INSERT INTO `clientes` VALUES (179, 'Jorge Junquilho', '', '', '', '23326760582', '', '', '0000-00-00', '', 'Rua Henrique Dias, 185,1? andar', '', '', 'Roma', '', 'Salvador', 'BA', '3314-1033', '', '', 3);
+INSERT INTO `clientes` VALUES (180, 'Livraria e Papelaria Azevedo', '', '', '', '10995121000174', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 43. P?. Da Revolu?', '', '', 'Periperi', '', 'Salvador', 'BA', '3308-0361', '33080351 Eriton', '', 3);
+INSERT INTO `clientes` VALUES (181, 'Ana Maria dos Santos Silva', '', '', '', '16274680000171', '', '', '0000-00-00', '', 'P? Rio Branco, n? 05', '', '', 'Centro', '44700000', 'Jacobina', 'BA', '74- 621-2832', '', '', 3);
+INSERT INTO `clientes` VALUES (182, 'Rey dos Armarinhos', '', '', '', '14150148000117', '', '', '0000-00-00', '', 'Rua Ruy Barbosa, 30', '', '', 'Centro', '45600221', 'Itabuna', 'BA', '73 32114084', '', '', 3);
+INSERT INTO `clientes` VALUES (183, 'Edvaldo Alves Rodrigues', '', '', '', '29715121500', '', '', '0000-00-00', '', 'Rua Osvaldo Cruz, 11E', '', '', 'Castelo Branco', '', 'Salvador', 'BA', '215-2467', '', '', 3);
+INSERT INTO `clientes` VALUES (184, 'Bahia Fardas Ind. E Com. Ltda.', '', '', '', '05249373000114', '', '', '0000-00-00', '', 'Rua Agr?rio de Menezes. 20', '', '', 'Mares', '40445000', 'Salvador', 'BA', '34920195', '31813186', '', 3);
+INSERT INTO `clientes` VALUES (185, 'Metal Mil Folheados e Bijouterias', '', '', '', '00181015000365', '', '', '0000-00-00', '', 'Rua Ruy Barbosa, 151', '', '', 'Centro', '45600000', 'Itabuna', 'BA', '73 32110273', '', '', 3);
+INSERT INTO `clientes` VALUES (186, 'Branca Molduraria & Vidra?aria', '', '', '', '03192807000161', '', '', '0000-00-00', '', 'Av.fernandes da cunha, 94', '', '', 'Mares', '', 'Salvador', 'BA', '315-4033/4036', '', '', 3);
+INSERT INTO `clientes` VALUES (187, 'Carlos A Costa Guimar?es', '', '', '', '14166862000101', '', '', '0000-00-00', '', 'Rua Araujo Pinho, 70', '', '', 'Centro', '', 'Ilh?us', 'BA', '(73) 3231-2240', '', '', 3);
+INSERT INTO `clientes` VALUES (188, 'Alexnaldo Paz Lima', '', '', '', '45591652549', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (189, 'Tres jolie Uniformes', '', '', '', '', '', '', '0000-00-00', '', '', '', '', 'Boca do  Rio', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (190, 'Armarinho Peixoto', '', '', '', '02957968000136', '', '', '0000-00-00', '', 'Rua Ruy Barbosa , 27A', '', '', 'Centro', '45600221', 'Itabuna', 'BA', '(73)  212-4860', '', '', 3);
+INSERT INTO `clientes` VALUES (191, 'Teka Baby', '', '', '', '34160812000116', '', '', '0000-00-00', '', 'Av. Praia de Itapoan, Qd. A04, Lt. 18', '', '', 'Vilas do Atl?ntico', '', 'Salvador', 'BA', '3379 4416', '3329-0098', '', 3);
+INSERT INTO `clientes` VALUES (192, 'Mercantil  J k Ltda', '', '', '', '03465959000190', '', '', '0000-00-00', '', 'Rua do Triunfo ,n 10, terreo-1 e 2 andar', '', '', 'Centro', '45035450', 'Vit?ria da Conquista', 'BA', '77 3421-4727', '', '', 3);
+INSERT INTO `clientes` VALUES (193, 'Armarinho JK', '', '', '', '01107461000120', '', '', '0000-00-00', '', 'Av. Presidente Dutra ,N 2711', '', '', 'Sumar', '45015660', 'Vit?ria da Conquista', 'BA', '77 3421-1192', '', '', 3);
+INSERT INTO `clientes` VALUES (194, 'Ubaldo Alves Pinto', '', '', '', '15720261000153', '', '', '0000-00-00', '', 'Av. Alves Pereira , N 34', '', '', 'Centro', '45200005', 'Jequi', 'BA', '73 525-5361', '', '', 3);
+INSERT INTO `clientes` VALUES (195, 'Caf? Decora??es', '', '', '', '05513998000141', '', '', '0000-00-00', '', 'Rua do Tabo?o ,N9', '', '', 'Pelourinho', '40026170', 'Salvador', 'BA', '3242-3176', '', '', 3);
+INSERT INTO `clientes` VALUES (196, 'RBS de Deus', '', '', '', '02149511000103', '', '', '0000-00-00', '', 'Rua do paraiso ,238', '', '', 'Nazar', '40040000', 'Salvador', 'BA', '321-6343', '', '', 3);
+INSERT INTO `clientes` VALUES (197, 'Armarinho  Magmax', '', '', '', '73714859000136', '', '', '0000-00-00', '', 'Rua Bar?o de Vila Velha , 161', '', '', 'Flores', '46100000', 'Brumado', 'BA', '77 3441-6794', '3441-6794', '', 3);
+INSERT INTO `clientes` VALUES (198, 'Tiwas Ind. E Com. de Confec??es Ltda.', '', '', '', '01463418000106', '', '', '0000-00-00', '', 'Rua Vasco da Gama', '', '', 'vasco da Gama', '0', 'Salvador', 'BA', '261-5905', '', '', 3);
+INSERT INTO `clientes` VALUES (199, 'Abaporu (deixou de trabalhar com o material)', '', '', '', '05383995000130', '', '', '0000-00-00', '', 'Estrada do Coco km 4,5, Vilas do bosque, Qdra H', '', 'casa 10', 'Vilas do Atl?ntico', '42700000', 'Lauro de Freitas', 'BA', '3289-3310', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (200, 'VISUALART', '', '', '', '02123409000146', '', '', '0000-00-00', '', 'Rua Djanira Maria Bastos, 59', '', 'Qd. B, Lt.', 'Vida Nova', '42700000', 'Lauro de Freitas', 'BA', '288-3496', '287-0168', '', 3);
+INSERT INTO `clientes` VALUES (201, 'CARTOGRAF', '', '', '', '34136598000162', '', '', '0000-00-00', '', 'Av. Conselheiro Zacariasm,427/443', '', '', 'Mares', '40410250', 'Salvador', 'BA', '3312-0200', '3312-8297', '', 3);
+INSERT INTO `clientes` VALUES (202, 'C?cero Santos de Pinho', '', '', '', '12138534000168', '', '', '0000-00-00', '', 'Av. M?rio Leal Ferreira,380 (Bonoc?)', '', 'loja 16', 'Brotas', '40285600', 'Salvador', 'BA', '3382-2336 LE', '3232-4391 AS', '', 3);
+INSERT INTO `clientes` VALUES (203, 'Limeira Brindes', '', '', '', '', '', '', '0000-00-00', '', 'Rua S? Oliveira, 137 A', '', '', 'Plataforma', '', 'Salvador', 'BA', '218-7102', '', '', 3);
+INSERT INTO `clientes` VALUES (204, 'DORIAN  ( Maria das Dores )', '', '', '', '16168992553', '', '', '0000-00-00', '', 'Rua Anita Costa Edj Cezani', '', 'Apt305', 'jardim Apipema', '40155000', 'Salvador', 'BA', '2459031', '', '', 3);
+INSERT INTO `clientes` VALUES (205, 'Armarinho 31 - Jo?o Luiz', '', '', '', '13435961000170', '', '', '0000-00-00', '', 'Rua Monsenhor Olimpio, n? 69', '', '', 'centro', '45015300', 'Vit?ria da Conquista', 'BA', '77 3422-2765', '', '', 3);
+INSERT INTO `clientes` VALUES (206, 'Unifardas', '', '', '', '04377393000108', '', '', '0000-00-00', '', 'Av. Vasco da Gama, n?459', '', '', 'Vasco da Gama', '40230731', 'Salvador', 'BA', '3334-2255', '334-2255', '', 3);
+INSERT INTO `clientes` VALUES (207, 'Firenze Brindes   (N?O VENDER)  DEVE', '', '', '', '03386332000144', '', '', '0000-00-00', '', 'Rua Tom?s de Aquino, n? 6', '', '', 'Fazenda Grande do Retiro', '40060410', 'Salvador', 'BA', '71 3304-0057', '71 3214-4993', '', 3);
+INSERT INTO `clientes` VALUES (208, 'Maria do Socorro Linhares Carneiro', '', '', '', '44200390353', '', '', '0000-00-00', '', 'R Ariston Destino de carvalho,230,Edf Cidade Acor', '', 'Apt012', 'Mussurunga', '40000000', 'Salvador', 'BA', '354-3574', '', '', 3);
+INSERT INTO `clientes` VALUES (209, 'Associa??o de Capoeira Mestre Bimba', '', '', '', '14497754000103', '', '', '0000-00-00', '', 'Rua das Laranjeiras', '', '', 'Pra?a da S', '40025090', 'Salvador', 'BA', '3322 0629', '3322-0639', '', 3);
+INSERT INTO `clientes` VALUES (210, 'Classe Couro I (Seu Ant?nio)', '', '', '', '96742507000190', '', '', '0000-00-00', '', 'Loteamento  Mirante , n? 97', '', '', 'Centro', '44600000', 'Ipir', 'BA', '75 32541182', '75 3254-3219', '', 3);
+INSERT INTO `clientes` VALUES (211, 'SAS Armarinho Salvador', '', '', '', '06118703000103', '', '', '0000-00-00', '', 'Rua Nova de S?o Bento , N? 49', '', '', 'nazar', '40000000', 'Salvador', 'BA', '3322-0661', '00000000', '', 3);
+INSERT INTO `clientes` VALUES (212, 'Comercial Norflex', '', '', '', '02046379000104', '', '', '0000-00-00', '', 'P?a Fros da  Mota, N? 23', '', '', 'centro', '44010570', 'Feira de Santana', 'BA', '3223-3425', '', '', 3);
+INSERT INTO `clientes` VALUES (213, 'Allpack', '', '', '', '04479236000103', '', '', '0000-00-00', '', 'Av Dorival Cayme , Loteamento Jardim Itapo', '', 'Lote 12', 'Itapo', '41635150', 'Salvador', 'BA', '3367 5370', '88166257', '', 3);
+INSERT INTO `clientes` VALUES (214, 'Armarinho 13 (n?o usar essa raz?o social)', '', '', '', '05793541000138', '', '', '0000-00-00', '', 'Av. R?gis Pacheco, 322', '', '', 'Centro', '45015130', 'Vit?ria da Conquista', 'BA', '77-2101-7370', '77 3321 - 8856', '', 3);
+INSERT INTO `clientes` VALUES (215, 'No?mi Brito Carvalho Mendes', '', '', '', '75941120591', '', '', '0000-00-00', '', 'Loteamento Cabula VI  Rua A casa 13', '', '', 'Cabula', '41207010', 'Salvador', 'BA', '3306-2950', '3230-6155', '', 3);
+INSERT INTO `clientes` VALUES (216, 'FICAMP', '', '', '', '12941720000130', '', '', '0000-00-00', '', 'Rua manoel Cezar de Mello, s/n', '', '', 'Distrito Industrial', '58320000', 'Alhandra', 'PB', '(83) 234-0500', '(83)2340505', '', 3);
+INSERT INTO `clientes` VALUES (217, 'Natalice Oliveira', '', '', '', '24631094591', '', '', '0000-00-00', '', 'Rua F, caminho 34, 13', '', 'Setror J', 'Mussurunga 2', '41510220', 'Salvador', 'BA', '376-5323', '', '', 3);
+INSERT INTO `clientes` VALUES (218, 'Mel festa', '', '', '', '05596983000194', '', '', '0000-00-00', '', 'rua do paraiso N? 34, Bloco D Loja 9', '', '', 'nazar', '40040000', 'Salvador', 'BA', '321-2086', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (219, 'Hally Bolsas', '', '', '', '06086143000144', '', '', '0000-00-00', '', 'Pra?a Fr?es de Mota, N?160,', '', '', 'Centro', '44010570', 'Feira de Santana', 'BA', '75 3614-5279/3221 8477', '75 3626-0491', '', 3);
+INSERT INTO `clientes` VALUES (220, 'Bahiabella', '', '', '', '08099849000176', '', '', '0000-00-00', '', 'Rua Ajax baleeiro , 63', '', '', 'Pernambu', '41100200', 'Salvador', 'BA', '3431-1455', '3460-0219', '', 3);
+INSERT INTO `clientes` VALUES (221, 'Real Bijouteria', '', '', '', '02468259000192', '', '', '0000-00-00', '', 'Rua Nova de S?o Bento', '', '', 'Centro', '', 'Salvador', 'BA', '3322-7645', '', '', 3);
+INSERT INTO `clientes` VALUES (222, 'Missel?nia Pernambu', '', '', '', '02089232000193', '', '', '0000-00-00', '', 'Rua Escritor Edson Carneiro, 56', '', '', 'Pernambu', '41120620', 'Salvador', 'BA', '450-1974', '', '', 3);
+INSERT INTO `clientes` VALUES (223, 'Malhas Santa Cruz', '', '', '', '03458309000118', '', '', '0000-00-00', '', 'Rua 20 de Agosto, 114', '', '', 'Pau Miudo', '40310610', 'Salvador', 'BA', '242-8552', '', '', 3);
+INSERT INTO `clientes` VALUES (224, 'Casa S?o Jorge', '', '', '', '04922363000135', '', '', '0000-00-00', '', 'Rua Sales Barbosa , 413', '', '', 'Centro', '44010340', 'Feira de Santana', 'BA', '75-3221-1411', '', '', 3);
+INSERT INTO `clientes` VALUES (225, 'Jos? Rodrigues dos Santos', '', '', '', '65642929534', '', '', '0000-00-00', '', 'Travessa Guanabara, 57', '', '', 'Brasil', '45000000', 'Vit?ria da Conquista', 'BA', '75  4246384', '', '', 3);
+INSERT INTO `clientes` VALUES (226, 'Aladddin Festas', '', '', '', '02004537000155', '', '', '0000-00-00', '', 'Rua do Para?so, 34 Loja 2 , bl D', '', '', 'Nazar', '40040000', 'Salvador', 'BA', '3241-7991', '241-7991', '', 3);
+INSERT INTO `clientes` VALUES (227, 'Ledcar', '', '', '', '06043039000172', '', '', '0000-00-00', '', 'Rua Jos? de Anchieta,136, Empresarial', '', 'Galp?o  01', 'Recreio', '42700000', 'Lauro de Freitas', 'BA', '3378 4233/3341 5065', '33415060', '', 3);
+INSERT INTO `clientes` VALUES (228, 'Armarinho Souza', '', '', '', '05893578000138', '', '', '0000-00-00', '', 'Rua J.J. Seabra , N? 34', '', '', 'Bx. Dos sapateiros', '40070026', 'Salvador', 'BA', '321-4001', '329-4586', '', 3);
+INSERT INTO `clientes` VALUES (229, 'Comercial de Miudezas', '', '', '', '03345799000146', '', '', '0000-00-00', '', 'Largo do S?o Miguel  02 A', '', '', 'Baixa dos  Sapateiros', '40025550', 'Salvador', 'BA', '3266-1024', '', '', 3);
+INSERT INTO `clientes` VALUES (230, 'MICRO MIL', '', '', '', '01251229000161', '', '', '0000-00-00', '', 'Rua Dom Pedro I, n?51, Edf. Primus', '', '', 'Mares', '40405100', 'Salvador', 'BA', '316-9633', '316-9633', '', 3);
+INSERT INTO `clientes` VALUES (231, 'ARGOS', '', '', '', '07409374000104', '', '', '0000-00-00', '', 'Rua Corpo Santo , n?17', '', '', 'Com?rcio', '40015200', 'Salvador', 'BA', '71 3242-2112', '', '', 3);
+INSERT INTO `clientes` VALUES (232, 'M. BRITO & CIA.', '', '', '', '10261745000168', '', '', '0000-00-00', '', 'Estrada de Campinas, 15', '', 'Ed. Campin', 'Campinas de Piraj', '41275410', 'Salvador', 'BA', '32462031', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (233, 'LYS Com?cio e Representa??o Ltda', '', '', '', '02163506000147', '', '', '0000-00-00', '', 'Rua Carlos Gomes, n?444, T?rreo', '', '', 'Centro', '40000000', 'Salvador', 'BA', '3322-5539', '', '', 3);
+INSERT INTO `clientes` VALUES (234, 'MEJ Papelaria e Armarinho', '', '', '', '05093546000122', '', '', '0000-00-00', '', 'Rua S?o Luiz n? 64', '', '', 'Sandra Regina', '47803160', 'Barreiras', 'BA', '77 612-1344', '', '', 3);
+INSERT INTO `clientes` VALUES (235, 'Livraria e Papelaria um Pouco de Tudo', '', '', '', '34241380000178', '', '', '0000-00-00', '', 'Rua 13 de maio ,n?123', '', '', 'Centro', '45600075', 'Itabuna', 'BA', '733211-5489', '613-0774', '', 3);
+INSERT INTO `clientes` VALUES (236, 'Ingred Bijouterias', '', '', '', '05234021000275', '', '', '0000-00-00', '', 'Rua Carlos Gomes 426', '', '', 'Largo 2 de julho', '40000000', 'Salvador', 'BA', '3321-4684', '', '', 3);
+INSERT INTO `clientes` VALUES (237, 'Edson Carvalho Correia', '', '', '', '00689335504', '', '', '0000-00-00', '', 'Cond. Recanto dos Passaros, Rua 4/102', '', 'Bloco 146', 'Cabula', '41150050', 'Salvador', 'BA', '257-7726/0120', '', '', 3);
+INSERT INTO `clientes` VALUES (238, 'Hilda Soares navarro dos Santos 1', '', '', '', '', '', '', '0000-00-00', '', 'Rua Para?ba, 125', '', 'Ed. Pituba', 'Pituba', '', 'Salvador', 'BA', '347-0518', '', '', 3);
+INSERT INTO `clientes` VALUES (239, 'Hilda Soares Navarro dos Santos', '', '', '', '', '', '', '0000-00-00', '', 'Rua Para?ba, 125', '', 'Ed. Pituba', 'Pituba', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (240, 'D''Presente', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'Rua Para?ba, 125', '', 'Ed. Pituba', 'Pituba', '40000000', 'Salvador', 'BA', '3347-0518', '', '', 3);
+INSERT INTO `clientes` VALUES (241, 'Armarinho Guimar?es', '', '', '', '14166862000284', '', '', '0000-00-00', '', 'Rua Ruy Barbosa, N?38', '', '', 'Centro', '45600221', 'Itabuna', 'BA', '73-212-4540', '73-212-4540', '', 3);
+INSERT INTO `clientes` VALUES (242, 'MAGKAL', '', '', '', '07022697000140', '', '', '0000-00-00', '', 'Rua Edgar Viana , L 02  Qd. 45', '', 'Lot. Pedra', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '34846312', '', '', 3);
+INSERT INTO `clientes` VALUES (243, 'RAOTECH', '', '', '', '04486723000101', '', '', '0000-00-00', '', 'Rua Marujo do Brasil', '', '', 'Nazar', '40050030', 'Salvador', 'BA', '3321-5400', '', '', 3);
+INSERT INTO `clientes` VALUES (244, 'MAUSAPLAST', '', '', '', '03618593000223', '', '', '0000-00-00', '', ' Av. Priscila Dutra , n?181', '', '', 'Vilas do Atl?ntico', '', 'Lauro de Freitas', 'BA', '3379-4084', 'o mesmo', '', 3);
+INSERT INTO `clientes` VALUES (245, 'Destake Armarinhos', '', '', '', '15196686000105', '', '', '0000-00-00', '', 'Rua Alberto Coimbra, N 32', '', '', 'Centro', '47803230', 'Barreiras', 'BA', '77-3611-1716', '', '', 3);
+INSERT INTO `clientes` VALUES (246, 'CORFEL  (FEIRA DE SANTANA)', '', '', '', '', '', '', '0000-00-00', '', 'Rua Santos Reis, 66', '', '', 'Barroquinha', '', 'Feira de Santana', 'BA', '3241-8194', '', '', 3);
+INSERT INTO `clientes` VALUES (247, 'Andr', '', '', '', '43181970506', '', '', '0000-00-00', '', 'rua Alagoinhas ,489 Cond. Mirante do Vale', '', '51 C', 'Rio Vermelho', '41940620', 'Salvador', 'BA', '88310246', '', '', 3);
+INSERT INTO `clientes` VALUES (248, 'Carmen L?cia Dieder Corr', '', '', '', '', '', '', '0000-00-00', '', 'Rua Leonel calmom 110, Apt 802,Principe de gales', '', 'Edf Princi', 'Cidade Jardim', '40000000', 'Salvador', 'BA', '3452-5484', '', '', 3);
+INSERT INTO `clientes` VALUES (249, 'Jaciara Brito do Sacramento', '', '', '', '75941210582', '', '', '0000-00-00', '', 'rua 23 de mar?o n9', '', '', 'Tancredo Neves', '41207030', 'Salvador', 'BA', '3266-3358', '3266-1668', '', 3);
+INSERT INTO `clientes` VALUES (250, 'Armarinho Vit?ria', '', '', '', '00812739000106', '', '', '0000-00-00', '', 'Av. Lauro de Freitas , 2C', '', '', 'Centro', '45015000', 'Vit?ria da Conquista', 'BA', '77 3424-5505', '', '', 3);
+INSERT INTO `clientes` VALUES (251, 'M D Papelaria e Armarinho ltda', '', '', '', '04978269000106', '', '', '0000-00-00', '', 'Rua S?o Marco , n 98', '', '', 'pau da lima', '40000000', 'Salvador', 'BA', '3213-4757', '', '', 3);
+INSERT INTO `clientes` VALUES (252, 'Capoeira Nossa Arte', '', '', '', '', '', '', '0000-00-00', '', 'Rua São Sebastião, n. 249', '', '', 'Eng. Velho da Federação', '', '', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (253, 'S?ndalo Armarinho', '', '', '', '15201296000186', '', '', '0000-00-00', '', 'Rua Deolindo de Carvalho', '', '275', 'Centro', '46100000', 'Brumado', 'BA', '77 34413807', '', '', 3);
+INSERT INTO `clientes` VALUES (254, 'Embalagem S?o Geraldo 1 excluir', '', '', '', '34436592000100', '', '', '0000-00-00', '', 'Av. ACM, 2501 Ed. Profissional Center', '', 'sala 206', 'Cidadela', '40288900', 'Salvador', 'BA', '358-2037/359-5682', '358-2037', '', 3);
+INSERT INTO `clientes` VALUES (255, 'CANCELADO', '', '', '', '00000000000', '', '', '0000-00-00', '', 'L', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (256, 'Bazar Camargo', '', '', '', '32626525000123', '', '', '0000-00-00', '', 'Rua 2 de Julho, n? 51', '', '', 'Centro', '45700000', 'Itapetinga', 'BA', '773261-3558', '77 3261- 3558', '', 3);
+INSERT INTO `clientes` VALUES (257, 'MAX CASA', '', '', '', '06164816000137', '', '', '0000-00-00', '', 'Rua Forte de S?o Pedro, 40', '', '', 'Campo Grande', '', 'Salvador', 'BA', '3329-3825', '', '', 3);
+INSERT INTO `clientes` VALUES (258, 'D''Duara Arabesque', '', '', '', '', '', '', '0000-00-00', '', 'Rua da Praia', '', '', 'Rio Vermelho', '', 'Salvador', 'BA', '3335-2335', '', '', 3);
+INSERT INTO `clientes` VALUES (259, 'Claudionora Borges de Jesus', '', '', '', '257791335', '', '', '0000-00-00', '', 'Rua do Carneiro , n? 109', '', '', 'retiro', '40353000', 'Salvador', 'BA', '3389-9609', '258-3533', '', 3);
+INSERT INTO `clientes` VALUES (260, 'ABC informatica Ltda', '', '', '', '0007295000101', '', '', '0000-00-00', '', 'Rua Conselheiro Dantas', '', 'n? 22/24', 'Com?rcio', '40015070', 'Salvador', 'BA', '3242-6622', '243-7155', '', 3);
+INSERT INTO `clientes` VALUES (261, 'Bocazul', '', '', '', '02685309000198', '', '', '0000-00-00', '', 'Rua  Boca da Mata, 122', '', '', 'Val?ria', '41300460', 'Salvador', 'BA', '34159493', '34159493', '', 3);
+INSERT INTO `clientes` VALUES (262, 'UNICONFEC', '', '', '', '04728189000194', '', '', '0000-00-00', '', 'Av Aliomar Baleeiro n? 500', '', 'Galp?o 7', 'Campinas de Piraj', '41230970', 'Salvador', 'BA', '391-0811', '392-4395', '', 3);
+INSERT INTO `clientes` VALUES (263, 'Carlos Rodrigues da Silva', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Luis Gama, 16', '', '', 'Nazar', '', 'Salvador', 'BA', '3321-6364', '', '', 3);
+INSERT INTO `clientes` VALUES (264, 'Armaninho da Barra', '', '', '', '01431020000180', '', '', '0000-00-00', '', 'Rua Marq?s de caravelas, 585 Lj 04', '', '', 'Barra', '40140241', 'Salvador', 'BA', '3267-1446', '267-1700', '', 3);
+INSERT INTO `clientes` VALUES (265, 'ATAKAD?O', '', '', '', '05607236000104', '', '', '0000-00-00', '', 'Rua Direta do Uruguai,n?63', '', '', 'Uruguai', '40454260', 'Salvador', 'BA', '345-5015', '', '', 3);
+INSERT INTO `clientes` VALUES (266, 'Jo?o Felix Pinheiro', '', '', '', '41112806504', '', '', '0000-00-00', '', 'Rua da Antartica 17 E', '', '', 'Periperi', '40000000', 'Salvador', 'BA', '32174484', '', '', 3);
+INSERT INTO `clientes` VALUES (267, 'Studio 8', '', '', '', '05262510000150', '', '', '0000-00-00', '', 'Alameda do sol 143,', '', '', 'Praia do forte', '48280000', 'Mata de S?o Jo', 'BA', '7136761495', '36761283', '', 3);
+INSERT INTO `clientes` VALUES (268, 'Lider Percianas e Decora?', '', '', '', '05929467000134', '', '', '0000-00-00', '', 'Estrada do Coqueiro grande, 2180', '', '', 'cajazeiras 8', '40000000', 'Salvador', 'BA', '32530114', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (269, 'Aso Representa??es e Comercio Ltda', '', '', '', '00715274000167', '', '', '0000-00-00', '', 'Rua Ruy Barbosa , 04 Sala 201/202', '', '', 'Centro', '40020070', 'Salvador', 'BA', '3321-2595, 3322-3796', '', '', 3);
+INSERT INTO `clientes` VALUES (270, 'Mil Sacolas', '', '', '', '', '', '', '0000-00-00', '', 'Loteamento Parques das Dunas , Lote 49', '', 'Casa', 'Jau', '40000000', 'Cama?ari', 'BA', '3672-1342', '3271-2488', '', 3);
+INSERT INTO `clientes` VALUES (271, 'Copiadora Vitoria', '', '', '', '01948473000188', '', '', '0000-00-00', '', 'Rua Do Pero Vaz', '', 'n? 18', 'Liberdade', '40335000', 'Salvador', 'BA', '3388-4975', '', '', 3);
+INSERT INTO `clientes` VALUES (272, 'Grupo Fonai Uniformes', '', '', '', '10218423000136', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe,170', '', '', 'Cal?ada', '40445000', 'Salvador', 'BA', '30149502/9507', '30149509', '', 3);
+INSERT INTO `clientes` VALUES (273, 'Grupo Pr?-Renais', '', '', '', '96705702000140', '', '', '0000-00-00', '', 'Rua Direta do santo ?ntonio ,62', '', '', 'Santo ?ntonio', '40301280', 'Salvador', 'BA', '3243-3634', '', '', 3);
+INSERT INTO `clientes` VALUES (274, 'Phoco Designer', '', '', '', '07402677000103', '', '', '0000-00-00', '', '', '', '', '7 Portas', '', 'Salvador', 'BA', '3381-2222', '', '', 3);
+INSERT INTO `clientes` VALUES (275, 'Sono e Sonhos', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bernardo Guimar?es, 459', '', '', 'paraiso', '46430000', 'Guanambi', 'BA', '77  3451-6311', '7133700942', '', 3);
+INSERT INTO `clientes` VALUES (276, 'Grupo Oficina Da Capoeira', '', '', '', '36070157591', '', '', '0000-00-00', '', 'Rua do Caxund? , N? 7', '', '', 'Boca Do Rio', '41705140', 'Salvador', 'BA', '33621856', '', '', 3);
+INSERT INTO `clientes` VALUES (277, 'A.gomes', '', '', '', '15112196000183', '', '', '0000-00-00', '', 'Ladeira da ?gua Brusca, 98', '', '', 'Santo Ant?nio', '40030120', 'Salvador', 'BA', '3183-5511', '', '', 3);
+INSERT INTO `clientes` VALUES (278, 'Deraldo Jos? dos Santos', '', '', '', '18917977654', '', '', '0000-00-00', '', 'Rua Marechal Deodoro, 503', '', '', 'Santo Ant?nio', '', 'Salvador', 'BA', '3601-3904', '', '', 3);
+INSERT INTO `clientes` VALUES (279, 'TodaCor Gr?fica', '', '', '', '05664112000160', '', '', '0000-00-00', '', 'Rua Nilo Pe?anha, 63  - Casa', '', '', 'Cal?ada', '40411380', 'Salvador', 'BA', '71 3313-6511', '71 3313-6623', '', 3);
+INSERT INTO `clientes` VALUES (280, 'O Maskate', '', '', '', '73693665000100', '', '', '0000-00-00', '', 'Av. Senhor dos Passos,n? 1.337', '', '', 'Centro', '44010231', 'Feira de Santana', 'BA', '75 21018866', '75 2101018888', '', 3);
+INSERT INTO `clientes` VALUES (281, 'Esta??o Bijou', '', '', '', '', '', '', '0000-00-00', '', 'Rua Ros?rio ,17 Lj03 Edf.Tani', '', '', 'Merces', '40060255', 'Salvador', 'BA', '33282368', '', '', 3);
+INSERT INTO `clientes` VALUES (282, 'Mocappio', '', '', '', '74154113000188', '', '', '0000-00-00', '', 'Rua Duarte Coelho, n?15', '', '', 'Pernambu', '40000000', 'Salvador', 'BA', '3431-1667', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (283, 'Elionaldo M?rcio Freire de Carvalho (N?o vender) deve', '', '', '', '03042369420', '', '', '0000-00-00', '', 'Rua J?pter, n?88', '', '', 'Vila Marcela', '5632075', 'Petrolina', 'PE', '87 30310200', '', '', 3);
+INSERT INTO `clientes` VALUES (284, 'AMAZONAS DECORA??O', '', '', '', '05472933000103', '', '', '0000-00-00', '', 'Rua Silva Jardim, n?05, Lj t?rreo', '', '', 'tabo', '40025160', 'Salvador', 'BA', '3327-1080', '3243-6165', '', 3);
+INSERT INTO `clientes` VALUES (285, 'X Copy', '', '', '', '06181073000103', '', '', '0000-00-00', '', 'Rua Conselheiro Franco,427B', '', '', 'Centro', '48000000', 'Alagoinhas', 'BA', '75-3421-1624', '', '', 3);
+INSERT INTO `clientes` VALUES (286, 'AREDDA', '', '', '', '01437693000145', '', '', '0000-00-00', '', 'Rua Joaquim Elias Madureira ,154', '', '', 'Centro', '44600000', 'Ipir', 'BA', '075-3254-2045', '', '', 3);
+INSERT INTO `clientes` VALUES (287, 'COUROSHOPPING', '', '', '', '05607332000152', '', '', '0000-00-00', '', 'Rua Fernando Meneses de Goes ,n?460', '', '', 'Pituba', '41810700', 'Salvador', 'BA', '3248-2244', '', '', 3);
+INSERT INTO `clientes` VALUES (288, 'Sabrina Variedades', '', '', '', '', '', '', '0000-00-00', '', 'Rua Leonel Leite,1421', '', '', 'Alecrim', '59037820', 'Natal', 'RN', '8432235512', ' mesmo', '', 3);
+INSERT INTO `clientes` VALUES (289, 'Bazar & Cia', '', '', '', '06555321000139', '', '', '0000-00-00', '', 'Rua cassimiro de Abreu ,19B', '', '', 'Centro', '46430000', 'Guanambi', 'BA', '77-3451-7900', '', '', 3);
+INSERT INTO `clientes` VALUES (290, 'Armarinho Guimar?es I', '', '', '', '14166862000101', '', '', '0000-00-00', '', 'Rua Araujo Pinho ,70', '', '', 'Centro', '45653145', 'Ilh?us', 'BA', '73-3231-2240', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (291, 'COMANDOS FARDAMENTOS MILITARES', '', '', '', '03488941000104', '', '', '0000-00-00', '', 'Rua Silveira Martins, S/N Lj10', '', '', 'Cabula', '41150000', 'Salvador', 'BA', '71 3257-2239', '', '', 3);
+INSERT INTO `clientes` VALUES (292, 'Dan Surf', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bar?o do Desterro, n?16', '', '', 'Nazar', '40000000', 'Salvador', 'BA', '3321-5393', '', '', 3);
+INSERT INTO `clientes` VALUES (293, 'IOX Pap?is Especiais', '', '', '', '34443846000118', '', '', '0000-00-00', '', 'Av ACM n?1034, Lj 28C', '', '', 'Pituba', '41858900', 'Salvador', 'BA', '3351-2153', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (294, 'New Stock', '', '', '', '00296688000107', '', '', '0000-00-00', '', 'Rua Miguel dos Santos Silva N? 07', '', '1?/2? Anda', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '33782287', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (295, 'CECOM', '', '', '', '14226369000121', '', '', '0000-00-00', '', 'Pra?a Lorde Cochrane, S/N', '', '', 'Garibalde', '40210255', 'Salvador', 'BA', '3235-8184', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (296, 'G?neses Bolsas', '', '', '', '', '', '', '0000-00-00', '', 'Rua Freitas Henrique de Cima, 26', '', 'Trv. Para', 'Cauxa D''agua', '40165350', 'Salvador', 'BA', '3389-4077', '', '', 3);
+INSERT INTO `clientes` VALUES (297, 'Flex Bag', '', '', '', '', '', '', '0000-00-00', '', 'Av. Tancredo Neves, N?274,Centro Empresarial BL B,', '', 'Sala734', 'Pituba', '41820020', 'Salvador', 'BA', '3450-5002', '', '', 3);
+INSERT INTO `clientes` VALUES (298, 'Shopping Brindes', '', '', '', '02441250000192', '', '', '0000-00-00', '', 'Lad. Do Tabo?o , 62,', '', '', 'Com?rcio', '40026220', 'Salvador', 'BA', '3241-3388', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (299, 'Ant?nio Costa (Faleceu)', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '3494-3806', '', '', 3);
+INSERT INTO `clientes` VALUES (300, 'Oficina da capoeira (B?gica)', '', '', '', '', '', '', '0000-00-00', '', 'KORTE PASTOORSTRAAT.S, 2600', '', '', 'BERCHEM', '', 'Belgica', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (301, 'Beto Bolsas (Feira de Santana)', '', '', '', '07059958000369', '', '', '0000-00-00', '', 'Rua Visconde do Rio Branco n?445', '', '', 'Centro', '44026000', 'Feira de Santana', 'BA', '75 3322 3550', '3322-3550', '', 3);
+INSERT INTO `clientes` VALUES (302, 'FARDEX', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe, 156/158 Lj. 07', '', '', 'Cal?ada', '40000000', 'Salvador', 'Ba', '3312-9072', '3312-1200', '', 3);
+INSERT INTO `clientes` VALUES (303, 'Casa Estrela', '', '', '', '73976755000108', '', '', '0000-00-00', '', 'Rua  Bar?o de Cotegipe,188', '', '', 'Cal?ada', '4000000', 'Salvador', 'BA', '30137045/48', '33210027', '', 3);
+INSERT INTO `clientes` VALUES (304, 'Moda Grande', '', '', '', '', '', '', '0000-00-00', '', 'Rua Na??es Unidas, 75 casa 3', '', 'Jardim Cru', 'Vila Ruy Barbosa', '4043017', 'Salvador', 'BA', '3384-6726', '', '', 3);
+INSERT INTO `clientes` VALUES (305, 'CORTEJO AFRO', '', '', '', '03018234000154', '', '', '0000-00-00', '', 'Rua In?cio Aciole, 27', '', '', 'Pelourinho', '40000000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (306, 'Armarinho Guimar?es II', '', '', '', '03751589000158', '', '', '0000-00-00', '', 'Rua Araujo Pinho , n? 16', '', '', 'Centro', '45653145', 'Ilh?us', 'BA', '73 3633-4308', '', '', 3);
+INSERT INTO `clientes` VALUES (307, 'Armarinho Violeta', '', '', '', '14244883000190', '', '', '0000-00-00', '', 'Rua 2 de julho, 215', '', '', 'Centro', '45570000', 'Ipia?', 'BA', '73 3531-3526', '73-35313526', '', 3);
+INSERT INTO `clientes` VALUES (308, 'Galeria Ricardo', '', '', '', '13561428000155', '', '', '0000-00-00', '', 'Pra?a Cairu  Mercado Modelo, Q. L,box 2 e 3', '', 's. n', 'Com?rcio', '', 'Salvador', 'BA', '33264386', '', '', 3);
+INSERT INTO `clientes` VALUES (309, 'ARMARINHO PONTO SEM N', '', '', '', '06932647000171', '', '', '0000-00-00', '', 'Rua Bar?o do Rio Branco, 84', '', '', 'Centro', '', 'Seabra', 'BA', '71-3240-2468', '', '', 3);
+INSERT INTO `clientes` VALUES (310, 'ARMARINHO D''ARTES', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'RUA PEDRO BARBOSA, 50', '', '', 'CENTRO', '40000000', 'Itabaiana', 'SE', '79 3431-1341', '79 3431-1341', '', 3);
+INSERT INTO `clientes` VALUES (311, 'Arte festas (Tom?s)', '', '', '', '07423013000112', '', '', '0000-00-00', '', 'Rua Engenheiro silva lima, 102', '', '', 'Nazar', '40000000', 'Salvador', 'BA', '3322-5751', '', '', 3);
+INSERT INTO `clientes` VALUES (312, 'Gaby Bijouterias', '', '', '', '06244161000107', '', '', '0000-00-00', '', 'Rua carlos gomes,426', '', '', '2 de julho', '40000000', 'Salvador', 'BA', '3321-3173', '', '', 3);
+INSERT INTO `clientes` VALUES (313, 'Xisto', '', '', '', '00139065000112', '', '', '0000-00-00', '', 'Rua marques de Sto Amaro, 10', '', '', 'Ribeira', '40420510', 'Salvador', 'BA', '3314-6060', '', '', 3);
+INSERT INTO `clientes` VALUES (314, 'Sacola & Cia', '', '', '', '00000000000000', '', '', '0000-00-00', '', '', '', '', '', '', 'Salvador', 'BA', '3308-2039', '', '', 3);
+INSERT INTO `clientes` VALUES (315, 'CARVALHO REPRESENTA??O', '', '', '', '05273874000136', '', '', '0000-00-00', '', 'Av. Otavio Mangabeira, 1601/sala 8', '', 'P. Sagre', 'Pituba', '41830050', 'Salvador', '', '3240-8339', '3240-8339', '', 3);
+INSERT INTO `clientes` VALUES (316, 'CLEIDE MORENO', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Pedro Barbosa, 50', '', '', 'Centro', '40000000', 'Itabaiana', 'SE', '79 34311341', '', '', 3);
+INSERT INTO `clientes` VALUES (317, 'Maria Auxiliadora', '', '', '', '00020000000', '', '', '0000-00-00', '', 'Rua Jo?o de deus, N 3 , EM FRENTE AO SEBRAE', '', '', 'Pelorinho', '40000000', 'Salvador', 'BA', '3371-4010 ramal 36', '', '', 3);
+INSERT INTO `clientes` VALUES (318, 'ANBA', '', '', '', '07593509000134', '', '', '0000-00-00', '', 'Rua 28 , qd 26 , N?11', '', '', 'Faz Coutos III', '4000000', 'Salvador', 'BA', '3521-7696', '3408-3927', '', 3);
+INSERT INTO `clientes` VALUES (319, 'TOP PLAST / CORFEL', '', '', '', '03849904000184', '', '', '0000-00-00', '', 'Rua Silva Jardim , n31', '', '', 'Tabu', '40000000', 'Salvador', 'BA', '3242-2204', '', '', 3);
+INSERT INTO `clientes` VALUES (320, 'Grupo de Capoeira Regional Tempo', '', '', '', '', '', '', '0000-00-00', '', 'Rua Heuv?cio Carneiro Ribeiro, n14', '', '', 'Ondina', '40160250', 'Salvador', 'BA', '3331 2711', '', '', 3);
+INSERT INTO `clientes` VALUES (321, 'AMOSTRA', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Lad. da Ordem 3? de S?o Francisco', '', '', 'Pelourinho', '40020075', 'Salvador', 'BA', '3321-8856', '3321-1751', '', 3);
+INSERT INTO `clientes` VALUES (322, 'Center Fardas', '', '', '', '05923763000128', '', '', '0000-00-00', '', 'Av. Fernandes da Cunha', '', 'n? 41', 'Mares', '40445200', 'Salvador', 'BA', '34190476/78', '33148417', '', 3);
+INSERT INTO `clientes` VALUES (323, 'Renata Sckianta', '', '', '', '77756029534', '', '', '0000-00-00', '', 'Av. Visconde de Itabora?, 259/213', '', '', 'Amaralina', '41900010', 'Salvador', 'BA', '8742-5553', '92923625', '', 3);
+INSERT INTO `clientes` VALUES (324, 'Beto Bolsas SSA', '', '', '', '05426076000105', '', '', '0000-00-00', '', 'Rua Dr. Jose dosquim Seabra , 33', '', '', 'Barroquinha', '40025000', 'Salvador', 'BA', '33228527', '', '', 3);
+INSERT INTO `clientes` VALUES (325, 'Christianne Rezende Paes Barreto', '', '', '', '03890627000153', '', '', '0000-00-00', '', 'Rua Corpo Santo , N 10,', '', 'Sala 101', 'Com?rcio', '40015200', 'Salvador', 'BA', '3242-4590', '3327-1139', '', 3);
+INSERT INTO `clientes` VALUES (326, 'Comercial Dumont', '', '', '', '04510940000181', '', '', '0000-00-00', '', 'Rua Santos Dumont,5', '', 'n? 5', 'Com?rcio', '40015200', 'Salvador', 'BA', '32418989/3183-5511', '32410505', '', 3);
+INSERT INTO `clientes` VALUES (327, 'Cantinho de Nenem', '', '', '', '13526938000191', '', '', '0000-00-00', '', 'Av. Paulo VI, 796', '', '', 'Pituba', '41810001', 'Salvador', 'BA', '34521123', '34527325', '', 3);
+INSERT INTO `clientes` VALUES (328, 'Armarinho Alian', '', '', '', '07884110000102', '', '', '0000-00-00', '', 'Rua Araujo Pinho, n 09', '', '', 'centro', '45653145', 'Ilh?us', 'BA', '73-3231-6256', '', '', 3);
+INSERT INTO `clientes` VALUES (329, 'Plumatex', '', '', '', '07385087000101', '', '', '0000-00-00', '', 'Rod Br324 Km 18,5 Cia Sul Setor Sesfi', '', '', 'Cia', '43700000', 'Sim?es Filho', 'BA', '71 3173-6161', '71 21086300', '', 3);
+INSERT INTO `clientes` VALUES (330, 'Lear Comporation', '', '', '', '01020305855555', '', '', '0000-00-00', '', 'Av.Henry Ford', '', 'n?2000', 'Cama?ari', '42810900', 'Salvador', '', '71 36492032', '71 36493808', '', 3);
+INSERT INTO `clientes` VALUES (331, 'Carlos Roberto Dias da Mota', '', '', '', '81778899587', '', '', '0000-00-00', '', 'Rua Tio Moura, 12', '', '', 'Cabula', '', 'Salvador', 'BA', '3385-9625', '', '', 3);
+INSERT INTO `clientes` VALUES (332, 'Elan Brasil', '', '', '', '02350603000149', '', '', '0000-00-00', '', 'Rodovia BA 084,', '', '', 'Km 06', '', 'Cora??o de Maria', 'BA', '3363-2233', '', '', 3);
+INSERT INTO `clientes` VALUES (333, 'Associa??o de Capoeira Discipulos de Cristo Capoarte', '', '', '', '', '', '', '0000-00-00', '', 'Rua Heitor Dias , s/n', '', '', 'Cosme de Farias', '40000000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (334, 'Cristiano Gomes de Morais', '', '', '', '16374250826', '', '', '0000-00-00', '', 'Lot. Parque das Dunas, L1', '', '', 'Jau', '', 'Cama?ari', 'BA', '3672-1119', '', '', 3);
+INSERT INTO `clientes` VALUES (335, 'LOVELY', '', '', '', '02076862000123', '', '', '0000-00-00', '', 'Rua Leblon, n? 40', '', '', 'Queimadinho', '40000000', 'Feira de Santana', 'BA', '75 3221-0262', '', '', 3);
+INSERT INTO `clientes` VALUES (336, 'GSA', '', '', '', '07624883000150', '', '', '0000-00-00', '', 'Av Santos Dumont, Centro Comercial MM, n502', '', 'sala102', 'Centro', '40000000', 'Lauro de Freitas', 'BA', '3288-6960', '33313-2004', '', 3);
+INSERT INTO `clientes` VALUES (337, 'Jos? Ant?nio de Souza Neto', '', '', '', '66872464534', '', '', '0000-00-00', '', 'Rua Miguel Bournier , n135, Edf mar Grande,', '', 'Apt 402', 'Barra', '40140190', 'Salvador', 'BA', '3347-4464', '', '', 3);
+INSERT INTO `clientes` VALUES (338, 'JRBA  Revestimentos Ltda', '', '', '', '73724486000184', '', '', '0000-00-00', '', 'P?a Fros da Mota N 24', '', '', 'Centro', '44010570', 'Feira de Santana', 'BA', '75 36234214', '', '', 3);
+INSERT INTO `clientes` VALUES (339, 'Raonique Monique', '', '', '', '05880066000137', '', '', '0000-00-00', '', 'Av. Sete de Setembro, Ed. Campos, 78', '', 'Sala 101', 'Av. Sete', '40060001', 'Salvador', 'BA', '71 3322-7453', '71 3322-7453', '', 3);
+INSERT INTO `clientes` VALUES (340, 'Kita Bijouterias', '', '', '', '03683978000193', '', '', '0000-00-00', '', 'Rua carlos Gomes,n56', '', '', 'Centro', '40060330', 'Salvador', 'BA', '3322-2870', '', '', 3);
+INSERT INTO `clientes` VALUES (341, 'Casa Ruas - Pto Verde', '', '', '', '04828027000128', '', '', '0000-00-00', '', 'Av Santos Dumont, S/n, Shopping Pto verde', '', '', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '33781431', '3241-1024', '', 3);
+INSERT INTO `clientes` VALUES (342, 'Mega Produ??es em tecido', '', '', '', '08077770000144', '', '', '0000-00-00', '', 'P?a Martiniano Maia , n12', '', '', 'centro', '42700000', 'Lauro de Freitas', 'BA', '3287-3424', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (343, 'Themis', '', '', '', '32878589000111', '', '', '0000-00-00', '', 'Rua Barros Falc?o, 215/219', '', '', 'Matatu', '40255370', 'Salvador', 'BA', ' 3382-7212', ' 3382-2221', '', 3);
+INSERT INTO `clientes` VALUES (344, 'Classe Couro II (Gilvando)', '', '', '', '04623865000165', '', '', '0000-00-00', '', 'Loteamento Mirante,101', '', '', 'Centro', '44600000', 'Ipir', 'BA', '75 3254-1364', '3254-2476', '', 3);
+INSERT INTO `clientes` VALUES (345, 'Edvaldo da Silva Proc?pio', '', '', '', '56345984515', '', '', '0000-00-00', '', 'Rua Jose Rodrigues de Oliveira n?40', '', '1?andarcs2', 'Fazenda Grande do retiro', '40355230', 'Salvador', 'BA', '41027493', '', '', 3);
+INSERT INTO `clientes` VALUES (346, 'CAPOARTE', '', '', '', '', '', '', '0000-00-00', '', 'Rua Solon de Carvalho, 52', '', '', 'Sussuarana', '40000000', 'Salvador', 'BA', '8755-1594', '', '', 3);
+INSERT INTO `clientes` VALUES (347, 'Continental', '', '', '', '08234942000146', '', '', '0000-00-00', '', 'Rua Concei??o da Praia N 8', '', '', 'Com?rcio', '40015210', 'Salvador', 'BA', '3242-0514', '', '', 3);
+INSERT INTO `clientes` VALUES (348, 'Le Bouton', '', '', '', '13418215000330', '', '', '0000-00-00', '', 'R: Gustavo dos Santos, 32', '', '', 'Largo 2 de Julho', '', 'Salvador', 'BA', '71 30113477', '', '', 3);
+INSERT INTO `clientes` VALUES (349, 'Gr?fica Santa Helena', '', '', '', '14386866000197', '', '', '0000-00-00', '', 'Rua Aristides Novis, 123,', '', '', 'Federa?', '41630210', 'Salvador', 'BA', '3203-1419', 'o mesmo', '', 3);
+INSERT INTO `clientes` VALUES (350, 'Milla Bijouterias', '', '', '', '05322064000122', '', '', '0000-00-00', '', 'Rua do Para?so, n 15, T?rreo', '', '', '', '40000000', 'Salvador', 'BA', '71 32663558', '', '', 3);
+INSERT INTO `clientes` VALUES (351, 'Embalagem S?o Geraldo', '', '', '', '34436592000100', '', '', '0000-00-00', '', 'Av. ACM, 2501,Edf.Profissional Center', '', 'sala 206', 'Cidadela', '40288900', 'Salvador', 'BA', '71 3358-2037', '71 3358-2037', '', 3);
+INSERT INTO `clientes` VALUES (352, 'Artes e Festa (atualizado)', '', '', '', '07423013000112', '', '', '0000-00-00', '', 'Rua Engenheiro Silva Lima', '', 'n? 102', 'Nazar', '40040030', 'Salvador', 'BA', '71 3322-5751', '', '', 3);
+INSERT INTO `clientes` VALUES (353, 'F?bio Queiroz', '', '', '', '87361779549', '', '', '0000-00-00', '', 'Rua Cachund', '', 'n? 7', 'Boca do Rio', '', 'Salvador', 'BA', '71 3362-5526', '', '', 3);
+INSERT INTO `clientes` VALUES (354, 'CTMC', '', '', '', '05743160000144', '', '', '0000-00-00', '', 'Rua da resistencia, n? 136 A', '', '', 'Bairro da Paz', '41515230', 'Salvador', 'BA', '71 3368-2609', '', '', 3);
+INSERT INTO `clientes` VALUES (355, 'Fred Souza Didier', '', '', '', '01818813491', '', '', '0000-00-00', '', 'Av. Ot?vio Mangabeira', '', 'n? 7.709', 'Pituba', '41706690', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (356, 'SESI - Pituba Parque Center', '', '', '', '', '', '', '0000-00-00', '', '', '', '', 'Itaigara', '', '', '', '71 3354-0085', '3354-0088', '', 3);
+INSERT INTO `clientes` VALUES (357, 'Inpack', '', '', '', '04755256000160', '', '', '0000-00-00', '', 'Av. ACM', '', 'n? 899', 'Malhado', '45651621', 'Ilh?us', 'BA', '73 3633-1144', '', '', 3);
+INSERT INTO `clientes` VALUES (358, 'MGM', '', '', '', '07923575000125', '', '', '0000-00-00', '', 'Rua Visconde de Caravelas', '', 'n? 95', 'Ribeira', '42420160', 'Salvador', 'BA', '71 3312-8377', '71 8802-7054', '', 3);
+INSERT INTO `clientes` VALUES (359, 'Sol da Terra', '', '', '', '', '', '', '0000-00-00', '', 'Largo Cruzeiro de S?o francisco, Edf Derik , loja3', '', '', 'Pelorinho', '40000000', 'Salvador', 'BA', '3243-5450', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (360, 'Master Capas LTDA', '', '', '', '02103557000183', '', '', '0000-00-00', '', 'Setor A, Caminho 16, n? 2 A', '', '', 'Mussurunga', '41490334', 'Salvador', 'BA', '71 3252-4913', '', '', 3);
+INSERT INTO `clientes` VALUES (361, 'M?rcio Cunha', '', '', '', '', '', '', '0000-00-00', '', 'Rua dos Marchantes', '', 'n? 08', 'Santo Ant?nio', '', 'Salvador', 'BA', '71 3319-0099', '', '', 3);
+INSERT INTO `clientes` VALUES (362, 'Associa??o Carnavalesca Bloco Afro-Olodum', '', '', '', '04707058000120', '', '', '0000-00-00', '', 'Rua das Laranjeiras', '', 'n? 30', 'Pelourinho', '40000000', 'Salvador', 'BA', '71 3322-8069', '71 3492-6584', '', 3);
+INSERT INTO `clientes` VALUES (363, 'USA', '', '', '', '03215469000135', '', '', '0000-00-00', '', 'Pra?a Inoc?ncio Galv', '', 'n 8', 'Largo 2 de Julho', '40060180', 'Salvador', 'BA', '71 3322-9758', '71 3322-8760', '', 3);
+INSERT INTO `clientes` VALUES (364, 'Jolair das Gra?as Santiago', '', '', '', '06554512500', '', '', '0000-00-00', '', 'Arthur Mendes de Aguiar, n 14, apt 02', '', '', 'Barbalho', '', 'Salvador', 'BA', '71 3242-6666', '', '', 3);
+INSERT INTO `clientes` VALUES (365, 'VISIONGRAF', '', '', '', '03336621000139', '', '', '0000-00-00', '', 'Rua General Andrea, 6', '', '88760068', 'Cal?ada', '40410020', 'Salvador', 'BA', '71 3312-8348', '71 3312-0320', '', 3);
+INSERT INTO `clientes` VALUES (366, 'Projeto Mus- e Brasil', '', '', '', '', '', '', '0000-00-00', '', 'Rua do caxund?, n 7', '', '', 'Boca do rio', '41605200', 'Salvador', 'BA', '3362-5526', '', '', 3);
+INSERT INTO `clientes` VALUES (367, 'Marcos Murilo Maffra', '', '', '', '13262823600', '', '', '0000-00-00', '', 'Rua Arnaldo Francelino n 6', '', '', 'Itapu', '41610440', 'Salvador', 'BA', '3286-5110', '3287-1406', '', 3);
+INSERT INTO `clientes` VALUES (368, 'Realce Tecidos', '', '', '', '08311297000118', '', '', '0000-00-00', '', 'Ladeira do Tabo?o, n? 6', '', '', 'Tabo', '', 'Salvador', 'BA', '71 3241-2750', '', '', 3);
+INSERT INTO `clientes` VALUES (369, 'Armarinho Girassol', '', '', '', '16406472000189', '', '', '0000-00-00', '', 'Rua General Savaget, n? 1', '', '', 'Liberdade', '40375070', 'Salvador', 'BA', '71 3241-2567', '', '', 3);
+INSERT INTO `clientes` VALUES (370, 'Bel Sonno', '', '', '', '02634416000430', '', '', '0000-00-00', '', 'Av. Engenheiro Elmo Serejo de Farias,n? 2429', '', 'Sala 107', 'CIA', '43700000', 'Sim?es Filho', 'BA', '71 3599809', '', '', 3);
+INSERT INTO `clientes` VALUES (371, 'Luiz Porto Falc', '', '', '', '01000000000', '', '', '0000-00-00', '', 'rrrrrrrrrrrrrr', '', 'rrrrrrrrr', 'rrrrrrrrrrr', '40000000', 'Salvador', 'BA', '3242-0046', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (372, 'I BEM AND', '', '', '', '', '', '', '0000-00-00', '', 'Rua Etizi?rio da cruz, n? 508', '', '', 'Piraj', '', 'Salvador', 'BA', '71 3211-6348', '', '', 3);
+INSERT INTO `clientes` VALUES (373, 'Lar Fabiano de Cristo', '', '', '', '33948381006982', '', '', '0000-00-00', '', 'Rua Jaime Vieira Lima', '', 'n? 104', 'Pau da Lima', '', 'Salvador', 'BA', '71 3393-2263', '', '', 3);
+INSERT INTO `clientes` VALUES (374, 'Grupo de Capoeira Nativos', '', '', '', '07593509000134', '', '', '0000-00-00', '', 'Rua 28 , Faz. Coutos - 3? Etapa', '', '', 'Faz. Coutos III', '', 'Salvador', 'BA', '71 3521-7696', '71 3521-7859', '', 3);
+INSERT INTO `clientes` VALUES (375, 'MSA Confec??es', '', '', '', '02577860000118', '', '', '0000-00-00', '', '1? Travessa do Balne?rio, n? 334', '', '', 'Imbassa', '42850000', 'Dias Davila', 'BA', '71 3625-1167', '71 3625-2216', '', 3);
+INSERT INTO `clientes` VALUES (376, 'Publigraf', '', '', '', '13942743000122', '', '', '0000-00-00', '', 'Rua Prof. Moura Bastos, n? 90', '', '', 'IAPI', '40330530', 'Salvador', 'BA', '(71) 3255-0511', '', '', 3);
+INSERT INTO `clientes` VALUES (377, 'Rosa Malena Bezerra Barbosa', '', '', '', '23382481553', '', '', '0000-00-00', '', 'Rua Gon?alves Cezimbra, n? 72, Boca do Rio', '', '', 'Pitua', '41740190', 'Salvador', 'BA', '71 3232-6884', '71 3363-4824', '', 3);
+INSERT INTO `clientes` VALUES (378, 'Emp?rio N?utico', '', '', '', '07533183000150', '', '', '0000-00-00', '', 'Rua Concei??o da Praia, n? 4', '', '', 'Com?rcio', '40015250', 'Salvador', 'BA', '71 3242-0514', '71 3242-0514', '', 3);
+INSERT INTO `clientes` VALUES (379, 'Renilda dos Reis Silva', '', '', '', '', '', '', '0000-00-00', '', 'Rua S?nia Barradas,n? 19E, Lot. Vila Mar', '', '', 'Nova Bras?lia', '41380310', 'Salvador', 'BA', '71 3213-1725', '', '', 3);
+INSERT INTO `clientes` VALUES (380, 'Criativa brindes Especiais', '', '', '', '65934938568000', '', '', '0000-00-00', '', 'Av. Jonana Angelica , 225 apt 08', '', '', 'Nazar', '40000000', 'salvador', 'BA', '3241-4116', '', '', 3);
+INSERT INTO `clientes` VALUES (381, 'S? Uniformes', '', '', '', '07896439000193', '', '', '0000-00-00', '', 'Av. vasco da Fama,432, 1? Andar', '', '', 'Brotas', '40268000', 'Salvador', 'BA', '3243-0202', '', '', 3);
+INSERT INTO `clientes` VALUES (382, 'IR? SALLES', '', '', '', '02939240000181', '', '', '0000-00-00', '', 'Alameda dos Umbunzeiros, 473', '', 'Exe.It?lia', 'Caminho da ?rvores', '41820680', 'Salvador', 'BA', '71 3355-0852', '', '', 3);
+INSERT INTO `clientes` VALUES (383, 'CHT', '', '', '', '04115844000139', '', '', '0000-00-00', '', 'Estada da mata escurA, LOTE 06/07 QD 05', '', '', 'BRASILG?S', '41225000', 'Salvador', 'BA', '3398 0088', '3398 0088', '', 3);
+INSERT INTO `clientes` VALUES (384, 'Gera??o 2000', '', '', '', '16268740000143', '', '', '0000-00-00', '', 'Rua General Labatuti, n?63', '', '', 'Barris', '4007010', 'Salvador', 'BA', '(71) 3328-3541', '(71) 3328-0960', '', 3);
+INSERT INTO `clientes` VALUES (385, 'Escola Tiradentes', '', '', '', '01983135000187', '', '', '0000-00-00', '', 'Rua: Jardim Castro Alves S/N', '', '', 'Caminho de Areia', '40440000', 'Salvador', 'BA', '(71) 3611-6516', '', '', 3);
+INSERT INTO `clientes` VALUES (386, 'Famucci Artigos em Couro', '', '', '', '07749169000109', '', '', '0000-00-00', '', 'Rua Itacira, n? 29', '', '', 'Centro', '46880000', 'Ituber', 'BA', '75 3251-1024', '', '', 3);
+INSERT INTO `clientes` VALUES (387, 'RBG Bolsas', '', '', '', '74154550000100', '', '', '0000-00-00', '', 'Rua Ciqueira Campos, 121', '', '', 'Centro', '45020790', 'Vit?ria da Conquista', 'BA', '77 3424 3734', '', '', 3);
+INSERT INTO `clientes` VALUES (388, 'NAC PC', '', '', '', '04327251000136', '', '', '0000-00-00', '', 'Rua do Sangradouro, n? 12', '', '', 'Santo Agostinho', '40255210', 'Salvador', 'BA', '(71) 3611-2902', '', '', 3);
+INSERT INTO `clientes` VALUES (389, 'Magno Correia da Silva', '', '', '', '79341217504', '', '', '0000-00-00', '', 'Jardim Cidade Nova,qd.9,Lt.20', '', '', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '(71) 3252-7437', '', '', 3);
+INSERT INTO `clientes` VALUES (390, 'L Lopes', '', '', '', '34058143000137', '', '', '0000-00-00', '', 'Rua da bandeira, 64', '', '', 'Centro', '42800000', 'Cama?ari', 'BA', '3622-1092', '', '', 3);
+INSERT INTO `clientes` VALUES (391, 'Couro.com', '', '', '', '09112445000138', '', '', '0000-00-00', '', 'R. Engenheiro Austricliano, n?53, T?rreo', '', '', 'S?o Caetano', '40391204', 'Salvador', 'BA', '(071) 3303-1403', '(071) 3303-1403', '', 3);
+INSERT INTO `clientes` VALUES (392, 'crimatec tornearia', '', '', '', '06149411000120', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '33829816', '', '', 3);
+INSERT INTO `clientes` VALUES (393, 'Armarinho 13', '', '', '', '01549160000157', '', '', '0000-00-00', '', 'Pra?a 09 de novembro, 05', '', '', 'Centro', '45015170', 'Vit?ria da Conquista', 'BA', '77 2101 7370', '', '', 3);
+INSERT INTO `clientes` VALUES (394, 'Jire Bolsas', '', '', '', '07172209000181', '', '', '0000-00-00', '', 'Av. Amaralina, n? 41,Quadra C,Caminho 02', '', '', 'Pampalona', '44022210', 'Feira de Santana', 'BA', '75 3624-5768', '', '', 3);
+INSERT INTO `clientes` VALUES (395, 'Nativa Produtos Naturais', '', '', '', '03773414000141', '', '', '0000-00-00', '', 'Rua pedro ?lvares Cabral,134', '', '', 'Centro', '45995049', 'Teixeira de Freitas', 'BA', '73 3011-2379', 'mesmo', '', 3);
+INSERT INTO `clientes` VALUES (396, 'Confec??es Hebert', '', '', '', '15105844000174', '', '', '0000-00-00', '', 'Av. Vasco da Gama, n? 840', '', '', 'Rio Vermelho', '40286000', 'Salvador', 'BA', '71 3525-2000', '', '', 3);
+INSERT INTO `clientes` VALUES (397, 'R&E Uniformes e EPI?S', '', '', '', '08484251000109', '', '', '0000-00-00', '', 'Rua A, N? 61,2? Etapa, T?rreo', '', '', 'Castelo Branco', '41320605', 'Salvador', 'BA', ' 3293-3792', '', '', 3);
+INSERT INTO `clientes` VALUES (398, 'M M Armarinho', '', '', '', '13581798000154', '', '', '0000-00-00', '', 'R Rua Gerson, n? 9', '', '', 'Cidade Nova', '44032580', 'Feira de Santana', 'BA', '75 3489-7434', '75 3224-6373', '', 3);
+INSERT INTO `clientes` VALUES (399, 'Karoliny de Almeida Souza', '', '', '', '08365592000157', '', '', '0000-00-00', '', 'Rua Gerson, n? 05', '', '', 'Cidade Nova', '44032580', 'Feira de Santana', 'BA', '75 3223-1539', '', '', 3);
+INSERT INTO `clientes` VALUES (400, 'EMA Fardamentos', '', '', '', '03604322000138', '', '', '0000-00-00', '', 'Rua Jos? Ernestro dos Santos', '', '', 'Centro', '', 'Lauro de Freitas', 'BA', '71 3287 2544/3378-0210', '', '', 3);
+INSERT INTO `clientes` VALUES (401, 'POP Armarinho', '', '', '', '08575944000107', '', '', '0000-00-00', '', 'Rua professor Florentino Menezes,n? 149', '', '', 'Centro', '49010680', 'Aracaju', 'SE', '79 3211-6412', '', '', 3);
+INSERT INTO `clientes` VALUES (402, 'Gr?fica Aquarela', '', '', '', '', '', '', '0000-00-00', '', 'Rua Orlando Gomes, 67', '', 'Multshopin', 'Boca do Rio', '', 'Salvador', 'BA', '3461-3232', '3432-3025', '', 3);
+INSERT INTO `clientes` VALUES (403, 'FARDSEG 1', '', '', '', '04998779000158', '', '', '0000-00-00', '', 'Rua Santos Titara, 22', '', '', 'Massaranduba', '', 'Salvador', 'BA', '3312-7464', '3207-5458', '', 3);
+INSERT INTO `clientes` VALUES (404, 'TS GR?FICA', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe', '', '', 'Roma', '', 'Salvador', 'BA', '3314-2133', '', '', 3);
+INSERT INTO `clientes` VALUES (405, 'Solideu Magazine', '', '', '', '09001359000158', '', '', '0000-00-00', '', 'Rua do Cabe?a n? 03 Loja 01,', '', '', 'Dois de Julho', '40060230', 'Salvador', 'BA', '71 3321-2771', '', '', 3);
+INSERT INTO `clientes` VALUES (406, 'Erivan dos Santos Assis', '', '', '', '08151363000130', '', '', '0000-00-00', '', 'R: Dr. J.J. Seabra, n? 9 - T?rreo', '', '', 'Baixa do Sapateiro', '40025000', 'Salvador', 'BA', '71 3326-2434', '', '', 3);
+INSERT INTO `clientes` VALUES (407, 'Stofart', '', '', '', '', '', '', '0000-00-00', '', 'Rua Vilma Santos', '', '', 'Vila Can?ria', '', 'Salvador', 'BA', '3211-9435', '', '', 3);
+INSERT INTO `clientes` VALUES (408, 'Prom?dica', '', '', '', '15214918000155', '', '', '0000-00-00', '', 'Av. Tancredo Neves n? 456', '', '27? andar', 'Caminha das ?rvores', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (409, 'FTC', '', '', '', '04670333000189', '', '', '0000-00-00', '', 'Pra?a da inglaterra, 2', '', '', 'Com?rcio', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (410, 'Danilo Silva Santana', '', '', '', '03429591589', '', '', '0000-00-00', '', 'Av. Sete de Setembro 1420', '', 'ed. Porto', 'Campo Grande', '', 'Salvador', 'BA', '3328-5939', '', '', 3);
+INSERT INTO `clientes` VALUES (411, 'Armarinho Ponto a Ponto ( n?o usar essa raz?o Social  )', '', '', '', '09017938000199', '', '', '0000-00-00', '', 'Alameda Lima Guerra, n? 57', '', '', 'Centro', '45040050', 'Vit?ria da Conquista', 'BA', '77 3424-0326', '', '', 3);
+INSERT INTO `clientes` VALUES (412, 'Grupo de Capoeira Ponta P', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'Rua Dr. Moises maia Fontes,232', '', 'Casa', 'Chapada do Rio vermelho', '41925055', 'Salvador', 'BA', '3347-5500', '', '', 3);
+INSERT INTO `clientes` VALUES (413, 'GBF Gr?fica', '', '', '', '63223713000134', '', '', '0000-00-00', '', 'Ladeira do peru, n?16 A', '', '', 'Largo do Tanque', '40349340', 'Salvador', 'BA', '71 3304-1970', '', '', 3);
+INSERT INTO `clientes` VALUES (414, 'DEDECAM', '', '', '', '04766794000150', '', '', '0000-00-00', '', 'R do Zaire, 201,G 1,Granjas Rurais Presid. Vargas', '', '', 'Piraj', '41290620', 'Salvador', 'BA', '71 3392-3085/4649', '3392-3085', '', 3);
+INSERT INTO `clientes` VALUES (415, 'MARM?VEIS', '', '', '', '96741921000184', '', '', '0000-00-00', '', 'Rua Gomes Melo ,147', '', '?', 'Cabula VI', '41181050', 'Salvador', 'BA', '3461-2631', '9131-7633', '', 3);
+INSERT INTO `clientes` VALUES (416, 'Rui Nascimento Concei??o Filho', '', '', '', '02525990552', '', '', '0000-00-00', '', 'Rua Dr. J. J. Seabra, 95', '', '', 'Centro', '45435000', 'Ituber', 'BA', '73 3256-1523', '', '', 3);
+INSERT INTO `clientes` VALUES (417, 'Armarinho Vi', '', '', '', '01111111111111', '', '', '0000-00-00', '', 'Rua Minas gerais', '', '', 'Pituba', '40000000', 'Salvador', 'BA', '3391-4642', '', '', 3);
+INSERT INTO `clientes` VALUES (418, 'Virg?lio Jos? Rios Leiro', '', '', '', '25394681520', '', '', '0000-00-00', '', 'Rua Margues de  Caravela, 525', '', '', 'Barra', '40040160', 'Salvador', 'BA', '3264-7504', '', '', 3);
+INSERT INTO `clientes` VALUES (419, 'Lado vim', '', '', '', '01700000000000', '', '', '0000-00-00', '', '', '', '', 'Lauro de freitas', '40000000', 'Lauro de Freitas', 'BA', '33796159', '', '', 3);
+INSERT INTO `clientes` VALUES (420, 'ARTESTILO', '', '', '', '', '', '', '0000-00-00', '', 'RUA RUI BARBOSA, 248', '', 'LOJA 08', 'CENTRO', '45600000', 'Itabuna', 'BA', '73 3212-8193', '73 3212-8193', '', 3);
+INSERT INTO `clientes` VALUES (421, 'ANA L?CIA CUNHA DA SILVA', '', '', '', '00000000000', '', '', '0000-00-00', '', 'RUA CL?VIS SP?NOLA, 40', '', 'AP. 1001', 'POLITEAMA', '40000000', 'Salvador', 'BA', '71 3329-1862', '', '', 3);
+INSERT INTO `clientes` VALUES (422, 'KIRUB? LARISSA CAMOES BATISTA SOUZA', '', '', '', '01514722542', '', '', '0000-00-00', '', 'RUA BISPO N? 24', '', '24', 'NOVA BRASILIA ITAPU?N', '41630540', 'Salvador', 'BA', '71 3249 0781', '71 3249 0781', '', 3);
+INSERT INTO `clientes` VALUES (423, 'Oitobaby', '', '', '', '04849772000153', '', '', '0000-00-00', '', 'Av. Ot?vio Mangabeira N?', '', '4329', 'Arma?', '41750240', 'Salvador', 'BA', '71 3461 4006', '713461 4006', '', 3);
+INSERT INTO `clientes` VALUES (424, 'Artur Antonio Fuisa Barreto', '', '', '', '89314417549', '', '', '0000-00-00', '', 'Rua Francisco Nunes Barreto n?', '', '40', 'Pelourinho', '40025100', 'Salvador', 'BA', '71 3321-5368', '71 3321 1721', '', 3);
+INSERT INTO `clientes` VALUES (425, 'Brinquedos Rosita', '', '', '', '03117855000195', '', '', '0000-00-00', '', 'Pra?a da Crian', '', '', 'Caji', '42700000', 'Lauro de Freitas', 'BA', '71 2106 3000', '71 2106 3000', '', 3);
+INSERT INTO `clientes` VALUES (426, 'Xis Couro', '', '', '', '08405700000178', '', '', '0000-00-00', '', 'Av. Lu?s Viana Filho n? 1711', '', '', 'Saboeiro', '41180000', 'Salvador', 'BA', '71 3230 1881', '71 3230 1881', '', 3);
+INSERT INTO `clientes` VALUES (427, 'ULISSES LIMA DE JESUS', '', '', '', '889638615.20', '', '', '0000-00-00', '', 'Rua Rio Negro', '', '291', 'Monte Serra', '', 'Salvador', 'BA', '3314 4633', '', '', 3);
+INSERT INTO `clientes` VALUES (428, 'Nilo S?rgio Almeida Solon', '', '', '', '89060253515', '', '', '0000-00-00', '', 'Rua Helversio Carneiro Ribeiro', '', '254', 'Ondina', '40170060', 'Salvador', 'BA', '3235-1937', '', '', 3);
+INSERT INTO `clientes` VALUES (429, 'Escola de Capoeira Regional Remanescentes', '', '', '', '', '', '', '0000-00-00', '', 'Rua E Quadra F Casa', '', '07', 'Cajazeiras', '41330030', 'Salvador', 'BA', '71 3391 0995', '71 3391 0995', '', 3);
+INSERT INTO `clientes` VALUES (430, 'Quebra Mar', '', '', '', '07752501000173', '', '', '0000-00-00', '', 'Rua; Concei??o da  Praia, N? 14', '', '', 'COM?RCIO', '40015250', 'Salvador', 'BA', '71 3243 9246', '', '', 3);
+INSERT INTO `clientes` VALUES (431, 'KIKI BRINDES', '', '', '', '07469106000688', '', '', '0000-00-00', '', 'Ladeira da Ordem 3? de S?o Francisco, 118', '', '', 'Pelourinho', '40020275', 'Salvador', 'BA', '3321-8919', '', '', 3);
+INSERT INTO `clientes` VALUES (432, 'BV 10 Gr?fica Ltda ME', '', '', '', '04849331000151', '', '', '0000-00-00', '', 'Rua Eng? Jos? Anasoh, 15 Jardim Cai?ara', '', '', 'Brotas', '', 'Salvador', 'BA', '3555 4264', '3381 4276', '', 3);
+INSERT INTO `clientes` VALUES (433, 'ROUPGRAF', '', '', '', '01347816000159', '', '', '0000-00-00', '', 'Rua Gerino de Souza Filho n? 537 LT', '', 'J. Jaragu', 'Itinga', '42700000', 'Lauro de Freitas', 'BA', '3365 0250', '', '', 3);
+INSERT INTO `clientes` VALUES (434, 'Armarinho Ponto a Ponto', '', '', '', '09017938000199', '', '', '0000-00-00', '', 'Alameda Lima Guerra 57', '', '', 'Centro', '45040030', 'Vit?ria da Conquista', 'BA', '77 3421 0326', '', '', 3);
+INSERT INTO `clientes` VALUES (435, 'Wilson Carlos Almeida dos Santos', '', '', '', '02957968000136', '', '', '0000-00-00', '', 'Rua Ruy Barbosa 27 A', '', '', 'Centro', '45600222', 'Itabuna', 'BA', '73 3212 4860', '73 3212 4860', '', 3);
+INSERT INTO `clientes` VALUES (436, 'Armarinho Nivan Ltda', '', '', '', '63264485000140', '', '', '0000-00-00', '', 'Rua Jorge Amado 123 B', '', '', 'Centro', '45652510', 'Ilh?us', 'BA', '73 3231 3234', '73 3231 3234', '', 3);
+INSERT INTO `clientes` VALUES (437, 'Moema Ribas', '', '', '', '86013459568', '', '', '0000-00-00', '', 'Rua Rio Negro N? 291,', '', '', 'Monte Serra', '', 'Salvador', 'BA', '71 3351 0925', '', '', 3);
+INSERT INTO `clientes` VALUES (438, 'Angelica Alves Maciel Santos', '', '', '', '13263397000156', '', '', '0000-00-00', '', 'RUA Ari Pereira de Oliveira N? 39', '', '', 'Amaralina', '41905010', 'Salvador', 'BA', '71 3240 7855', '', '', 3);
+INSERT INTO `clientes` VALUES (439, 'Associa??o Cultural Ginga N''ativa Capoeira', '', '', '', '', '', '', '0000-00-00', '', 'Avenida Peixoto, 37', '', '', 'Federa?', '40230100', 'Salvador', 'BA', '71 3235-5527', '', '', 3);
+INSERT INTO `clientes` VALUES (440, 'Qualigraf', '', '', '', '00878183000142', '', '', '0000-00-00', '', 'Av. Conselheiro  Zacarias 66', '', '', 'Mares', '40445080', 'Salvador', 'BA', '71 3312 8730', '71 3312 8730', '', 3);
+INSERT INTO `clientes` VALUES (441, 'Camuger? (Hamilton Tosta dos Santos )', '', '', '', '897434825 04', '', '', '0000-00-00', '', 'Rua das Ac?cia', '', '42 A', 'Itapoan', '41610215', 'salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (442, 'JLG', '', '', '', '08071584000106', '', '', '0000-00-00', '', 'Rua Conde de Porto Alegre, 80', '', '', 'IAPI', '40330200', 'Salvador', 'BA', '(71) 2356-5936', '3386-4908', '', 3);
+INSERT INTO `clientes` VALUES (443, 'Graciela Valdez Sales', '', '', '', '39669513653', '', '', '0000-00-00', '', 'Rua Amazonas n 1121', '', '1? andar', 'Pituba', '41830380', 'Salvador', 'BA', '71 3248 9556', '71 3248 9556', '', 3);
+INSERT INTO `clientes` VALUES (444, 'Cara Caramba', '', '', '', '03347757000144', '', '', '0000-00-00', '', 'Av. Ot?vio Mangabeira, 6000', '', '', 'Boca do Rio', '41706690', 'Salvador', 'BA', '3797-6000', '', '', 3);
+INSERT INTO `clientes` VALUES (445, 'N?cleo Cultural Jaguacapoeira', '', '', '', '', '', '', '0000-00-00', '', 'Rua Jo?o Sezarino N? 36', '', '', 'Palmeiras', '45345000', 'Jaguaquara', 'BA', '73 8135 2338', '', '', 3);
+INSERT INTO `clientes` VALUES (446, 'Comercial  Nunes', '', '', '', '10621972000157', '', '', '0000-00-00', '', 'Rua do Tabo?o, N? 20,', '', '', 'Pelourinho', '40026170', 'Salvador', 'BA', '3241 1012', '3241 1012', '', 3);
+INSERT INTO `clientes` VALUES (447, 'FARDSEG', '', '', '', '04998479000158', '', '', '0000-00-00', '', 'Rua Bar?o de Cotejipe 212 I Andar', '', '', 'Cal?ada', '40411001', 'Salvador', 'BA', '71 3207 5458', '71 3312 1696', '', 3);
+INSERT INTO `clientes` VALUES (448, 'Qualytextil S/A', '', '', '', '04011170000122', '', '', '0000-00-00', '', 'Rua do Luxemburg 260, Lotes 82/83, Quadra O', '', '', 'Piraj', '40230130', 'Salvador', 'BA', '71 3390 3000', '71 3390 3013', '', 3);
+INSERT INTO `clientes` VALUES (449, 'Jose Ernane dos Santos J?nior', '', '', '', '51431335568', '', '', '0000-00-00', '', 'Av. D. Jo?o VI 1946, BL 07 Apt. 202 CJ. C. Silva', '', '', 'Brotas', '40285001', 'Salvador', 'BA', '71 3405 6163', '', '', 3);
+INSERT INTO `clientes` VALUES (450, 'J. Brito Com?rcio de Armarinho Ltda', '', '', '', '14244883000190', '', '', '0000-00-00', '', 'Rua 2 de Julho, 215,', '', '', 'Centro', '', 'Ipia?', 'BA', '73 3531 3526', '75 3531 3526', '', 3);
+INSERT INTO `clientes` VALUES (451, 'Oceania Pesca e Camping', '', '', '', '08821611000102', '', '', '0000-00-00', '', 'Rua Concei??o da Praia, n 08', '', '', 'Com?rcio', '40015260', 'Salvador', 'BA', '32410354', '32410354', '', 3);
+INSERT INTO `clientes` VALUES (452, 'Silvan Franco Lula', '', '', '', '82304815553', '', '', '0000-00-00', '', 'Rua Gaspar Sadock N? 511, Apartamento 102', '', '', 'Costa Azul', '', 'Salvador', 'BA', '3271 4340', '', '', 3);
+INSERT INTO `clientes` VALUES (453, 'Jos? Nery do Nascimento Filho  (DEVENDO A BAHIA FIOS)', '', '', '', '83922448815', '', '', '0000-00-00', '', 'Travessa M?rio Kestz, 539', '', '', 'Fazenda Grande do Retiro', '', 'Salvador', 'BA', '71 3304 3847', '', '', 3);
+INSERT INTO `clientes` VALUES (454, 'Ortonew Ltda', '', '', '', '03693531000103', '', '', '0000-00-00', '', 'Rua Barros Falc?o 321 Sala 301', '', '', 'Matatu de Brotas', '', 'Salvador', 'BA', '71 3234 2619', '', '', 3);
+INSERT INTO `clientes` VALUES (455, 'Arg?lia Vit?ria Borges Santos', '', '', '', '25290010572', '', '', '0000-00-00', '', 'Rua Valfredo tepe, n? 80', '', '', 'Centro', '45653230', 'Ilh?us', 'BA', '73 3231-4234', '', '', 3);
+INSERT INTO `clientes` VALUES (456, 'Aramif?cio Nordeste Ltda', '', '', '', '13766191000149', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe, n? 211', '', '', 'Cal?ada', '40410201', 'Salvador', 'BA', '71 3312 2166', '71 3312 3722', '', 3);
+INSERT INTO `clientes` VALUES (457, 'Comercial 23 Ltda', '', '', '', '03735577000130', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe, N? 11', '', '', 'Cal?ada', '40411002', 'Salvador', 'BA', '71 3312 9254', '', '', 3);
+INSERT INTO `clientes` VALUES (458, 'Casa dos Adesivos Comercial Ltda', '', '', '', '04742975000146', '', '', '0000-00-00', '', 'Rua Artur Gomes de Carvalho, 459 - Loja 01', '', '', 'Pituba', '41810640', 'Salvador', 'BA', '7133538000/ 30218011', '33538000', '', 3);
+INSERT INTO `clientes` VALUES (459, 'Divina Pesca', '', '', '', '04798760000147', '', '', '0000-00-00', '', 'Pra?a Visconde de Cayru, 17', '', '', 'Com?rcio', '40015170', 'Salvador', 'BA', '71 3242 2695', '', '', 3);
+INSERT INTO `clientes` VALUES (460, 'Ivo Neri dos Santos', '', '', '', '96593814504', '', '', '0000-00-00', '', 'Travessa Dami?o de G?es, 32/A', '', '', 'Liberdade', '', 'Salvador', 'BA', '71 3242 5598', '', '', 3);
+INSERT INTO `clientes` VALUES (461, 'Rede Coutos', '', '', '', '04792519000100', '', '', '0000-00-00', '', 'Rua Alameda P?dua, 335  Vela Branca Center', '', '', 'Pituba', '41830480', 'Salvador', 'BA', '71 33581207', '', '', 3);
+INSERT INTO `clientes` VALUES (462, 'Bomfim Papelaria', '', '', '', '10217171000120', '', '', '0000-00-00', '', 'Rua Rodrigues Alves, n? 05, 3? Andar', '', '', 'Com?rcio', '40015310', 'Salvador', 'BA', '71 3326 7987/3242 6706', '', '', 3);
+INSERT INTO `clientes` VALUES (463, 'Bon?s e Cia', '', '', '', '06357427000150', '', '', '0000-00-00', '', 'Conjunto Doron, Bloco 40 Apart. 01', '', '', 'Cabula', '41180400', 'Salvador', 'BA', '71 3481 8035', '75 3634 3695', '', 3);
+INSERT INTO `clientes` VALUES (464, 'Comunidade Franciscana da Bahia', '', '', '', '15193287000190', '', '', '0000-00-00', '', 'Largo do Cruzeiro de S?o Francisco', '', '', 'Pelourinho', '40020380', 'Salvador', 'BA', '3322-6430', '', '', 3);
+INSERT INTO `clientes` VALUES (465, 'Carolina de Almeida Souza', '', '', '', '', '', '', '0000-00-00', '', 'Rua A n? 27', '', '', 'Cidade Nova', '', 'Feira de Santana', 'BA', '75 3224 0039', '', '', 3);
+INSERT INTO `clientes` VALUES (466, 'Confec??o do Cabula', '', '', '', '356.851.075-87', '', '', '0000-00-00', '', 'Rua 8 de Dezembro, 88A', '', '', 'Gra', '40150000', 'Salvador', 'BA', '71 3232 4391', '', '', 3);
+INSERT INTO `clientes` VALUES (467, 'Moises Celestino de Barros', '', '', '', '', '', '', '0000-00-00', '', 'Rua Direta da Liberdade n? 220,', '', '', 'Liberdade', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (468, 'Pacam Esporte Wear', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'Rua J.J Seabra, 145', '', '', 'Cal?ada', '', 'Salvador', 'BA', '71 3241 6750', '', '', 3);
+INSERT INTO `clientes` VALUES (469, 'Sidney Lu?s Santos Lima', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Dr. M?rio de Souza Dantas, 6', '', '', 'Caixa d?agua', '', 'Salvador', 'BA', '71 3327 4429', '', '', 3);
+INSERT INTO `clientes` VALUES (470, 'Ad?lia Oliveira Lemos', '', '', '', '07235566000141', '', '', '0000-00-00', '', 'Rua Djalma Dutra, Box 9 a 12', '', '', '7 Portas', '40255000', 'Salvador', 'BA', '71 3322 7756', '', '', 3);
+INSERT INTO `clientes` VALUES (471, 'ARMARINHO ARCO IRIS', '', '', '', '00000000000000', '', '', '0000-00-00', '', 'Rua Marques de Herval, 47', '', '', 'Centro', '45400000', 'Valen', 'BA', '75 - 3641-4019', '', '', 3);
+INSERT INTO `clientes` VALUES (472, 'M M Comercial de Miudezas Ltda. ME', '', '', '', '13581798000154', '', '', '0000-00-00', '', '', '', '', '', '', 'Feira de Santana', 'BA', '75 3224 6373/3482 9182', '', '', 3);
+INSERT INTO `clientes` VALUES (473, 'Jailson Silva dos Santos', '', '', '', '94642699520', '', '', '0000-00-00', '', 'Rua Bernadete dias n? 9', '', '', 'Boca do Rio', '40610040', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (474, 'Vanete Mara Santana Castro', '', '', '', '91616220520', '', '', '0000-00-00', '', 'Rua Primeiro de Dezembro, 20', '', '', 'Cidade Nova', '40000000', 'Salvador', 'BA', '3492-0657', '', '', 3);
+INSERT INTO `clientes` VALUES (475, 'Florisvaldo Soares (Vadinho/Maragogipe)', '', '', '', '1388880565 00', '', '', '0000-00-00', '', 'Largo S?o Jos?, S/N', '', 'ultima cas', 'Beco dos Canudos', '', 'Maragogipe', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (476, 'Casa Moraes', '', '', '', '02974563000105', '', '', '0000-00-00', '', 'Av. Manoel Dias da Silva 618', '', '', 'Amaralina', '41830001', 'Salvador', 'BA', '71 3345-5858', '', '', 3);
+INSERT INTO `clientes` VALUES (477, 'Versales', '', '', '', '09065754000102', '', '', '0000-00-00', '', 'Rua Ruy Barbosa n? 4  Edf Ruy Barbosa Sala  503', '', '', 'Centro', '', 'Salvador', 'BA', '71 3322 3796', '71 3322 3796', '', 3);
+INSERT INTO `clientes` VALUES (478, 'Cancelado', '', '', '', '00812739000106', '', '', '0000-00-00', '', '', '', '', '', '', 'Vit?ria da Conquista', 'BA', '77 3424 5505', '', '', 3);
+INSERT INTO `clientes` VALUES (479, 'GRAFTEC', '', '', '', '02582817000140', '', '', '0000-00-00', '', 'Av. Brigadeiro Alberto Costa Matos', '', '', 'Araqui', '42700000', 'Lauro de Freitas', 'BA', '35079011', '', '', 3);
+INSERT INTO `clientes` VALUES (480, 'Gr?fica All Color', '', '', '', '04433196000169', '', '', '0000-00-00', '', 'Av. Prof. Manuel Ribeiro, 1292', '', '', 'Stiep', '41750160', 'Salvador', 'BA', '71 3342 4141', '71 3341 1301', '', 3);
+INSERT INTO `clientes` VALUES (481, 'Elzira dos Santos Calheiro', '', '', '', '13529757500', '', '', '0000-00-00', '', '3? Travessa Brigida do Vale, 03', '', '', 'Engenho Velho de Brotas', '', 'Salvador', 'BA', '71 3381 4606', '', '', 3);
+INSERT INTO `clientes` VALUES (482, 'Pontual Uniformes', '', '', '', '10663016000138', '', '', '0000-00-00', '', 'Rua  Haroldo Caino, 17', '', '', 'Sussuarana', '41215820', 'Salvador', 'BA', '3306-8802', 'ezaquias.', '', 3);
+INSERT INTO `clientes` VALUES (483, 'Roberto dos Santos', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Batista Machado, 187- E', '', '', 'Plataforma', '', 'Salvador', 'BA', '99166421', '', '', 3);
+INSERT INTO `clientes` VALUES (484, 'Galp?o do Polo', '', '', '', '02233247000183', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe, 210', '', '', 'Cal?ada', '40410001', 'Salvador', 'BA', '71 32074800', '71 32074822', '', 3);
+INSERT INTO `clientes` VALUES (485, 'BIRA BRINDES', '', '', '', '16403651000162', '', '', '0000-00-00', '', 'Rua Marechal Castelo Branco, 260', '', '', 'Capuchinos', '44052110', 'Feira de Santana', 'BA', '7536256446', '', '', 3);
+INSERT INTO `clientes` VALUES (486, 'Grupo de Capoeira Grupo Capoeira', '', '', '', '', '', '', '0000-00-00', '', '', '', '', 'Boca do Rio', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (487, 'Grupo de Capoeira Mundo Capoeira 2', '', '', '', '', '', '', '0000-00-00', '', '', '', '', 'Boca do Rio', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (488, 'Congrega??o das  Irm?s da Provid?ncia', '', '', '', '71854319002176', '', '', '0000-00-00', '', 'Rua Albino Fernandes,211', '', '', 'Sussuarana', '41215770', 'Salvador', 'BA', '71-33062325', '', '', 3);
+INSERT INTO `clientes` VALUES (489, 'Severo Farias', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '88270081', '', '', 3);
+INSERT INTO `clientes` VALUES (490, 'Ailton da Cruz', '', '', '', '002328975-90', '', '', '0000-00-00', '', 'Rua Djalma Dultra, 27', '', '', 'Sete Portas', '40240081', 'Salvador', 'BA', '3322-5143/4015', '', '', 3);
+INSERT INTO `clientes` VALUES (491, 'Moraes & Queiroz Ltda.', '', '', '', '15196686000105', '', '', '0000-00-00', '', 'Rua Alberto Coimbra, 87', '', '', 'Sandra Regina', '47803230', 'Barreiras', 'BA', '77/3611-1716', '', '', 3);
+INSERT INTO `clientes` VALUES (492, 'SOS  Com. De fardas e Equipamentos', '', '', '', '10695400000112', '', '', '0000-00-00', '', 'Av. Fernades da Cunha,', '', '', 'Cal?ada', '40445200', 'Salvador', 'BA', '34870977', '', '', 3);
+INSERT INTO `clientes` VALUES (493, 'Morena Fil?', '', '', '', '10293997000179', '', '', '0000-00-00', '', 'Av. 7 de Setembro, Ed. Execultivo Sala 713', '', '', 'S?o Bento', '40060020', 'Salvador', 'BA', '3321-5408', '', '', 3);
+INSERT INTO `clientes` VALUES (494, 'Classe Couro III (Maiane)', '', '', '', '08732913000104', '', '', '0000-00-00', '', 'Rua Coronel Mendes Le?o, 238', '', '', 'Centro', '44600000', 'Ipir', 'BA', '75-3254 1684/3254 2476', '', '', 3);
+INSERT INTO `clientes` VALUES (495, 'Pharos Ind. E Com?rcio de Couros Ltda.', '', '', '', '40617763000109', '', '', '0000-00-00', '', 'Av. Luiz Tarqu?nio 1541, Galp?o 03, Qd. F', '', 'Lt. 08/09', 'Jardim Aeroporto', '4270000', 'Lauro de Freitas', 'BA', '3379 5055/3379 5480', '3379 5055', '', 3);
+INSERT INTO `clientes` VALUES (496, 'Claudio Ferreira dos Santos', '', '', '', '01939007500', '', '', '0000-00-00', '', 'Rua Sim?o Sobral,1? Travessa do petroleo', '', '', 'Massaranduba', '40435410', 'Salvador', 'BA', '3397 5237', '', '', 3);
+INSERT INTO `clientes` VALUES (497, 'FAHEL COMERCIAL LTDA.', '', '', '', '14820765000182', '', '', '0000-00-00', '', 'Rua Concei??o da Praia, 24', '', '', 'Com?rcio', '40015250', 'Salvador', 'BA', '3242 1273', '', '', 3);
+INSERT INTO `clientes` VALUES (498, 'Patricia Lima Rolim', '', '', '', '', '', '', '0000-00-00', '', 'Rua Jo?o das Botas ,89, Ed. M? L?via, Ap 101', '', '', 'Canela', '', 'Salvador', 'BA', '3328 3579', '', '', 3);
+INSERT INTO `clientes` VALUES (499, 'Placa 7 Comunica??o Visual', '', '', '', '14737258000180', '', '', '0000-00-00', '', 'Rua Garcia Lorca,224', '', '', 'Lot. Praia de Ipitanga', '42700000', 'Lauro de Freitas', 'BA', '3378 1355', '', '', 3);
+INSERT INTO `clientes` VALUES (500, 'Nelcy Piagio de Oliveira Freitas', '', '', '', '', '', '', '0000-00-00', '', 'Av. Luiz Tarquinio, cond. Port?o do atl?ntico,', '', 'Qd. 11, 08', 'Pitangueiras', '', 'Lauro de Freitas', 'BA', '3369 1732', '', '', 3);
+INSERT INTO `clientes` VALUES (501, 'Litoral Norte', '', '', '', '05607488000133', '', '', '0000-00-00', '', 'Rua Uruguai, 15', '', '', 'Mares', '40454260', 'Salvador', 'BA', '3207 9463', '', '', 3);
+INSERT INTO `clientes` VALUES (502, 'Central Plast', '', '', '', '11437321000174', '', '', '0000-00-00', '', 'Rua do Zaire,16 , Galp?o 5', '', 'Brasilg', 'Grajas Rurais Presidente Varga', '40230060', 'Salvador', 'BA', '3215 9106', '', '', 3);
+INSERT INTO `clientes` VALUES (503, 'Francisco da Hora', '', '', '', '00000000000', '', '', '0000-00-00', '', '', '', '', '', '', 'Salvador', 'BA', '9207 7704', '', '', 3);
+INSERT INTO `clientes` VALUES (504, 'Emanuel da Silva Guimar?es Carvalho', '', '', '', '98606018520', '', '', '0000-00-00', '', 'Rua Futuro Toror?,16', '', '', 'Toror?', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (505, 'Sirlene J dos Santos Me', '', '', '', '08187687000128', '', '', '0000-00-00', '', 'Rua Costa pinto, Nova Feira de cama?ari', '', '', 'Centro', '42000840', 'Cama?ari', 'BA', '3622 0406', '', '', 3);
+INSERT INTO `clientes` VALUES (506, 'Alana Karen Bittencourt da Silva', '', '', '', '86390490500', '', '', '0000-00-00', '', 'Rua Salgado filho, 15, Ed. S?o luis, 201', '', '', 'Brotas', '40240350', 'Salvador', 'BA', '3233 7640', '', '', 3);
+INSERT INTO `clientes` VALUES (507, 'RVM Ind?stria e Com?rcio de Confec??es Ltda.', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bar?o de Cotagipe, 210, 2? andar', '', '', 'Cal?ada', '', 'Salvador', 'BA', '3312 9343', '', '', 3);
+INSERT INTO `clientes` VALUES (508, 'Tucano - Eduardo Ferreira da Concei?', '', '', '', '80911994572', '', '', '0000-00-00', '', 'Rua 1? de maio, Itapoan', '', '', 'Nova Bras?lia', '41520630', 'Salvador', 'BA', '713249-1462', '', '', 3);
+INSERT INTO `clientes` VALUES (509, 'Rainei Almeida Bonfim', '', '', '', '022.222.585-88', '', '', '0000-00-00', '', 'Rua Jo?o Cezarino, 26', '', 'Casa', 'Palmeira', '45345000', 'Jaguaquara', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (510, 'Luciano Texeira Santos', '', '', '', '94586420510', '', '', '0000-00-00', '', 'Rua Apolinario Santana,154, casa 02', '', '', 'Engenho Velho da Federa?', '', 'Salvador', 'BA', '3203 6535', '', '', 3);
+INSERT INTO `clientes` VALUES (511, 'Rodrigo Menezes (bigu)', '', '', '', '', '', '', '0000-00-00', '', 'Rua 18 de Outubro,187 E', '', '', 'Cosme de Farias', '', 'Salvador', 'BA', '8877 8286', '', '', 3);
+INSERT INTO `clientes` VALUES (512, 'Elias Celestino de Barros', '', '', '', '', '', '', '0000-00-00', '', 'Rua Padre Arcenio da Fonseca', '', '', '', '', 'Sim?es Filho', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (513, 'Bossainova Convites', '', '', '', '', '', '', '0000-00-00', '', 'R. Dr. Jos? Peroba,275', '', 'Sl.204/205', 'Stiep', '', 'Salvador', 'BA', '3342 0090', '', '', 3);
+INSERT INTO `clientes` VALUES (514, 'Luiz Liborio Neto', '', '', '', '01907365508', '', '', '0000-00-00', '', 'R. Arlindo Fragoso,1A,Ap. 301', '', '', 'Brotas', '', 'Salvador', 'BA', '3011 6208', '', '', 3);
+INSERT INTO `clientes` VALUES (515, 'Rodrigo Menezes', '', '', '', '', '', '', '0000-00-00', '', 'Rua 18 de Outubro, 187 E', '', '', 'Cosme de Farias', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (516, 'Mimo Doce Com?rcio de Artigos Infantis Ltda.', '', '', '', '08177816000105', '', '', '0000-00-00', '', 'Rua do Cabe?a, 43, Ed. Marques de Abrantes', '', 'Sala 710', 'Centro', '', 'Salvador', 'BA', '3321 8267', '', '', 3);
+INSERT INTO `clientes` VALUES (517, 'Centro Projeto Ax', '', '', '', '63229981000195', '', '', '0000-00-00', '', 'Av. Estados Unidos, 161, Ed. Surdick', '', '', 'Com?rcio', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (518, 'Associa??o Cultural Vadia??o Capoeira', '', '', '', '04762619000194', '', '', '0000-00-00', '', 'Rua da ilha, S/N', '', '', 'Itapu', '41620620', 'Salvador', 'BA', '3249 3638', '', '', 3);
+INSERT INTO `clientes` VALUES (519, 'Clodoaldo Ribeiro dos Santos', '', '', '', '', '', '', '0000-00-00', '', 'R. Prof. Pl?nio Garces de Sena,Bl 34', '', '', 'Mussurunga I', '', 'Salvador', 'BA', '3376 3245', '', '', 3);
+INSERT INTO `clientes` VALUES (520, 'Antonio Omar Fernandes de Oliveira', '', '', '', '33788324520', '', '', '0000-00-00', '', 'Rua Cidreira, 01, Qd 13', '', '', 'Lobato', '', 'Salvador', 'BA', '3215 1468', '', '', 3);
+INSERT INTO `clientes` VALUES (521, 'Saara Tendas', '', '', '', '10761603000160', '', '', '0000-00-00', '', 'Rua Ramagem Padar?, s/n', '', 'Galp?o 8', 'Uruguai', '40450440', 'Salvador', 'BA', '3313 8860', '3313 8292', '', 3);
+INSERT INTO `clientes` VALUES (522, 'THOMPSON MAUES SILVA', '', '', '', '', '', '', '0000-00-00', '', 'Rua Conselheiro Pedro Lu?s, 491/504', '', 'Ed. Cidade', 'Rio Vermelho', '', 'Salvador', '', '3334-3290', '', '', 3);
+INSERT INTO `clientes` VALUES (523, 'Edm?rio Santana Neris', '', '', '', '82044910500', '', '', '0000-00-00', '', 'Rua S?o Roque, 11  Araial', '', '', 'Cabula 1', '41150410', 'Salvador', 'BA', '32577260', '', '', 3);
+INSERT INTO `clientes` VALUES (524, 'T?cio Barros dos Santos', '', '', '', '', '', '', '0000-00-00', '', 'Setor C caminho 2 Casa 11', '', '', 'Mussurunga I', '41490354', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (525, 'Mundo Capoeira', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (526, 'Mauricio Teixeira', '', '', '', '', '', '', '0000-00-00', '', 'APAE', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (527, 'UNIFORMIZE', '', '', '', '08726177000181', '', '', '0000-00-00', '', 'Rua Marcos Antonio Miranda, 93', '', '', 'Centro', '42850000', 'Dias Davila', 'BA', '71 36251167', '3625-1025', '', 3);
+INSERT INTO `clientes` VALUES (528, 'Everton Santiago dos Santos', '', '', '', '61330744500', '', '', '0000-00-00', '', 'Rua Lima Teixeira, 73', '', '', 'Cosme de Farias', '40252450', 'Salvador', 'BA', '33816940', '', '', 3);
+INSERT INTO `clientes` VALUES (529, 'Assoc. Artística e Recreat. de Capoeira Nossa Arte', 'Assoc. Artística e Recreat', '', '', '', '', '', '0000-00-00', '', 'Rua S?o Sebasti?o, 219 E', '', '', 'Eng. Velho da Federação', '40220390', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (530, 'Valdete Rocha Santos', '', '', '', '04839480559', '', '', '0000-00-00', '', 'Condominio  Solar dos Armores rua 2 bloco 62', '', 'apt 302', 'Resgate', '', 'Salvador', 'BA', '33840383', '', '', 3);
+INSERT INTO `clientes` VALUES (531, 'Alex Apresenta?', '', '', '', '62983164500', '', '', '0000-00-00', '', 'Rua Jucelino Kubsheck, 120', '', 'casa', 'Cajazeiras XI', '40300030', 'Salvador', 'BA', '30224602', '', '', 3);
+INSERT INTO `clientes` VALUES (532, 'Lima Matos', '', '', '', '02927810000113', '', '', '0000-00-00', '', 'Rua comendor', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (533, 'Alex Silva Lima', '', '', '', '97367141520', '', '', '0000-00-00', '', 'Rua Reginaldo Fran?a, 7', '', '', 'Arenoso', '40000000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (534, 'Ecol?gica Reciclados', '', '', '', '', '', '', '0000-00-00', '', 'Rua Teodomiro Batista 254/104', '', '', 'Rio Vermelho', '41940320', 'Salvador', 'BA', '91290270', '', '', 3);
+INSERT INTO `clientes` VALUES (535, 'Fernando Rafael Matos Freire Concei?', '', '', '', '94232784500', '', '', '0000-00-00', '', 'Rua Futuro do Toror?, 21 casa 9', '', '', 'Toror?', '40090050', 'Salvador', 'BA', '32112630', '', '', 3);
+INSERT INTO `clientes` VALUES (536, 'Darlan dos  Santos Fernandez', '', '', '', '03531502581', '', '', '0000-00-00', '', 'Rua Pastor  Rodrigues de Santana ,156E', '', 'casa', 'Pau  da Lima', '40000000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (537, 'Central da Pesca', '', '', '', '06017378100084', '', '', '0000-00-00', '', 'Rua Concei??o da Praia n? 10', '', '', 'Com?rcio', '', 'Salvador', 'BA', '3243-2532', '', '', 3);
+INSERT INTO `clientes` VALUES (538, 'Sr? Mateus Galv', '', '', '', '11050487000133', '', '', '0000-00-00', '', 'Vila Sertanejo n? 106', '', 'casa', 'Nordeste de Amaralina', '41906125', 'Salvador', 'BA', '32484454', '', '', 3);
+INSERT INTO `clientes` VALUES (539, 'Madri Reformas', '', '', '', '11050487000133', '', '', '0000-00-00', '', 'Vila Sertanejo n? 106', '', 'casa', 'Nordeste de Amaralina', '41906125', 'Salvador', 'BA', '32484454', '', '', 3);
+INSERT INTO `clientes` VALUES (540, 'EXCLUIR', '', '', '', '03999451000172', '', '', '0000-00-00', '', 'Rua Rubem Berta ,352', '', '?', 'Pituba', '41810045', 'Salvador', 'BA', '3345/8900', '', '', 3);
+INSERT INTO `clientes` VALUES (541, 'EXCLUIR', '', '', '', '03999451000172', '', '', '0000-00-00', '', 'Rua : Rubem  Berta,352', '', 'casa', 'Pituba', '41810045', 'Salvador', 'BA', '3345/8900', '', '', 3);
+INSERT INTO `clientes` VALUES (542, 'Gr?fica Luripress', '', '', '', '03999451000172', '', '', '0000-00-00', '', 'Rua Rubem Berta,352', '', '', 'pituba', '41810045', 'Salvador', 'BA', '71 3205-1600 / 71 3033-1273', '', '', 3);
+INSERT INTO `clientes` VALUES (543, '2F Comunica?', '', '', '', '', '', '', '0000-00-00', '', 'Av Antonio Carlos Magalh?es, 3051', '', 'Galp?o 5', 'Pernambues', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (544, 'Vis?o Marketing', '', '', '', '07796752000150', '', '', '0000-00-00', '', 'Rua Juazeiro, 01 Loja 04C', '', '', 'Itapo', '41610260', 'Salvador', 'BA', '3285-3463', '', '', 3);
+INSERT INTO `clientes` VALUES (545, 'Alan Botelho Teixeira', '', '', '', '91735572500', '', '', '0000-00-00', '', 'Av: 7 de Setembro n?1474', '', '', 'Campo Grande', '40080001', 'Salvador', 'BA', '3328-6485', '', '', 3);
+INSERT INTO `clientes` VALUES (546, 'Maria Celia Ferreira dos Santos', '', '', '', '19509995568', '', '', '0000-00-00', '', 'Rua Tenente Gustavo dos Santos , 194', '', 'Casa', 'Boca do Rio', '', 'Salvador', 'BA', '(71)3495-7633', '', '', 3);
+INSERT INTO `clientes` VALUES (547, 'Simone Rodrigues da Silva', '', '', '', '08836253857', '', '', '0000-00-00', '', 'Rua Des. Ant?nio Bensabath, 06', '', '', 'Piat', '41650160', 'Salvador', 'BA', '3367-0157', '', '', 3);
+INSERT INTO `clientes` VALUES (548, 'OrK ComercialL  Ltda.', '', '', '', '05293958000131', '', '', '0000-00-00', '', 'Av. Progresso , 249', '', 'casa', 'Areia Branca', '42700000', 'Lauro de Freitas', 'BA', '2101-5900', '2101-5900', '', 3);
+INSERT INTO `clientes` VALUES (549, 'Marcia Embalagens', '', '', '', '52498126000136', '', '', '0000-00-00', '', 'Rua Almirante C?mera, 246', '', 'casa', 'Marechal Rondon', '52487698', 'Salvador', 'BA', '3451-5879', '', '', 3);
+INSERT INTO `clientes` VALUES (550, 'Grupo de Capeoira Ginga Mundo', '', '', '', '', '', '', '0000-00-00', '', 'Rua Comendar Jos? Alves Ferreira ,160', '', 'sede', 'Garcia', '', 'Salvador', 'BA', '3328-5756', '', '', 3);
+INSERT INTO `clientes` VALUES (551, 'Centro Cultural Capoeira Baiana', '', '', '', '', '', '', '0000-00-00', '', 'Rua Rodrigues Doria', '', 'apt', 'Jardim Arma?', '41750030', 'Salvador', 'BA', '3235-5218', '', '', 3);
+INSERT INTO `clientes` VALUES (552, 'Sheila Barbosa Pereira', '', '', '', '54401631587', '', '', '0000-00-00', '', 'Rua Apolin?ri Santana,', '', 'Vila Flavi', 'Eng. Velho da Federa?', '40220100', 'Salvador', 'BA', '32036029', '', '', 3);
+INSERT INTO `clientes` VALUES (553, 'Jos? Carlos Pereira da Silva', '', '', '', '', '', '', '0000-00-00', '', 'Rua Santa Am?lia, 97', '', '', 'S?o Jorge', '57045160', 'Macei?', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (554, 'STILL', '', '', '', '02971227000100', '', '', '0000-00-00', '', 'Rua : Arthur Gonzalez,165', '', 'casa', 'Pau Lima', '41235180', 'Salvador', 'BA', '3393-7856', '3393-7856', '', 3);
+INSERT INTO `clientes` VALUES (555, 'Raimundo Ribeiro Passos', '', '', '', '', '', '', '0000-00-00', '', 'Rua S?o Roque 33', '', 'casa 1? na', 'Cabula 1', '41150410', 'Salvador', 'BA', '32575740', '', '', 3);
+INSERT INTO `clientes` VALUES (556, 'Gloria Cristina/Virginia Maria Nunes', '', '', '', '06320034000140', '', '', '0000-00-00', '', 'Rua: Largo do Tanque n? 06 1? andar', '', 'Predio', 'Alto do Peru', '40349250', 'Salvador', 'BA', '(71)3389-7613/6736', '3389/7613', '', 3);
+INSERT INTO `clientes` VALUES (557, 'LPM INDUSTRIA', '', '', '', '06347567000115', '', '', '0000-00-00', '', 'AV MESTRE MANOEL N? 284', '', '', 'BOCA DO RIO', '41705715', 'Salvador', 'BA', '33623499', '', '', 3);
+INSERT INTO `clientes` VALUES (558, 'Planeta Farda', '', '', '', '06320034000140', '', '', '0000-00-00', '', 'Rua do Largo do Tanque n?6', '', '?', 'Alto do Peru', '40349250', 'Salvador', 'BA', '3389-7613/6736', '3389-7613', '', 3);
+INSERT INTO `clientes` VALUES (559, 'ART EM ESTOFADOS', '', '', '', '11324389000147', '', '', '0000-00-00', '', 'Rua Carlos Mariguela,690', '', '', 'S?o Marcos', '41250570', 'Salvador', 'BA', '3399-9043', '33999043', '', 3);
+INSERT INTO `clientes` VALUES (560, 'Maria Cristina Dantas', '', '', '', '00000000000', '', '', '0000-00-00', '', '', '', '', 'Brotas', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (561, 'Grupo de Capoeira Ginga para Cristo', '', '', '', '597541117500', '', '', '0000-00-00', '', 'Cunj. Dos Contabilista, Rua 1 Bl. 198/101', '', '', 'Patamares', '', 'Salvador', 'BA', '21083600', '', '', 3);
+INSERT INTO `clientes` VALUES (562, 'Total Brim', '', '', '', '09170138000103', '', '', '0000-00-00', '', 'Rua 24 de Outubro', '', '114', 'Plataforma', '40440520', 'Salvador', 'BA', '34841430', '', '', 3);
+INSERT INTO `clientes` VALUES (563, 'Florisvaldo Soares (Vaadinho)', '', '', '', '13888056500', '', '', '0000-00-00', '', 'Largo S?o Jos', '', '', 'Beco dos Canudos', '', 'MARAGOGIPE', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (564, 'Eduardo', '', '', '', '00000000000', '', '', '0000-00-00', '', 'Rua Lamar?o, 837', '', '', 'Cidade Nova', '', 'Serrinha', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (565, 'Pro-c', '', '', '', '08935184000193', '', '', '0000-00-00', '', 'Rua sete de Setembro, 337', '', '', 'Centro', '44900000', 'Irece', 'BA', '(74)36416699', '(74)36414644', '', 3);
+INSERT INTO `clientes` VALUES (566, 'EGBA', '', '', '', '15257819000106', '', '', '0000-00-00', '', 'Rua Mello Moraes Filho, 189', '', '', 'Fazenda Grande do Retiro', '40352000', 'Salvador', 'BA', '3116-2828', '31162900', '', 3);
+INSERT INTO `clientes` VALUES (567, 'Cristina Maria Dantas dos Santos', '', '', '', '09115510506', '', '', '0000-00-00', '', 'Rua Ariston Bertino de Carvalho,600', '', 'Casa', 'Brotas', '40285360', 'Salvador', 'BA', '34914874', '', '', 3);
+INSERT INTO `clientes` VALUES (568, 'Valdemiro Caldeira da Silva', '', '', '', '91199441520', '', '', '0000-00-00', '', 'Av. Paulo Valente 57 A', '', 'Casa', 'Uruguai', '40450350', 'Salvador', 'BA', '33129291', '', '', 3);
+INSERT INTO `clientes` VALUES (569, 'SM COMERCIAL', '', '', '', '10592957000128', '', '', '0000-00-00', '', 'Rua Bar?o de Cotegipe n?254', '', 'Loja', 'Cal?ada', '40411001', 'Salvador', 'BA', '33125063', '33125063', '', 3);
+INSERT INTO `clientes` VALUES (570, 'LJS', '', '', '', '73976755000108', '', '', '0000-00-00', '', 'RUA BAR?O DE COTEGIPE, 188', '', 'LOJA', 'CAL?ADA', '40411001', 'SALVADOR', 'BA', '30162640', '', '', 3);
+INSERT INTO `clientes` VALUES (571, 'Valdeilson de Lima da Silva', '', '', '', '78945964520', '', '', '0000-00-00', '', 'Rua 1 Caminho 9 Casa 8 4? etapa', '', '', 'Castello Branco', '', 'Salvador', 'BA', '86692149', '', '', 3);
+INSERT INTO `clientes` VALUES (572, 'ASSOCIA??O CULTURAL PADRE PINTO', '', '', '', '10792144000181', '', '', '0000-00-00', '', 'Largo da Lapinha, 24', '', '', 'Lapinha', '40000000', 'Salvador', 'BA', '3243-3567', '3243-3567', '', 3);
+INSERT INTO `clientes` VALUES (573, 'Ana Claudia Martins de Souza Couto', '', '', '', '04792519000100', '', '', '0000-00-00', '', 'Rua Alameda P?dua, 335  (Vela Branca Center)', '', '', 'Pituba', '41830480', 'Salvador', 'BA', '3358-1207', '', '', 3);
+INSERT INTO `clientes` VALUES (574, 'cancelado', '', '', '', '00000000000000', '', '', '0000-00-00', '', '', '', '', 'Pituba', '', 'Salvador', 'BA', '33581207', '', '', 3);
+INSERT INTO `clientes` VALUES (575, 'Lilian da Silva Pinto', '', '', '', '02529414548', '', '', '0000-00-00', '', 'Rua da Gra?a N? 05 Loteamento D. Rosa', '', 'Casa', 'Itapuan', '41620640', 'Salvador', 'BA', '32497573', '', '', 3);
+INSERT INTO `clientes` VALUES (576, 'Taluana Castello Branco Pinheiro Sousa', '', '', '', '78646677591', '', '', '0000-00-00', '', 'Rua Antonino Casais N? 18', '', 'Casa', 'Itapuan', '41635370', 'Salvador', 'BA', '33751950', '', '', 3);
+INSERT INTO `clientes` VALUES (577, 'Grupo Cultural Kirube', '', '', '', '10717450000153', '', '', '0000-00-00', '', 'Rua Manoel Coelho', '', '', 'Arempepe', '42835000', 'Cama?ari', 'BA', '36243430', '', '', 3);
+INSERT INTO `clientes` VALUES (578, 'GINA UNIFORMES', '', '', '', '07211331000110', '', '', '0000-00-00', '', 'Av. Conselheiros Zacarias', '', '', 'Mares', '40445080', 'Salvador', 'BA', '3315-1559', '', '', 3);
+INSERT INTO `clientes` VALUES (579, 'Maria da Concei??o Pedrosa Amaral', '', '', '', '', '', '', '0000-00-00', '', 'Rua Marques de Caravela, 429/202', '', '', 'Barra', '', 'Salvador', 'BA', '32676044', '', '', 3);
+INSERT INTO `clientes` VALUES (580, 'Divina Rede', '', '', '', '11587434000156', '', '', '0000-00-00', '', 'Alameda Recanto da Colina, 67, Bl 05', '', 'apt101', 'Cajazeiras-Boca da Mata', '41345125', 'Salvador', 'BA', '32196665/3309-6338', '', '', 3);
+INSERT INTO `clientes` VALUES (581, 'Conteflex Industria de Embalagens', '', '', '', '06117635000150', '', '', '0000-00-00', '', 'Av. Sudene s/n?', '', 'CIS', 'Tomba', '44010025', 'Feira de Santana', 'BA', '75-21022666', '75-2102-2667', '', 3);
+INSERT INTO `clientes` VALUES (582, 'Rivaldo Ferreira de Souza', '', '', '', '35723360582', '', '', '0000-00-00', '', 'Rua Sin?sio Nunes, 34', '', '', 'S?o Caetano', '', 'Salvador', 'BA', '34038828', '', '', 3);
+INSERT INTO `clientes` VALUES (583, 'GS Couro (Getulio Pinto de Menezes )', '', '', '', '09432469549', '', '', '0000-00-00', '', 'Av Heitor Dias,84', '', '', 'Barro Reis', '', 'Salvador', 'BA', '33476060', '', '', 3);
+INSERT INTO `clientes` VALUES (584, 'Casar?o Esportivo', '', '', '', '03343515000182', '', '', '0000-00-00', '', 'Rua Corpo Santo, 18', '', 'T?rreo', 'Com?rcio', '', 'Salvador', 'BA', '33267136', '32420105', '', 3);
+INSERT INTO `clientes` VALUES (585, 'Muller Representa??o e Constru??o Civil Ltda', '', '', '', '', '', '', '0000-00-00', '', 'Rua do Genipapeiro, n? 34', '', '', 'Sa?de', '40040580', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (586, 'Wandick Fran?a SantAna', '', '', '', '13538594520', '', '', '0000-00-00', '', 'Rua 1? de Dezembro N? 20', '', 'Casa', 'Cidade Nova', '40310510', 'Salvador', 'BA', '34920657', '', '', 3);
+INSERT INTO `clientes` VALUES (587, 'Mundo das Fardas', '', '', '', '11976542000110', '', '', '0000-00-00', '', 'Rua S?o Corn?lio, n? 329', '', '', 'Boa Vista do Lobato', '40487010', 'Salvador', 'BA', '32395257/3246', '32391009', '', 3);
+INSERT INTO `clientes` VALUES (588, 'Valdinea Santos Silva Gentil', '', '', '', '80463053591', '', '', '0000-00-00', '', 'Ilha de S?o Jo?o Copa 03 Sobrado 01 Galp?o 01', '', '', 'Ilha de S?o Jo', '43700000', 'Sim?es Filho', 'BA', '32167106', '81126628', '', 3);
+INSERT INTO `clientes` VALUES (589, 'Dominus Couro', '', '', '', '02002464000162', '', '', '0000-00-00', '', 'Rua Bruno Santa Rosa,158', '', 'Centro', 'Centro', '44600000', 'Ipir', 'BA', '75 91142916', '75 32541558', '', 3);
+INSERT INTO `clientes` VALUES (590, 'DMJ Fardas Lt', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (591, 'Joilson', '', '', '', '11', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (592, 'DMJ Fardas', '', '', '', '11881078000189', '', '', '0000-00-00', '', 'Estrada da Paci?ncia,1294', '', 'sala 02', 'Cajazeira VIII', '', 'Salvador', 'BA', '96412860/82561953', '33094781', '', 3);
+INSERT INTO `clientes` VALUES (593, 'VERGE Papelaria', '', '', '', '0861809900010', '', '', '0000-00-00', '', 'Rua Nova Maternidade, n 74', '', 'casa 02', 'Baixa de Quintas', '40300445', 'Salvador', '', '32445166', '32445166', '', 3);
+INSERT INTO `clientes` VALUES (594, 'Ecosystem', '', '', '', '04648130000196', '', '', '0000-00-00', '', 'Rua Dr. Luiz Tarqu?nio Pontes,Qd E,Galp?o 1', '', 'Anexo lote', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '71 31737126', '31737111', '', 3);
+INSERT INTO `clientes` VALUES (595, 'Associa??o S?cio Art?stico Cultural do Conde', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (596, 'Xinane Ind?stria de Roupas Ltda', '', '', '', '10861974000113', '', '', '0000-00-00', '', 'Rua Jose? Joaquim de Oliveira, 28', '', '', 'Ch?cara', '46400000', 'Caetit', 'BA', '(77) 3454-2267', '', '', 3);
+INSERT INTO `clientes` VALUES (597, 'Zenilda Marques Andrade', '', '', '', '76748146534', '', '', '0000-00-00', '', 'Rua Vila Ipiranga, 37', '', '1 andar', 'IAPI', '40330110', 'Salvador', 'BA', '33884464', '', '', 3);
+INSERT INTO `clientes` VALUES (598, 'Pinheiro Mayer Embalagens do Nordeste Ltda.', '', '', '', '07129275000179', '', '', '0000-00-00', '', 'Av. Queira Deus, 1049', '', '', 'Port', '42700000', 'Lauro de Freitas', 'BA', '33799217', '3379-9217', '', 3);
+INSERT INTO `clientes` VALUES (599, 'Identific', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', 'Salvador', 'BA', '32736303', '', '', 3);
+INSERT INTO `clientes` VALUES (600, 'Associa??o Cultural Gueto', '', '', '', '04224941000160', '', '', '0000-00-00', '', 'Rua Marques de Queluz, 9', '', '', 'Pitua', '41740170', 'Salvador', 'BA', '3363-4568', '', '', 3);
+INSERT INTO `clientes` VALUES (601, 'Uni & Forme  Fardamentos', '', '', '', '11528043000160', '', '', '0000-00-00', '', 'Av. Porto dos Mastros, 300, Shopping Gold', '', 'Center', 'Ribeira', '', 'Salvador', 'BA', '3315-0571', '', '', 3);
+INSERT INTO `clientes` VALUES (602, 'DGB Berimbau', '', '', '', '06073784000164', '', '', '0000-00-00', '', 'Pca Cairu Mercado Modelo N  box 7', '', '', 'Com?rcio', '40015170', 'Salvador', 'BA', '3488-1070', '3243-6415', '', 3);
+INSERT INTO `clientes` VALUES (603, 'Fund. Centro Bras de Prot e Pesq das Tart. Marinhas', '', '', '', '16110041000685', '', '', '0000-00-00', '', 'Rua Jos? Bispo dos Santos, n 73', '', '', 'Centro', '49190000', 'Pirambu', 'SE', '79-3276-1158', '79-3276-1392', '', 3);
+INSERT INTO `clientes` VALUES (604, 'Central Papelaria', '', '', '', '04699639000168', '', '', '0000-00-00', '', 'Av. Santos Dumont', '', '', 'Estrada do Coco', '42700000', 'Lauro de Freitas', 'BA', '33699000', '33699010', '', 3);
+INSERT INTO `clientes` VALUES (605, 'Eliana da Silva Rodrigues', '', '', '', '06325891007', '', '', '0000-00-00', '', 'Rua Altamir de Azevedo, 24', '', '', 'Vale do Matatu', '41233240', 'Salvador', 'BA', '81816932', '', '', 3);
+INSERT INTO `clientes` VALUES (606, 'Carlos Eduardo Muniz', '', '', '', '94624623568', '', '', '0000-00-00', '', 'Ladeira do Acupe, 924, Cond Solar do Acupe', '', 'apt 1501', 'Acupe', '40290160', 'Salvador', 'BA', '3335-1655', '', '', 3);
+INSERT INTO `clientes` VALUES (607, 'Marcelo de Castro', '', '', '', '67819648520', '', '', '0000-00-00', '', 'Rua Tude Celestino de Souza,158,Recreio', '', 'Recreio', 'Ipitanga', '42700000', 'Lauro de Freitas', 'BA', '33747856', '99550842', '', 3);
+INSERT INTO `clientes` VALUES (608, 'N & J Materiais', '', '', '', '11478296000133', '', '', '0000-00-00', '', 'Rua Recanto Verdel, 21', '', '', 'Mata Escura', '41245000', 'Salvador', 'BA', '3358-2396', '', '', 3);
+INSERT INTO `clientes` VALUES (609, 'Proter Telas e Redes de Prote?', '', '', '', '12052802000124', '', '', '0000-00-00', '', 'Rua Colina Azun, 90-S4', '', '', 'Pau da Lima', '41245000', 'Salvador', 'BA', '32134396', '', '', 3);
+INSERT INTO `clientes` VALUES (610, 'Adailton Andrade Teixeira', '', '', '', '12052802000124', '', '', '0000-00-00', '', 'Rua Colina Azul, 90,-S4', '', 'Subsolo', 'Pau da Lima', '41245000', 'Salvador', 'BA', '32134396', '', '', 3);
+INSERT INTO `clientes` VALUES (611, 'Fabr?cio Velloso Mas?lli', '', '', '', '00874110599', '', '', '0000-00-00', '', 'Rua Engenheiro Silva Lima,77', '', '', 'Nazar', '40040030', 'Salvador', 'BA', '33223460', '', '', 3);
+INSERT INTO `clientes` VALUES (612, 'Quality & Brindes', '', '', '', '05578765000127', '', '', '0000-00-00', '', 'Rua El?sio Azevedo, 276', '', '', 'Sui', '49050290', 'Aracaju', 'SE', '(79) 3214-2007', '', '', 3);
+INSERT INTO `clientes` VALUES (613, 'Evangivaldo Rosa da Silva', '', '', '', '49019716549', '', '', '0000-00-00', '', 'Alameda Praia de Itacar?, Com Portal da Praia, 18', '', '', 'Stela Maris', '', 'Salvador', 'BA', '3364-1688', '', '', 3);
+INSERT INTO `clientes` VALUES (614, 'Companhia Brasileira de Bentonita', '', '', '', '04885978000139', '', '', '0000-00-00', '', 'Estrada da Fazenda Santa Helena, s/n', '', '', 'Distrito do Pradoso', '45050355', 'Vit?ria da Conquista', 'BA', '77 3402-4094', '77 3421-0820', '', 3);
+INSERT INTO `clientes` VALUES (615, 'Lazion R da Rocha', '', '', '', '84199850000150', '', '', '0000-00-00', '', 'Av Tapaj?s, Box 28', '', '', 'Centro', '68005000', 'Santar', 'PA', '93 3523-9445', '', '', 3);
+INSERT INTO `clientes` VALUES (616, 'MS de Moura Com?rcio ME', '', '', '', '05585826000183', '', '', '0000-00-00', '', 'Mercado Municipal, S/N', '', '', 'Centro', '68005040', 'Santar', 'PA', '93 3522-5419', '', '', 3);
+INSERT INTO `clientes` VALUES (617, 'Marcos Welber Mota dos Santos/Matamba Capoeira', '', '', '', '62454978504', '', '', '0000-00-00', '', 'Rua Alto da Bomba,129', '', '', 'Federa?', '', 'Salvador', 'BA', '9274-5520', '', '', 3);
+INSERT INTO `clientes` VALUES (618, 'Edgar Ramos Concei??o Junior', '', '', '', '98602969520', '', '', '0000-00-00', '', 'Rua Marechal da Fonseca,288', '', '', 'Muritiba', '44340000', 'Salvador', 'BA', '75 3424-2412', '75 9146-2969', '', 3);
+INSERT INTO `clientes` VALUES (619, 'Dep?sito Apolo XIV', '', '', '', '15253867000126', '', '', '0000-00-00', '', 'A. JuracY Magalh?es J?nior,114', '', '', 'Rio Vermelho', '41940060', 'Salvador', 'BA', '3330-1555', '', '', 3);
+INSERT INTO `clientes` VALUES (620, 'Planeta II', '', '', '', '12274495000207', '', '', '0000-00-00', '', 'RuaJOSE PEREIRA DA SILVA', '', '', 'MARES', '40445230', 'Salvador', 'BA', '(71) 3389-5230 / 3314-2698', '', '', 3);
+INSERT INTO `clientes` VALUES (621, 'Sesi', '', '', '', '03795086000184', '', '', '0000-00-00', '', 'Av Tiradentes, 1454', '', '', 'Caminho de Areia', '40440001', 'Salvador', 'BA', '3254-9908', '3312-5463', '', 3);
+INSERT INTO `clientes` VALUES (622, 'Parana? Capoeira', '', '', '', '05122607000168', '', '', '0000-00-00', '', '', '', '', '', '', 'Salvador', 'BA', '8857-0384', '', '', 3);
+INSERT INTO `clientes` VALUES (623, 'Arte em Tudo', '', '', '', '', '', '', '0000-00-00', '', 'Av. Eixo Urbano Central, 01', '', '', 'Centro', '', 'Cama?ari', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (624, 'Moura Botto', '', '', '', '11234271000128', '', '', '0000-00-00', '', 'Rua Afonso Celso,264', '', 'casa', 'Barra', '40140080', 'Salvador', 'BA', '3012-2710', '', '', 3);
+INSERT INTO `clientes` VALUES (625, 'Adriano Silva de Jesus', '', '', '', ' 451885', '', '', '0000-00-00', '', 'Rua Isaias de Oliveira, 30', '', '1 andar', 'Tancredo Neves', '41207530', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (626, 'Suely Andrade de Almeida', '', '', '', '45812456236', '', '', '0000-00-00', '', 'Rua Amazonas, 245', '', '1 andar', 'Pituba', '40258390', 'Salvador', 'BA', '312-1478', '', '', 3);
+INSERT INTO `clientes` VALUES (627, 'Marcos Gentil de Carvalho', '', '', '', '', '', '', '0000-00-00', '', 'Rua J?nio Quadros, 13', '', 'apt 308', 'Amaralina', '40253220', 'Salvador', 'BA', '8883-0278', '', '', 3);
+INSERT INTO `clientes` VALUES (628, 'Venture Gr?fica', '', '', '', '40500886000157', '', '', '0000-00-00', '', 'Tv Bartolomeu de Gusm?o, 104', '', '', 'Rio Vermelho', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (629, 'Funda??o Pro- Tamar', '', '', '', '16110041000502', '', '', '0000-00-00', '', 'Estrada do Projeto Tamar', '', 's/n', 'Arembepe', '42800000', 'Cama?ari', 'BA', '36760108', '3351-6152', '', 3);
+INSERT INTO `clientes` VALUES (630, 'Planeta Bola', '', '', '', '05127176000122', '', '', '0000-00-00', '', 'Rua Corpo Santo, 14', '', '', 'Com?rcio', '40015200', 'Salvador', 'BA', '3242-2112', '', '', 3);
+INSERT INTO `clientes` VALUES (631, 'Vivaldo de Souza Oliveira', '', '', '', '44929226520', '', '', '0000-00-00', '', 'Rua do Curio, 34', '', '', 'Mirante de Periperi', '40720272', 'Salvador', 'BA', '3308-6903', '', '', 3);
+INSERT INTO `clientes` VALUES (632, 'Regina C?lia Viana', '', '', '', '28544125420', '', '', '0000-00-00', '', 'Rua Deolino de Carvalho', '', 'n? 275', 'Centro', '', 'Brumado', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (633, 'ALVES ART  ESTOFADOS', '', '', '', '11324389000147', '', '', '0000-00-00', '', 'Rua Carlos Mariguella, 690', '', '', 'S?o Marcos', '41250520', 'Salvador', 'BA', '3399-9043', '', '', 3);
+INSERT INTO `clientes` VALUES (634, 'Cristiano Santos', '', '', '', '', '', '', '0000-00-00', '', 'Rua Juazeiro, 230', '', '', 'Itapu', '', 'Salvador', 'BA', '8807-6480', '', '', 3);
+INSERT INTO `clientes` VALUES (635, 'Ed Bijuterias', '', '', '', '050880700029', '', '', '0000-00-00', '', 'Rua Carlos Gomes, 426', '', '', 'Dois de Julho', '', 'Salvador', 'BA', '3328-1992', '', '', 3);
+INSERT INTO `clientes` VALUES (636, 'Tainara Ferreira dos Santos Cana Brasil', '', '', '', '03827711509', '', '', '0000-00-00', '', 'Rua Nossa Senhora da Vit?ria, n5', '', '', 'Itapu', '41620670', 'Salvador', 'BA', '88250047', '', '', 3);
+INSERT INTO `clientes` VALUES (637, 'ION', '', '', '', '15244536000120', '', '', '0000-00-00', '', 'Rua Professor Sabino Silva', '', 'n? 549', 'Jardim Apipema', '40155250', 'salvador', 'BA', '3235-4236/3336-2699', '', '', 3);
+INSERT INTO `clientes` VALUES (638, 'Rede Nova Alian?a de Prote?', '', '', '', '05482083000116', '', '', '0000-00-00', '', 'Rua da Auditora, 20', '', 'Casa', 'S?o Cristov', '41510350', 'Salvador', 'BA', '71 3251-0504 / 71 3365-6751', '', '', 3);
+INSERT INTO `clientes` VALUES (639, 'Gilmar Carrera Brasil', '', '', '', '22369449500', '', '', '0000-00-00', '', 'Rua Caetano Moura, 33, Loja A', '', '', 'Federa?', '40210341', 'Salvador', 'BA', '88264777', '', '', 3);
+INSERT INTO `clientes` VALUES (640, 'Itec', '', '', '', '15626971000119', '', '', '0000-00-00', '', 'Av. Fernando da Cunha, 135,  Ed. Bagarel', '', 'sl 102', 'Roma', '40444201', 'Salvador', 'BA', '3172-1919/1922', '3172-1920', '', 3);
+INSERT INTO `clientes` VALUES (641, 'Tidelli', '', '', '', '05900342000181', '', '', '0000-00-00', '', 'Rua Morada da Lagoa, 452', '', '', 'Fazenda Coutos', '40750120', 'Salvador', 'BA', '33113352', '33113352', '', 3);
+INSERT INTO `clientes` VALUES (642, 'EMEB? EMBALAGENS', '', '', '', '08530369000118', '', '', '0000-00-00', '', 'Rua Parati, 211', '', '', 'Concei??o I', '44065762', 'Feira de Santana', 'BA', '75 32250443', '', '', 3);
+INSERT INTO `clientes` VALUES (643, 'Golden tulip', '', '', '', '01054909000195', '', '', '0000-00-00', '', 'Rua Monte do Conselho, 121', '', '', 'Rio Vermelho', '41940370', 'Salvador', 'BA', '21032045', '21032047', '', 3);
+INSERT INTO `clientes` VALUES (644, 'Panorama Impress?es Ltda', '', '', '', '', '', '', '0000-00-00', '', 'Rua Trist?o Nunes, 17 Ladeira do Bengala', '', '', 'Mouraria', '40040130', 'Salvador', 'BA', '3481-8288', '3207-9536', '', 3);
+INSERT INTO `clientes` VALUES (645, 'Duas Marias ( Mariana Bastos Bittencourt)', '', '', '', '', '', '', '0000-00-00', '', 'Rua Plinio Moscoso', '', '1233/1302', 'Jardim Apipema', '40155810', 'Salvador', 'BA', '30121514', 'joao-9163-0584', '', 3);
+INSERT INTO `clientes` VALUES (646, 'Vencedor', '', '', '', '16361842000109', '', '', '0000-00-00', '', 'Conj. Vista Alegre, Bloco 164 m Ap. 103', '', '', 'Vista Alegre', '46000000', 'Salvador', 'BA', '3307-6790', '', '', 3);
+INSERT INTO `clientes` VALUES (647, 'AM Confec??es', '', '', '', '08182541000190', '', '', '0000-00-00', '', 'Mussuruga I Caminho 6  casa 9', '', '', 'Mussurunga', '41490388', 'Salvador', 'BA', '32520571', '', '', 3);
+INSERT INTO `clientes` VALUES (648, 'Alexandro F. C. Ciqueira', '', '', '', '01915449570', '', '', '0000-00-00', '', 'Rua da Paz', '', '26', 'Itapo', '40000000', 'Salvador', 'BA', '8864-7975', '', '', 3);
+INSERT INTO `clientes` VALUES (649, 'Pro Paper', '', '', '', '08029325000109', '', '', '0000-00-00', '', 'Rua dos Algibebes, N? 04 - Ed. S?lio Pedreira', '', 'sala 602', 'Com?rcio', '40015060', 'salvador', 'BA', '3494-7976', '3327-5030', '', 3);
+INSERT INTO `clientes` VALUES (650, 'Balc?o da F?brica Ind. E Comercio de Confec??o Ltda.', '', '', '', '01535073000140', '', '', '0000-00-00', '', 'Rua Bejamin Constant, 14', '', '', 'Bonfim', '40415585', 'Salvador', 'BA', '33123742', '', '', 3);
+INSERT INTO `clientes` VALUES (651, 'K Confec??es', '', '', '', '04700400000160', '', '', '0000-00-00', '', 'Rua Morada da Lagoa', '', '7', 'Nova Brasilia de Valeria', '41306745', 'Salvador', 'BA', '3797-1000', '37971011', '', 3);
+INSERT INTO `clientes` VALUES (652, 'AC Bolsa e Acess?rios', '', '', '', '10560565000187', '', '', '0000-00-00', '', 'Rua Aristides ?tico, 28', '', 'sub solo', 'Barbalho', '40301220', 'Salvador', 'BA', '34897174', '', '', 3);
+INSERT INTO `clientes` VALUES (653, 'Duarte Brindes', '', '', '', '12093842000114', '', '', '0000-00-00', '', 'Rua D?rio V?lois, 121', '', '', 'Boca do Rio', '41710760', 'Salvador', 'BA', '33568788/30179756', '', '', 3);
+INSERT INTO `clientes` VALUES (654, 'Zanira Farias Rosas', '', '', '', '06400167587', '', '', '0000-00-00', '', 'Rua Boa Vista', '', '63, 1? and', 'itapoa', '41620580', 'salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (655, 'Carmelina Magnavita R. de  Almeida', '', '', '', '01763202534', '', '', '0000-00-00', '', 'Travessa dos Barris', '', '87, ap 702', 'Barris', '40000000', 'Salvador', 'BA', '3328-2658/2693', '', '', 3);
+INSERT INTO `clientes` VALUES (656, 'Maria da Concei??o Mota Santos', '', '', '', '36719099515', '', '', '0000-00-00', '', 'Rua Valdir Pires', '', '104', '', '', 'Milagres', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (657, 'Emerson Manoel dos Santos', '', '', '', '01380689503', '', '', '0000-00-00', '', 'Rua das Palmeiras , S/N', '', '', 'Val?ria', '', 'Salvador', 'BA', '3301-9294', '', '', 3);
+INSERT INTO `clientes` VALUES (658, 'DMJ Fardas', '', '', '', '11881078000189', '', '', '0000-00-00', '', 'Estrada da Paci?ncia, 1294 - sala 02', '', '', 'Cajazeira VIII', '41338700', 'Salvador', 'BA', '32533136', '32192392', '', 3);
+INSERT INTO `clientes` VALUES (659, 'Capta Brindes', '', '', '', '01657958000112', '', '', '0000-00-00', '', 'Rua caetano Moura, 33', '', '', 'Federa?', '40210341', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (660, 'Capital das Fardas', '', '', '', '17318902000173', '', '', '0000-00-00', '', '2? Travessa Domingos Rabelo, 145', '', '', 'Ribeira', '40421700', 'Salvador', 'BA', '71 3494-3974', '', '', 3);
+INSERT INTO `clientes` VALUES (661, 'SERV Brindes', '', '', '', '04755406000135', '', '', '0000-00-00', '', 'Rua dos Bandeirantes, 100', '', '', 'Matatu', '40260000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (662, 'Mundo das Fardas II', '', '', '', '11976542000110', '', '', '0000-00-00', '', 'Rua S?o Corn?lio, 329  loja 06', '', '', 'Boa Vista do Lobato', '40480710', 'Salvador', 'BA', '32395257/3246', '', '', 3);
+INSERT INTO `clientes` VALUES (663, 'J.O Santos Moreira', '', '', '', '09365542000132', '', '', '0000-00-00', '', 'P?a Brigadeiro Eduardo Gomes, 198', '', '', 'Arraial D''Ajuda', '45816000', 'Porto Seguro', 'BA', '(73)32684283', '', '', 3);
+INSERT INTO `clientes` VALUES (664, 'Luciano Bispo dos Santos Concei?', '', '', '', '27225704591', '', '', '0000-00-00', '', 'Loteamento Rita de Cassia, 18', '', '', 'Gra', '45400000', 'Valen', 'BA', '7588064063', '', '', 3);
+INSERT INTO `clientes` VALUES (665, 'Top Estruturas Tubulares', '', '', '', '02053458000134', '', '', '0000-00-00', '', 'Via Adutora, s/n, Cia. Sul', '', '', 'Cia. Sul', '43700000', 'Sim?es Filho', 'BA', '3594-9363', '3394-1194', '', 3);
+INSERT INTO `clientes` VALUES (666, 'Coren-Ba', '', '', '', '15679277000160', '', '', '0000-00-00', '', 'Rua General Labatut, 05', '', '', 'Barris', '40070100', 'Salvador', 'BA', '21043853', '', '', 3);
+INSERT INTO `clientes` VALUES (667, 'Novo Lar', '', '', '', '', '', '', '0000-00-00', '', 'Rua Mocambo, n? 6', '', '', 'Trobogy', '', 'Salvador', 'BA', '3219-6665', '34959349', '', 3);
+INSERT INTO `clientes` VALUES (668, 'Central de Comunica??o Visual', '', '', '', '13682519000149', '', '', '0000-00-00', '', 'Rua da Indon?sia, s/n', '', 'Lote 05', 'Granjas Rurais P. Vargas', '41230020', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (669, 'Construtora Incorporadora Metropolitana Ind?stria e Com?rcio Ltda', '', '', '', '13287701000103', '', '', '0000-00-00', '', 'Rua Jardim das Margaridas', '', '', 'S?o Cristov', '41502020', 'Salvador', 'BA', '3377-4410', '3377-6013', '', 3);
+INSERT INTO `clientes` VALUES (670, 'Cimic', '', '', '', '13287701000103', '', '', '0000-00-00', '', ' Rua A Jardim das Margaridas', '', '', 'S?o Crist?v', '41502020', 'Salvador', 'BA', '33774410', '33774410', '', 3);
+INSERT INTO `clientes` VALUES (671, 'Luis Humberto Fedullo Machado', '', '', '', '22724150597', '', '', '0000-00-00', '', 'Jardim Santa M?nica, Q h, R F, Lote 29', '', 'n?384 E', 'IAPI', '40340720', 'Salvador', 'BA', '8878-8994', '', '', 3);
+INSERT INTO `clientes` VALUES (672, 'Alexandre Gustavo Gonsalves Medeiros', '', '', '', '00769013511', '', '', '0000-00-00', '', 'Rua Raul Leite,n 18', '', '', 'Vila Laura', '40270010', 'Salvador', 'BA', '3233-5191', '3233-5191', '', 3);
+INSERT INTO `clientes` VALUES (673, 'Pedro Mota dos Santos', '', '', '', '19094477572', '', '', '0000-00-00', '', 'Rua C?cero Sim?es, 83/102', '', '', 'Pituba', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (674, 'Sheila Angela Silva', '', '', '', '11881868000164', '', '', '0000-00-00', '', 'Ladeira da Ordem Terceira de S?o Francisco', '', 'Terreo', 'Centro', '40020275', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (675, 'Willian dos Santos Teles', '', '', '', '01991616145', '', '', '0000-00-00', '', 'Rua Presidente Dutra, n? 80', '', '', 'Bairro da Paz', '41515120', 'Salvador', 'BA', '81639758', '', '', 3);
+INSERT INTO `clientes` VALUES (676, 'PROQU?MICA LABORAT?RIOS LTDA', '', '', '', '13463104000184', '', '', '0000-00-00', '', 'LADEIRA DA ?GUA BRUSCA, N? 71/73', '', '', 'Santo Antonio', '40301290', 'salvador', 'BA', '32420022', '32429210', '', 3);
+INSERT INTO `clientes` VALUES (677, 'Ana Paula Pessoa', '', '', '', '96781840585', '', '', '0000-00-00', '', 'Condom?nio Vale do Jaguaribe, rua F', '', 'Casa 76', 'Piat', '41680190', 'Salvador', 'BA', '91606639', '', '', 3);
+INSERT INTO `clientes` VALUES (678, '3D Gr?fica', '', '', '', '03165536000155', '', '', '0000-00-00', '', 'Rua dos Protestantes', '', '', 'Garcia', '40100100', 'Salvador', 'BA', '3267-0711', '30130713', '', 3);
+INSERT INTO `clientes` VALUES (679, 'Fest Moda', '', '', '', '03249369000120', '', '', '0000-00-00', '', '', '', '', 'Iguatemi', '40530130', 'Salvador', 'BA', '34818766', '', '', 3);
+INSERT INTO `clientes` VALUES (680, 'Josenilton dos Santos Lago', '', '', '', '67842542520', '', '', '0000-00-00', '', 'Rua Manoel Rufino, 25', '', '', 'Tancredo Neves', '', 'Salvador', 'BA', '88270418', '', '', 3);
+INSERT INTO `clientes` VALUES (681, 'Lopes Oliveira Cia Ltda', '', '', '', '06923647000171', '', '', '0000-00-00', '', 'Rua Pio XII', '', '', 'Centro', '46900000', 'Seabra', 'BA', '32402468', '', '', 3);
+INSERT INTO `clientes` VALUES (682, 'Rubens Alves', '', '', '', '54690595534', '', '', '0000-00-00', '', 'Rua Oiteio', '', '', 'Fazenda Santa Rosa', '', 'Sim?es Filho', 'BA', '87202078', '', '', 3);
+INSERT INTO `clientes` VALUES (683, 'Transgraph Gr?fica e Copiadora', '', '', '', '', '', '', '0000-00-00', '', 'Rua Bar?o de Sergy, n? 44', '', '', 'Porto da Barra', '40140040', 'Salvador', 'BA', '30181301', '30165593', '', 3);
+INSERT INTO `clientes` VALUES (684, 'Raquel Angelina Motta dos Anjos', '', '', '', '29345260544', '', '', '0000-00-00', '', 'Rua Astrozildo Sep?lveda, 32', '', '', 'IAPI', '40340765', 'Salvador', 'BA', '32565430', '', '', 3);
+INSERT INTO `clientes` VALUES (685, 'Armarinho Popular', '', '', '', '34056143000137', '', '', '0000-00-00', '', 'Rua da Bandeira, 64', '', '', 'Centro', '42800130', 'Cama?ari', 'BA', '36221092', '', '', 3);
+INSERT INTO `clientes` VALUES (686, 'Associa??o de Capoeira e Cultura Tribo de Jud', '', '', '', '13874340000193', '', '', '0000-00-00', '', 'Conjunto Novo Arvoredo, Edificio Cruzeiro do Sul,', '', 'apt 101', 'Tancredo Neves', '41205283', 'Salvador', 'BA', '87450763', '', '', 3);
+INSERT INTO `clientes` VALUES (687, 'Ligia Simone de Souza Viana', '', '', '', '06233749000165', '', '', '0000-00-00', '', 'Rua Jo?o de Deus, 07', '', '1 andar', 'Pelourinho', '40025080', 'Salvador', 'BA', '34926903', '', '', 3);
+INSERT INTO `clientes` VALUES (688, 'Adriano Ferreira da Silva', '', '', '', '03375434537', '', '', '0000-00-00', '', 'Rua Alvo, 126,', '', 'Vila Eulin', 'Sa?de', '40045180', 'Salvador', 'BA', '88873262', '', '', 3);
+INSERT INTO `clientes` VALUES (689, 'Roberta Bijoux', '', '', '', '05323892000185', '', '', '0000-00-00', '', 'Av. 7 de Setembro, 400, Ed. Funda??o Polit?cnica,', '', 'L C01', 'Centro', '40060001', 'Salvador', 'BA', '8644-8197', '', '', 3);
+INSERT INTO `clientes` VALUES (690, 'CTEC - TOPOGRAFIA & CONSULTORIA/P?rola Confec??es', '', '', '', '09200611000158', '', '', '0000-00-00', '', 'Rua das Embuias, 24', '', '', 'Cabula VI', '41181050', 'Salvador', 'BA', '3232-4391', '', '', 3);
+INSERT INTO `clientes` VALUES (691, 'Marcos de Souza Sacramento', '', '', '', '09542116500', '', '', '0000-00-00', '', 'Rua Junqueira Ayres, 33', '', '1, 2,3 pis', 'Barris', '', 'Salvador', 'BA', '3329-1888', '', '', 3);
+INSERT INTO `clientes` VALUES (692, 'Vania Santos Nascimento', '', '', '', '35575808572', '', '', '0000-00-00', '', 'Rua Texeira Barros, 2 tv, 40', '', '1 andar', 'Brotas', '', 'Salvador', 'BA', '86026577', '', '', 3);
+INSERT INTO `clientes` VALUES (693, 'Felipe Andrade de Oliveira', '', '', '', '05097025547', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', 3);
+INSERT INTO `clientes` VALUES (694, 'Ricardo', '', '', '', '14239411000149', '', '', '0000-00-00', '', 'Rua dos Marchantes', '', 'n?35', 'Santo Antonio', '40301430', 'Salvador', 'BA', '3023-4784', '', '', 3);
+INSERT INTO `clientes` VALUES (695, 'Ricardo', '', '', '', '14239411000149', '', '', '0000-00-00', '', 'Rua dos Marchantes', '', 'n?35', 'Santo Antonio', '40301430', 'Salvador', 'BA', '30234784', '', '', 3);
+INSERT INTO `clientes` VALUES (696, 'Ricardo', '', '', '', '14239411000149', '', '', '0000-00-00', '', 'Rua dos Marchantes', '', 'n?35', 'Santo Antonio', '40301430', 'Salvador', 'BA', '30234784', '', '', 3);
+INSERT INTO `clientes` VALUES (697, 'Ricardo Bertino Santana', '', '', '', '14239411000149', '', '', '0000-00-00', '', 'Rua dos Marchantes', '', 'n/35', 'Santo Antonio', '40301430', 'Salvador', 'BA', '30234784', '', '', 3);
+INSERT INTO `clientes` VALUES (698, 'Ricardo Bertino Santana', '', '', '', '01669324508', '', '', '0000-00-00', '', 'Rua Marchantes', '', 'n?35', 'Santo Antonio', '40301430', 'Salvador', 'BA', '30234784', '', '', 3);
+INSERT INTO `clientes` VALUES (699, 'Josevan do Nascimento Oliveira', '', '', '', '63497514500', '', '', '0000-00-00', '', 'Ladeira de Santana', '', '91', 'Nazare', '40040460', 'Salvador', 'BA', '33217620', '', '', 3);
+INSERT INTO `clientes` VALUES (700, 'Edna Costa dos Santos', '', '', '', '85969419591', '', '', '0000-00-00', '', 'Av.Afranio Peixoto', '', '189', 'Coutos', '', 'Salvador', 'BA', '33975634', '', '', 3);
+INSERT INTO `clientes` VALUES (701, 'Maria de Fatima do Rosario Alves Costa', '', '', '', '11755695500', '', '', '0000-00-00', '', 'Av.Aliomar Baleeiro,Res Parque Bandeirante', '', 'n?302ap013', 'Jardim Nova Esperan', '41370045', 'Salvador', 'BA', '34094953', '', '', 3);
+INSERT INTO `clientes` VALUES (702, 'Solange Lima de Guimar?es', '', '', '', '21675511500', '', '', '0000-00-00', '', 'Rua Turiema', '', 'n? 04', 'Cam.de Areia', '40440200', 'Salvador', 'BA', '33126628', '', '', 3);
+INSERT INTO `clientes` VALUES (703, 'Roberto Santana', '', '', '', '48748609587', '', '', '0000-00-00', '', 'Rua Apolinario Santana', '', 'n? 37', 'Federa?', '40220101', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (704, 'Delamar de Oliveira Mendes', '', '', '', '48617830549', '', '', '0000-00-00', '', 'Av.Pasteur', '', 'n?151', 'Centro', '42850000', 'Dias DaVila', 'BA', '36257608', '', '', 3);
+INSERT INTO `clientes` VALUES (705, 'Edmilson Souza Santana', '', '', '', '31357187349', '', '', '0000-00-00', '', 'Rua Jones Melo', '', 'n?512', 'Narandiba', '41181050', 'Salvador', 'BA', '33440400', '', '', 3);
+INSERT INTO `clientes` VALUES (706, 'Fabiana dos Santos Ferreira', '', '', '', '81208073591', '', '', '0000-00-00', '', 'Rua do Paraiso n?48', '', '', 'Port', '42700000', 'Lauro de freita', 'BA', '33692959', '', '', 3);
+INSERT INTO `clientes` VALUES (707, 'Associa??o Cultural Aboli??o Capoeira', '', '', '', '07370891000117', '', '', '0000-00-00', '', 'Rua Pra?a dos Coqueiro s/n', '', 'Barrac?o C', 'Arembepe', '42835000', 'Cama?ari', 'BA', '99139449', '', '', 3);
+INSERT INTO `clientes` VALUES (708, 'Gr?fica Editora Vento Leste', '', '', '', '10601866000101', '', '', '0000-00-00', '', 'Rua Genaral Labat', '', 'n?94', 'Barris', '40070100', 'Salvador', 'BA', '33280820', '30113993', '', 3);
+INSERT INTO `clientes` VALUES (709, 'Davi Oliveira Nascimento', '', '', '', '81854285572', '', '', '0000-00-00', '', 'Tv Carlos Mariguela,Conj.Colina de Pitua', '', '11 ap202', 'S?o Rafael', '41250520', 'Salvador', 'BA', '33654659', '', '', 3);
+INSERT INTO `clientes` VALUES (710, 'Neide Clementina da Silva Leite', '', '', '', '29620180500', '', '', '0000-00-00', '', 'Rua Neide Gama', '', 'n?43', 'Vasco da Gama', '', 'Salvador', 'BA', '33345265', '', '', 3);
+INSERT INTO `clientes` VALUES (711, 'Edson dos Anjos Santana', '', '', '', '81387652516', '', '', '0000-00-00', '', 'Rua Mata Maroto', '', 'n?148', 'Federa?', '40225080', 'Salvador', 'BA', '32451888', '', '', 3);
+INSERT INTO `clientes` VALUES (712, 'Atelie Veste Bem', '', '', '', '13509196000196', '', '', '0000-00-00', '', 'Rua Cristov?o Ferreira', '', 'n?63', 'Nordeste', '', 'Salvador', 'BA', '32407066', '', '', 3);
+INSERT INTO `clientes` VALUES (713, 'Comercial Nordeste LTDA', '', '', '', '10958569000118', '', '', '0000-00-00', '', 'Rua da Praia', '', '', 'S?o Jos', '50020550', 'Recife', 'PE', '81-32243841', '', '', 3);
+INSERT INTO `clientes` VALUES (714, 'Antonio Carlos Oliveira da Silva', '', '', '', '44101287449', '', '', '0000-00-00', '', '1?trv.Duque de Caxias', '', 'n?30', 'Centro', '55370000', 'S?o Bento do Uma', 'PE', '81-37351181', '', '', 3);
+INSERT INTO `clientes` VALUES (715, 'Paulo Cesar do Rosario Santana', '', '', '', '05155279550', '', '', '0000-00-00', '', 'Rua Nossa Senhora de Fatima n?59', '', '1?andar', 'Tancredo Neves', '41205100', 'Salvador', 'BA', '32324132', '', '', 3);
+INSERT INTO `clientes` VALUES (716, 'Arte & Aconchego', '', '', '', '14091996000100', '', '', '0000-00-00', '', 'Rua do Meio,Largo da Mariquita', '', 'n?154', 'Rio Vermelho', '41940426', 'Salvador', 'BA', '35062286', '', '', 3);
+INSERT INTO `clientes` VALUES (717, 'Sol e Lua Artigos Religiosos', '', '', '', '10374280000151', '', '', '0000-00-00', '', 'Rua Belo Oriente', '', 'n?65', 'Liberdade', '40375390', 'Salvador', 'BA', '32437818', '', '', 3);
+INSERT INTO `clientes` VALUES (718, 'Leny Santana Bello', '', '', '', '04936183504', '', '', '0000-00-00', '', 'Jardim Eldorado,Quadra ?nica', '', 'n?18', 'Iapi', '40330480', 'Salvador', 'BA', '33863130', '', '', 3);
+INSERT INTO `clientes` VALUES (719, 'S.G.Loca??o e Produ??o de Eventos Ltda', '', '', '', '10288750000164', '', '', '0000-00-00', '', 'Av.Arquiteto Luis Nunes', '', '100', 'Imbiribeira', '51170430', 'Recife', 'PE', '8130735306', '', '', 3);
+INSERT INTO `clientes` VALUES (720, 'Magno Santana', '', '', '', '81865562572', '', '', '0000-00-00', '', 'Rua Vitor Serra 2? trv Otavio Mangabeira', '', 'n? 21', 'Pero Vaz', '40335795', 'Salvador', 'BA', '3388-4027', '', '', 3);
+INSERT INTO `clientes` VALUES (721, 'Geraldo da Silva Carvalho', '', '', '', '61760909404', '', '', '0000-00-00', '', 'COND.Cleriston Andrade', '', 'BL A N?103', 'Centro', '42700000', 'Lauro de Freitas', 'BA', '32881633', '', '', 3);
+INSERT INTO `clientes` VALUES (722, 'Robson Mascarenhas Miranda', '', '', '', '92627471520', '', '', '0000-00-00', '', 'Rua Afonso Pena', '', '45', 'Centro', '48730000', 'C.Coite', 'BA', '75-9972-1219', '', '', 3);
+INSERT INTO `clientes` VALUES (723, 'Damasceno e Santos Ltda - ME', '', '', '', '13139075000108', '', '', '0000-00-00', '', 'Rua Djalma Dutra', '', '77', 'Matatu de Brotas', '40255020', 'Salvador', 'BA', '33214726', '', '', 3);
+INSERT INTO `clientes` VALUES (724, 'Joelma Carvalho Moreira(Jaco Adventure)', '', '', '', '43172075591', '', '', '0000-00-00', '', 'Rua Conselheiro Crreia de Menezes,220 ap 1303', '', 'Mans?o Hor', 'Horto Florestal', '40295030', 'Salvador', 'BA', '3018-0536', '', '', 3);
+INSERT INTO `clientes` VALUES (725, 'Evanilson Amaral Andrade', '', '', '', '06553710520', '', '', '0000-00-00', '', 'Ladeira do Desterro n?41', '', 'ap12', 'Nazare', '40040480', 'Salvador', 'BA', '3266-7010', '', '', 3);
+INSERT INTO `clientes` VALUES (726, 'suzana julia', '', '', '', '04147841546', '', '', '0000-00-00', '', 'Rua S?o salvador', '', 'Feira', 'Liberdade', '40325660', 'Salvador', 'BA', '33274562', '', '', 3);
+INSERT INTO `clientes` VALUES (727, 'Jecivaldo Vieira dos Santos', '', '', '', '01005325510', '', '', '0000-00-00', '', 'Rua de Bretagne n?03', '', '', 'S?o Sebasti', '44230000', 'Suloere', '', '74-3621-6863', '', '', 3);
+INSERT INTO `clientes` VALUES (728, 'Luis Carlos Silva de Jesus', '', '', '', '83244387500', '', '', '0000-00-00', '', 'Av.Joana Angelica', '', 'n?1053', 'Nazar', '40050000', 'Salvador', 'BA', '3321-6210', '', '', 3);
+INSERT INTO `clientes` VALUES (729, 'JCM Industria e Comercio de Confec??es', '', '', '', '05607488000133', '', '', '0000-00-00', '', 'Rua de Uruguai', '', 'n?15', 'Uruguai', '40454260', 'Salvador', 'BA', '3033-6586', '3207-9463', '', 3);
+INSERT INTO `clientes` VALUES (730, 'Rildo do Amor Divino Santos', '', '', '', '71627430563', '', '', '0000-00-00', '', 'Conj.Nova Primavera Alameda Ver', '', 'n?140', 'Plataforma', '40417140', 'Salvador', 'BA', '3391-1939', '', '', 3);
+INSERT INTO `clientes` VALUES (731, 'Verailda Alves Albuquerque', '', '', '', '21561818534', '', '', '0000-00-00', '', 'Rua Conego Orlando Teles', '', 'n?12', 'Bonfim', '40415290', 'Salvador', 'BA', '3313-9221', '', '', 3);
+INSERT INTO `clientes` VALUES (732, 'Circuito Bureau de Comunica??es Ltda', '', '', '', '12535442000109', '', '', '0000-00-00', '', 'Av.Tancredo Neves,n?786 Edf.Tancredo Neves Trade', '', 'sala 707', 'Tancredo Neves', '', 'Salvador', 'BA', '3014-4098/99', '', '', 3);
+INSERT INTO `clientes` VALUES (733, 'Cordoarias Brazilian Lopes.Com Ltda', '', '', '', '12584281000156', '', '', '0000-00-00', '', 'Rua Ivan Figueredo Lote 8', '', 'Galp?o 2', 'Caji', '42700000', 'Lauro de Freitas', 'BA', '3379-1620', '', '', 3);
+INSERT INTO `clientes` VALUES (734, 'Rachel Soares Mascarenhas', '', '', '', '64706486572', '', '', '0000-00-00', '', 'Rua do Carmo', '', 'n?13', 'Santo Antonio', '40301380', 'Salvador', 'BA', '3241-3450', '', '', 3);
+INSERT INTO `clientes` VALUES (735, 'Marcos Nader Sarquis', '', '', '', '06597054865', '', '', '0000-00-00', '', 'Rua Artur de Almeida Couto', '', '', 'VILA LAURA', '4000000', 'SALVADOR', 'BA', '(11)6890-7070', '', '', 3);
+INSERT INTO `clientes` VALUES (736, 'Shotokan', '', '', '', '14365031000150', '', '', '0000-00-00', '', 'Rua Nova de Piraja', '', '500', 'Piraja', '41295360', 'Salvador', 'BA', '3246-3706', '', '', 3);
+INSERT INTO `clientes` VALUES (737, 'Fardas Bahia', '', '', '', '03118420000165', '', '', '0000-00-00', '', 'Professor Edgar Santos', '', '391', 'Cabula', '', 'Salvador', 'BA', '3243-1450', '', '', 3);
+INSERT INTO `clientes` VALUES (738, 'Supergraf', '', '', '', '06006137000130', '', '', '0000-00-00', '', 'Ladeira de Santana,2-A-Ed.Montalv', '', 'LJ04', 'Baixa de Sapateiro', '40040460', 'Salvador', 'BA', '3321-7620', '3321-8097', '', 3);
+INSERT INTO `clientes` VALUES (739, 'Jose carlos souza seixas', '', '', '', '32770847520', '', '', '0000-00-00', '', 'Avenida princesa isabel N? 526', '', '', 'Barra', '40140000', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (740, 'Maria Aladia de Sena Costa', '', '', '', '08180210553', '', '', '0000-00-00', '', 'Rua JJ Seabra,458 Ap 719', '', '4?andar', 'Sete Portas', '40025001', 'Salvador', 'BA', '3242-9678', '', '', 3);
+INSERT INTO `clientes` VALUES (741, 'Rosival Barbosa dos Santos ME', '', '', '', '00349990000178', '', '', '0000-00-00', '', 'Avenida Concelheiro Zacarias, 47', '', '', 'Mares', '', 'Salvador', 'BA', '71 3315-5360 / 71 9245-2306', '', '', 3);
+INSERT INTO `clientes` VALUES (742, 'Ism?rio', '', '', '', '07320206000148', '', '', '0000-00-00', '', 'Rual Almeida Garret , n? 35', '', '', 'Itaigara', '41815320', 'salvador', 'BA', '3353-6212', '', '', 3);
+INSERT INTO `clientes` VALUES (743, 'Quiteria Rodrigues Paiva ME', '', '', '', '14117437000114', '', '', '0000-00-00', '', 'Rua Daniel Costa Oliveira,15?', '', 'Terr', 'Terra Santa', '44150000', 'Santa Barbara', 'BA', '75-9925-1233', '', '', 3);
+INSERT INTO `clientes` VALUES (744, 'Canal Export Ltda', '', '', '', '04372442000110', '', '', '0000-00-00', '', 'Oscar Dantas n? 96', '', '', 'Gra', '40150260', 'Salvador', 'BA', '71 3012-6281', '', '', 3);
+INSERT INTO `clientes` VALUES (745, 'Thiago Pereira de Andrade', '', '', '', '11107960000171', '', '', '0000-00-00', '', 'Rua Novo Horizonte', '', '1? andar', 'Jap', '45416000', 'Presidente Tancredo Neves', 'BA', '75 3491-9765', '', '', 3);
+INSERT INTO `clientes` VALUES (746, 'Francisco Leonardo', '', '', '', '10261745000168', '', '', '0000-00-00', '', 'Estrada de Campinas n?15 - Edf? Campinas', '', '', 'Campinas de Piraj', '41275410', 'Salvador', 'BA', '3392-6501', '', '', 3);
+INSERT INTO `clientes` VALUES (747, 'Venicius bonfim Le', '', '', '', '80920837549', '', '', '0000-00-00', '', 'Rua setor J , caminho 19 n? 7', '', '', 'mussurunga II', '41480040', 'Salvador', 'BA', '3014-0319', '', '', 3);
+INSERT INTO `clientes` VALUES (748, 'LILIANE', '', '', '', '08814461000100', '', '', '0000-00-00', '', 'SANTOS DITARA, N?22', '', '', 'MASSARANDUBA', '40435480', 'SALVADOR', 'BA', '3312-7464', '', '', 3);
+INSERT INTO `clientes` VALUES (749, 'CINTIA DE JESUS SANTOS', '', '', '', '76725790534', '', '', '0000-00-00', '', 'Rua S?O LAZARO N? 100 E', '', '', 'NOVA BRAS?LIA', '41350120', 'SALVADOR', 'BA', '3212-4026', '', '', 3);
+INSERT INTO `clientes` VALUES (750, 'cintia de jesus santos', '', '', '', '76725790534', '', '', '0000-00-00', '', 'RUA S?O LAZARO N?100', '', '', 'NOVA BRAS?LIA', '41350120', 'SALVADOR', 'BA', '3212-4026', '', '', 3);
+INSERT INTO `clientes` VALUES (751, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA NOVA DA MATERNIDADE', '', '', 'BAIXA DE QUINTAS', '40300445', 'SALVADOR', 'BA', '30321640', '', '', 3);
+INSERT INTO `clientes` VALUES (752, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA NOVA DA MATERNIDADE', '', '', 'BAIXA DE QUINTAS', '40300445', 'SALVADOR', 'BA', '30321640', '', '', 3);
+INSERT INTO `clientes` VALUES (753, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA NOVA DA MATERNIDADE', '', '', 'BAIXA DE QUINTAS', '40300445', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (754, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA DA NOVA MATERNIDADE', '', '', 'BAIXA DE QUINTAS', '40300445', 'SALVADOR', 'BA', '3032-1640', '', '', 3);
+INSERT INTO `clientes` VALUES (755, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA  DA  NOVA MATERNIDADE', '', '', 'BAIXA  DE  QUINTAS', '40300445', 'SALVADOR', 'BA', '3032-1640', '', '', 3);
+INSERT INTO `clientes` VALUES (756, 'DIRCEL', '', '', '', '08618099000100', '', '', '0000-00-00', '', 'RUA DA  NOVA MATERNIDADE', '', '', 'BAIXA  DE QUINTAS', '40300445', 'SALVADOR', 'BA', '3032-1640', '', '', 3);
+INSERT INTO `clientes` VALUES (757, 'Maria Lucia Ramos Dias', '', '', '', '64507629500', '', '', '0000-00-00', '', 'RUA TRAVESSA IVANILDO QUEIROZ DE BRITO', '', '', 'TACREDO NEVES', '', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (758, 'David Jos? dos Santos', '', '', '', '79247806534', '', '', '0000-00-00', '', 'RUA OSM?RIO SILVA 23 E 1? ANDAR', '', '', 'TANCREDO NEVES', '41207265', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (759, 'FRANCISCA TELES DOS SANTOS', '', '', '', '06608647549', '', '', '0000-00-00', '', 'RUA PEDRO IVO', '', '4', 'CAIXA D''?GUA', '40003200', 'SALVADOR', 'BA', '3388-2796', '', '', 3);
+INSERT INTO `clientes` VALUES (760, 'TATIANE FRANCA ROSA', '', '', '', '07350152795', '', '', '0000-00-00', '', 'RUA ESTRADA DOS PALMARES 4667, BLOCO 5204', '', '', 'SANTA CRUZ', '23575275', 'RIO DE JANEIRO', 'RJ', '(XX21) 8102-8375 tim', '', '', 3);
+INSERT INTO `clientes` VALUES (761, 'CAPOEIRA NEGRO NAG', '', '', '', '56048181515', '', '', '0000-00-00', '', 'RUA SOLN DE CARVALHO', '', '52', 'SUSSUARANA', '', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (762, 'BARTOLOMEU PINTO', '', '', '', '65033892568', '', '', '0000-00-00', '', 'RUA JJ SEABRA', '', '', 'BAIXA DO SAPATEIRO', '', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (763, 'NORMA CORREIA', '', '', '', '32610347000142', '', '', '0000-00-00', '', 'RUA JOANES MELO, 210', '', '', 'CABULA VI .', ' 4118105', 'SALVADOR', 'BA', '71 33713131', '', '', 3);
+INSERT INTO `clientes` VALUES (764, 'NORMA CORREIA', '', '', '', '32610347000142', '', '', '0000-00-00', '', 'RUA JOANES MELO, 210', '', '', 'CABULA VI', '41181050', 'SALVADOR', 'BA', '71 33713131', '', '', 3);
+INSERT INTO `clientes` VALUES (765, 'LUCILENE', '', '', '', '12274495000207', '', '', '0000-00-00', '', 'RUA JOSE PEREIRA DA SILVA', '', '', 'MARES', '40445230', 'SALAVDOR', 'BA', '(71) 3389-7613', '', '', 3);
+INSERT INTO `clientes` VALUES (766, 'Jorge Alexandre', '', '', '', '04715443000110', '', '', '0000-00-00', '', 'AV. ITABUNA N? 791', '', '', 'CENTRO', '45650015', 'ILHEUS', 'BA', '(73)3231-2713', '', '', 3);
+INSERT INTO `clientes` VALUES (767, 'JORGE ALEXANDRE', '', '', '', '04715443000110', '', '', '0000-00-00', '', 'AV. ITABUNA N? 791', '', '', 'CENTRO', '45650015', 'SALVADOR', 'BA', '(73) 3231-2713', '', '', 3);
+INSERT INTO `clientes` VALUES (768, 'JORGE ALEXANDRE', '', '', '', '04715443000110', '', '', '0000-00-00', '', 'AVENIDA ITABUNA N? 791', '', '', 'CENTRO', '45650015', 'ILH?US', 'BA', '(73) 3231-2713', '', '', 3);
+INSERT INTO `clientes` VALUES (769, 'JORGE', '', '', '', '04715443000110', '', '', '0000-00-00', '', 'AVENIDA ITABUNA, N? 791', '', '', 'CENTRO', '45650015', 'ILH?US', 'BA', '73 3231-2713', '', '', 3);
+INSERT INTO `clientes` VALUES (770, 'EDMILSON FERREIRA SANTOS', '', '', '', '49339680553', '', '', '0000-00-00', '', 'RUA WALTER GONZAGA ESTRALA', '', '', 'JARDIM CASTEL?O', '42700000', 'LAURTO DE FREITAS', 'BA', '9611-3419', '', '', 3);
+INSERT INTO `clientes` VALUES (771, 'Jose', '', '', '', '06164816000137', '', '', '0000-00-00', '', 'Rua Forte de S?o Pedro', '', '', 'Campo Grande', '', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (772, 'BRUNO LIMA CARTIZO', '', '', '', '06164816000137', '', '', '0000-00-00', '', 'RUA FORTE DE S?O PEDRO', '', '', 'CAMPO GRANDE', '', 'SALVADOR', 'BA', '3329-3825', '', '', 3);
+INSERT INTO `clientes` VALUES (773, 'ANA', '', '', '', '03650732000151', '', '', '0000-00-00', '', 'RUA DO SAUDANHA, N ?6', '', '', 'PRA?A DA S', '40020250', 'SALVADOR', 'BA', '3327-3105', '', '', 3);
+INSERT INTO `clientes` VALUES (774, 'PAULO DULTRA', '', '', '', '07637444000181', '', '', '0000-00-00', '', 'RUA PITUA??, N? 172', '', '', 'BOCA DO RIO', '41705770', 'SALVADOR', 'BA', '33711088', '', '', 3);
+INSERT INTO `clientes` VALUES (775, 'caio Maciel', '', '', '', '03868223000163', '', '', '0000-00-00', '', 'RUA ALEGRIA DOS BARRIS', '', '', 'BARRIS', '40070210', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (776, 'caio Marcel', '', '', '', '03868223000163', '', '', '0000-00-00', '', 'RUA ALEGRIA DOS BARRIS, 37, CASA 7', '', '', 'BARRIS', '40070210', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (777, 'GRUPO DE CAPOEIRA REGIONAL PORTO DA BARRA', '', '', '', '03868223000163', '', '', '0000-00-00', '', 'RUA ALEGRIA DOS BARRIS, 37, CASA 7', '', '', 'BARRIS', '40070210', 'SALVADOR', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (778, 'GRASB - GR?FICA SANTA BARBARA', '', '', '', '15719743000193', '', '', '0000-00-00', '', 'RUA CARLOS BRAND?O SILVA', '', '02', 'MATA ESCURA', '41219480', 'SALVADOR', 'BA', '71 3415-0550', '71 3415-1562', '', 3);
+INSERT INTO `clientes` VALUES (779, 'CLEONIL SILVA FARIAS', '', '', '', '11758942000150', '', '', '0000-00-00', '', 'PRA?A DO URUGUAI', '', '05', 'URUGUAI', '40450385', 'SALVADOR', 'BA', '(71) 3314-7396/9928-7542', '', '', 3);
+INSERT INTO `clientes` VALUES (780, 'TL DE SIQUEIRA ME', '', '', '', '12341290000116', '', '', '0000-00-00', '', 'RUA JOSE  BERNARDO LOPES 34 GALPAO', '', '', 'CENTRO', '44900000', 'IREC', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (781, 'Dusol Comunica??es Ltda', '', '', '', '07637444000181', '', '', '0000-00-00', '', 'Rua Pitua?u, 172', '', '', 'Boca do Rio', '41705770', 'Salvador', 'BA', '33627226', '', '', 3);
+INSERT INTO `clientes` VALUES (782, 'RP Toldos Com?rcio e Loca??es Ltda ME', '', '', '', '', '', '', '0000-00-00', '', 'Rua S?o Jos? 01', '', '', 'Campinas de Piraj', '41275360', 'Salvador', '', '3246-5617', '3246-5760', '', 3);
+INSERT INTO `clientes` VALUES (783, 'ALEX ANDRADE DE OLIVEIRA ME', '', '', '', '00914935000183', '', '', '0000-00-00', '', 'TRAVESSA ANTONIO CARLOS MAGALH?ES', '', '', 'CENTRO COMERCIAL', '45601000', 'ITABUNA', 'BA', '073- 3041-3447', '', '', 3);
+INSERT INTO `clientes` VALUES (784, 'JAIME PESSOA SOARES JUNIOR', '', '', '', '94801932568', '', '', '0000-00-00', '', 'RUA DOUTOR EDUARDO SANTOS, N? 09', '', '', 'PEROV?S', '40340070', 'SALVADOR', 'BA', '8808-1794 / 4141-1563', '', '', 3);
+INSERT INTO `clientes` VALUES (785, 'WILLIAM ANDERSON CARICIO DE MENEZES', '', '', '', '01400697557', '', '', '0000-00-00', '', 'RUA ARTHUR DE ALMEIDA COUTO, 416', '', '', 'VILLA LAURA', '40270100', 'SALVADOR', 'BA', '3016-3177', '', '', 3);
+INSERT INTO `clientes` VALUES (786, 'Melo Martins Engenharia e Consultoria Ltda', '', '', '', '10295448000133', '', '', '0000-00-00', '', 'Rua G?es Calmon, 275 Edf Correia e Andrade', '', 'Sala 102', 'Centro', '44550000', 'S?o Felipe', 'BA', '71 3117-3243', '', '', 3);
+INSERT INTO `clientes` VALUES (787, 'Nadi Machado de Moura', '', '', '', '01729423574', '', '', '0000-00-00', '', 'Rua Rio Amazonas, 510', '', '', 'Cristo Reis', '42850000', 'Dias D''avila', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (788, 'Comercial Leite de Cal?ados Ltda', '', '', '', '33881871000110', '', '', '0000-00-00', '', 'Rua DesembargadorFilinto Basto, 740', '', '', 'Centreo', '44015100', 'Feira de Santana', 'BA', '75 3602-5060', '', '', 3);
+INSERT INTO `clientes` VALUES (789, 'Publisilk Comunica??o Visual Ltda', '', '', '', '05278412000292', '', '', '0000-00-00', '', 'Rua Alcaba?a, 85', '', 'Cabula', 'Resgate', '41152115', 'Salvador', 'BA', '71-3257-9798', '', '', 3);
+INSERT INTO `clientes` VALUES (790, 'M & Artes Gr?fica', '', '', '', '02582817000140', '', '', '0000-00-00', '', 'Avenida Brigadeiro Alberto Costa Matos', '', 'casa', 'Araqui', '42700000', 'Lauro de Freitas', 'BA', '3507-9011', '', '', 3);
+INSERT INTO `clientes` VALUES (791, 'Rosival Barbosa dos Santos', '', '', '', '00349990000178', '', '', '0000-00-00', '', 'Rua Conselheiro Zacarias 03', '', 'casa', 'Mares', '40445080', 'Salvador', 'BA', '71-3012-3558', '', '', 3);
+INSERT INTO `clientes` VALUES (792, 'Jennifer Nobre Nascimento Morelli ME', '', '', '', '12501371000136', '', '', '0000-00-00', '', 'Rua Rodolfo B. Barros, 628', '', 'Loja 08', 'Parque Jockey Club', '42700000', 'Lauro de Freitas', 'BA', '71 3378-6870', '', '', 3);
+INSERT INTO `clientes` VALUES (793, 'Luana Com?rcio de Produtos', '', '', '', '12085326000148', '', '', '0000-00-00', '', 'Rua Rodolfo B. Barros, 628', '', 'Loja 7', 'Parque Jockey Club', '42700000', 'Lauro de Freitas', 'BA', '71 3497-4331 / 71 3378-9834', '', '', 3);
+INSERT INTO `clientes` VALUES (794, 'Willian dos Santos Teles', '', '', '', '01991614535', '', '', '0000-00-00', '', 'Rua Presidente Dultra, 80', '', 'Casa', 'Paz', '41515120', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (795, 'R P Toldos Com?rcio e Loca??o LTDA-ME', '', '', '', '09209004000159', '', '', '0000-00-00', '', 'Rua S?o Jos?  01', '', 'casa', 'Campinas de Piraj', '41276360', 'Salvador', 'BA', '3246-5617', '', '', 3);
+INSERT INTO `clientes` VALUES (796, 'A L Decora Comercio e Importa??o Ltda', '', '', '', '12345762000109', '', '', '0000-00-00', '', 'Alameda Antunes ,13', '', '', 'Barra', '40140020', 'salvador', 'BA', '3018-4918', '', '', 3);
+INSERT INTO `clientes` VALUES (797, 'Raimundo de Lucena', '', '', '', '07494113000130', '', '', '0000-00-00', '', 'Rua Quitano Boca?va  n1', '', 'casa', 'Centro', '44500000', 'Castro Alves', 'BA', '3371-7476', '', '', 3);
+INSERT INTO `clientes` VALUES (798, 'Fabiana Santos Luz', '', '', '', '02220339599', '', '', '0000-00-00', '', 'Via Paquet', '', '46', 'Cosme de Farias', '', 'Salvador', 'BA', '71 3380-0325', '', '', 3);
+INSERT INTO `clientes` VALUES (799, 'Genebaldo de Oliveira Meira', '', '', '', '00936377569', '', '', '0000-00-00', '', 'Rua Reis  39', '', 'casa', 'Pernanbu', '41100560', 'Salvador', 'BA', '82100624', '', '', 3);
+INSERT INTO `clientes` VALUES (800, 'Evila Tamires Nunes dos Santos', '', '', '', '04417155593', '', '', '0000-00-00', '', 'Rua Silva Jardim, 53', '', 'Casa', 'Valeria', '', 'Salvador', 'BA', '71 8212-5788', '', '', 3);
+INSERT INTO `clientes` VALUES (801, 'Zuarte Neiva Barbosa J?nior', '', '', '', '10796237000184', '', '', '0000-00-00', '', 'Rua Caetit?, 26', '', 'Casa', 'Rio Vermelho', '41940070', 'Salvador', 'BA', '71 3240-2775', '', '', 3);
+INSERT INTO `clientes` VALUES (802, 'Willians Heyn Roxo Lopo', '', '', '', '81539410544', '', '', '0000-00-00', '', 'Rua Pastor Jos? Guilherme de Moraes, 14B', '', 'Casa', 'Pau da Lima', '41235015', 'Salvador', 'BA', '71 3012-1325', '', '', 3);
+INSERT INTO `clientes` VALUES (803, 'Cia das Lampadas', '', '', '', '03650372000151', '', '', '0000-00-00', '', 'Rua do Saldan -06', '', 'casa', 'Centro-Pc da S', '40020250', 'Salvador', '', '71-3327-3105', '', '', 3);
+INSERT INTO `clientes` VALUES (804, 'Cristiano', '', '', '', '13999431000155', '', '', '0000-00-00', '', 'Av. Silveira Martins', '', 'casa', 'Cabula', '41520000', 'Salvador', 'BA', '4103-0473', '', '', 3);
+INSERT INTO `clientes` VALUES (805, 'Lucio Campos da Silva', '', '', '', '56074050520', '', '', '0000-00-00', '', 'Rua dos Dominicanos', '', 'casa', 'Dom Avelar', '41315140', 'salvador', 'BA', '8112-5475', '', '', 3);
+INSERT INTO `clientes` VALUES (806, 'Fernanda Coeli Maia Fimeza-ME', '', '', '', '', '', '', '0000-00-00', '', 'Rua Gersino Coelho', '', '', 'Matatu- Brotas', '40255130', 'Salvador', 'BA', '3244-1137', '', '', 3);
+INSERT INTO `clientes` VALUES (807, 'Sempre Fardas', '', '', '', '16697236000169', '', '', '0000-00-00', '', 'Rua Miguel Goes Calmon', '', '2 andar', 'S?o Caetano', '40390785', 'Salvador', 'BA', '3019-9087', '', '', 3);
+INSERT INTO `clientes` VALUES (808, 'Papelaria e Bazar Rocha', '', '', '', '07166179000109', '', '', '0000-00-00', '', 'Avenida Norte 05', '', 'casa', 'Centro', '47630000', 'Serra do Ramalho', 'BA', '77-3620-1568', '', '', 3);
+INSERT INTO `clientes` VALUES (809, 'Lampi?o Material de Constru??o Ltda', '', '', '', '02092076000110', '', '', '0000-00-00', '', 'Rua Direita da Engomadeira, 404', '', 'Casa', 'Engomadeira', '41200050', 'Salvador', 'BA', '', '', '', 3);
+INSERT INTO `clientes` VALUES (810, 'Narandiba Materiais de Contru?', '', '', '', '11201641000120', '', '', '0000-00-00', '', 'Avenida Edgar Santos, 1867', '', 'Casa', 'Narandiba', '', 'Salvador', 'BA', '(71) 3232-7477', '', '', 3);
+INSERT INTO `clientes` VALUES (811, 'Ferragens Popular', '', '', '', '01249017000140', '', '', '0000-00-00', '', 'Rua Tomaz Gonzaga, 314', '', 'Casa', 'Pernambu', '', 'Salvador', 'BA', '(71) 3345-2689', '', '', 3);
+INSERT INTO `clientes` VALUES (812, 'Zacmac', '', '', '', '11946255000168', '', '', '0000-00-00', '', 'Rua Escritor Carneiro, 37', '', 'Casa', 'Pernambu', '41130010', 'Salvador', 'BA', '(71) 3450-5740', '', '', 3);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `cores`
+-- 
+
+CREATE TABLE `cores` (
+  `id_cor` int(11) NOT NULL auto_increment,
+  `nu_codigo` varchar(4) collate latin1_general_ci NOT NULL,
+  `nm_cor` varchar(50) collate latin1_general_ci NOT NULL,
+  `nm_cor1` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_status` int(11) NOT NULL default '3',
+  PRIMARY KEY  (`id_cor`),
+  KEY `id_status` (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=50 ;
+
+-- 
+-- Extraindo dados da tabela `cores`
+-- 
+
+INSERT INTO `cores` VALUES (1, '', '13.1 vermelho', '1234567890', 3);
+INSERT INTO `cores` VALUES (2, '', '12.1 verde bandeira', '1234567890', 3);
+INSERT INTO `cores` VALUES (3, '', '8.1 preta', '1234567890', 3);
+INSERT INTO `cores` VALUES (4, '', '4.1 branca', '1111111111', 3);
+INSERT INTO `cores` VALUES (5, '', '10.1 roxo claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (6, '', '1.2 amarelo ouro', '1234567890', 3);
+INSERT INTO `cores` VALUES (7, '', '9.2 rosa escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (8, '', '6.1 laraja claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (9, '', '10.2 roxo escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (10, '', '7.1  marrom escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (11, '', '2.3 azul marinho', '1234567890', 3);
+INSERT INTO `cores` VALUES (12, '', '3.2 bege champanhe', '1234567890', 3);
+INSERT INTO `cores` VALUES (13, '', '12.4 verde musgo', '1234567890', 3);
+INSERT INTO `cores` VALUES (14, '', '14.2  vinho escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (15, '', '5.2 cinza escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (16, '', '2.4 azul royal', '1234567890', 3);
+INSERT INTO `cores` VALUES (17, '', '2.1 azul anil', '1234567890', 3);
+INSERT INTO `cores` VALUES (18, '', '16.1 cru', '1234567890', 3);
+INSERT INTO `cores` VALUES (19, '', '11.1 salm', '1234567890', 3);
+INSERT INTO `cores` VALUES (20, '', '5.1 cinza claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (21, '', '10.2 roxo escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (22, '', '17.1 preto', '1234567890', 3);
+INSERT INTO `cores` VALUES (23, '', '2.2 azul claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (24, '', '1.1 amarelo claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (25, '', '6.2 laranja escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (26, '', '3.3 bege p?rola', '1234567890', 3);
+INSERT INTO `cores` VALUES (27, '', '6.2  laranja escuro', '1234567890', 3);
+INSERT INTO `cores` VALUES (28, '', '12.2 verde claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (29, '', '9.3 rosa gren', '1234567890', 3);
+INSERT INTO `cores` VALUES (30, '', '9.1 rosa claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (31, '', '12.5 verde petr?leo', '1234567890', 3);
+INSERT INTO `cores` VALUES (32, '', '7.2 marrom terra', '1234567890', 3);
+INSERT INTO `cores` VALUES (33, '', '15.1 alvejado', '1234567890', 3);
+INSERT INTO `cores` VALUES (34, '', '3.1 bege palha', '1234567890', 3);
+INSERT INTO `cores` VALUES (35, '', '2.5 azul turquesa', '1234567890', 3);
+INSERT INTO `cores` VALUES (36, '', '12.3  verde cabar', '1234567890', 3);
+INSERT INTO `cores` VALUES (37, '', '14.1 vinho claro', '1234567890', 3);
+INSERT INTO `cores` VALUES (38, '', '18.1 Outros', '1234567890', 3);
+INSERT INTO `cores` VALUES (39, '', '9.4  Rosa Pink', '1234567890', 3);
+INSERT INTO `cores` VALUES (40, '', '18.1 Bicolor', '1234567890', 3);
+INSERT INTO `cores` VALUES (41, '', '20.1', '1234567890', 3);
+INSERT INTO `cores` VALUES (42, '', 'Verde/Amarelo', '1234567890', 3);
+INSERT INTO `cores` VALUES (43, '', 'Branco/Preto/Amarelo', '1234567890', 3);
+INSERT INTO `cores` VALUES (44, '', 'Amarelo e Verde', '1234567890', 3);
+INSERT INTO `cores` VALUES (47, '', '123 cor teste', '1234567890', 4);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `embalagens`
+-- 
+
+CREATE TABLE `embalagens` (
+  `id_emb` int(11) NOT NULL auto_increment,
+  `nm_emb` varchar(50) collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`id_emb`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=8 ;
+
+-- 
+-- Extraindo dados da tabela `embalagens`
+-- 
+
+INSERT INTO `embalagens` VALUES (1, 'Caixa');
+INSERT INTO `embalagens` VALUES (2, 'Carretel');
+INSERT INTO `embalagens` VALUES (6, 'Saco');
+INSERT INTO `embalagens` VALUES (7, 'Bobina');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `grandezas`
+-- 
+
+CREATE TABLE `grandezas` (
+  `id_grandeza` int(11) NOT NULL auto_increment,
+  `nm_grandeza` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_status` int(11) NOT NULL default '7',
+  PRIMARY KEY  (`id_grandeza`),
+  KEY `id_status` (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=7 ;
+
+-- 
+-- Extraindo dados da tabela `grandezas`
+-- 
+
+INSERT INTO `grandezas` VALUES (1, 'Kg', 7);
+INSERT INTO `grandezas` VALUES (2, 'm', 7);
+INSERT INTO `grandezas` VALUES (6, 'Un', 7);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `produtos`
+-- 
+
+CREATE TABLE `produtos` (
+  `id_produto` int(11) NOT NULL auto_increment,
+  `nm_produto1` varchar(12) collate latin1_general_ci NOT NULL,
+  `nm_produto` varchar(50) collate latin1_general_ci NOT NULL,
+  `pc_produto` int(11) NOT NULL,
+  `id_status` int(11) NOT NULL default '3',
+  PRIMARY KEY  (`id_produto`),
+  KEY `id_status` (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=82 ;
+
+-- 
+-- Extraindo dados da tabela `produtos`
+-- 
+
+INSERT INTO `produtos` VALUES (2, '16.1', '4 A 1', 0, 3);
+INSERT INTO `produtos` VALUES (3, '16.18888888', '3 A 1', 0, 3);
+INSERT INTO `produtos` VALUES (4, '16.1', '5 A 1', 0, 3);
+INSERT INTO `produtos` VALUES (5, '16.1', '6 A 1', 0, 3);
+INSERT INTO `produtos` VALUES (6, '16.1', '7 A 1', 0, 3);
+INSERT INTO `produtos` VALUES (7, '16.1', '3 A 2', 0, 3);
+INSERT INTO `produtos` VALUES (8, '16.1', '3 A 3', 0, 3);
+INSERT INTO `produtos` VALUES (9, '16.1', '3 A 4', 0, 3);
+INSERT INTO `produtos` VALUES (10, '16.1', '4 A 2', 0, 3);
+INSERT INTO `produtos` VALUES (11, '16.1', '5 A 2', 0, 3);
+INSERT INTO `produtos` VALUES (12, '16.1', 'D4 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (13, '16.1', 'D4 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (14, '16.1', 'D8 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (15, '16.1', 'T8 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (17, '16.1', 'CA4 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (18, '16.1', 'CA4 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (19, '16.1', 'CA4 6mm', 0, 3);
+INSERT INTO `produtos` VALUES (20, '16.1', 'CA4 7mm', 0, 3);
+INSERT INTO `produtos` VALUES (21, '16.1', 'CA4 8mm', 0, 3);
+INSERT INTO `produtos` VALUES (22, '16.1', 'D8 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (23, '16.1', 'CA 1260 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (24, '16.1', 'D/8', 0, 3);
+INSERT INTO `produtos` VALUES (25, '16.1', 'D/18', 0, 3);
+INSERT INTO `produtos` VALUES (26, '16.1', 'D/22', 0, 3);
+INSERT INTO `produtos` VALUES (27, '16.1', 'CA 1260 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (28, '16.1', 'CA 1260 3mm', 0, 3);
+INSERT INTO `produtos` VALUES (29, '16.1', 'TNT', 0, 3);
+INSERT INTO `produtos` VALUES (30, '16.1', 'Dourado', 0, 3);
+INSERT INTO `produtos` VALUES (31, '16.1', 'AA8/4', 0, 3);
+INSERT INTO `produtos` VALUES (32, '16.1', 'CA 1260 6mm', 0, 3);
+INSERT INTO `produtos` VALUES (33, '16.1', 'CA 1260 8mm', 0, 3);
+INSERT INTO `produtos` VALUES (34, '16.1', 'CA 1260 3,5mm', 0, 3);
+INSERT INTO `produtos` VALUES (35, '16.1', '5 A 3', 0, 3);
+INSERT INTO `produtos` VALUES (36, '16.1', 'CA4 9mm', 0, 3);
+INSERT INTO `produtos` VALUES (37, '16.1', 'CA8 8mm', 0, 3);
+INSERT INTO `produtos` VALUES (38, '16.1', 'CA8 3mm', 0, 3);
+INSERT INTO `produtos` VALUES (39, '16.1', 'CA4 12mm', 0, 3);
+INSERT INTO `produtos` VALUES (40, '16.1', 'CA 1260 2,5 mm', 0, 3);
+INSERT INTO `produtos` VALUES (41, '16.1', 'Linha Reta', 0, 3);
+INSERT INTO `produtos` VALUES (42, '16.1', 'Linha Overlock', 0, 3);
+INSERT INTO `produtos` VALUES (43, '16.1', 'C 1260 3mm', 0, 3);
+INSERT INTO `produtos` VALUES (44, '16.1', 'CA8 6mm', 0, 3);
+INSERT INTO `produtos` VALUES (45, '16.1', 'T4 8mm', 0, 3);
+INSERT INTO `produtos` VALUES (46, '16.1', 'CA4 10mm', 0, 3);
+INSERT INTO `produtos` VALUES (47, '16.1', 'CA 1260 10mm', 0, 3);
+INSERT INTO `produtos` VALUES (48, '16.1', 'CD 1260 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (49, '16.1', 'CA4 11mm', 0, 3);
+INSERT INTO `produtos` VALUES (50, '16.1', 'CA8 11mm', 0, 3);
+INSERT INTO `produtos` VALUES (51, '16.1', '5 A 3', 0, 3);
+INSERT INTO `produtos` VALUES (52, '16.1', 'CA8 10mm', 0, 3);
+INSERT INTO `produtos` VALUES (53, '16.1', 'D8 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (54, '16.1', 'FILAMENTO', 0, 3);
+INSERT INTO `produtos` VALUES (55, '16.1', 'CA8 4MM', 0, 3);
+INSERT INTO `produtos` VALUES (56, '16.1', 'CA8 5MM', 0, 3);
+INSERT INTO `produtos` VALUES (57, '16.1', 'CA8 9mm', 0, 3);
+INSERT INTO `produtos` VALUES (58, '16.1', 'CA8 10mm', 0, 3);
+INSERT INTO `produtos` VALUES (59, '16.1', 'CA8 4 mm', 0, 3);
+INSERT INTO `produtos` VALUES (60, '16.1', 'CA8 5mm', 0, 3);
+INSERT INTO `produtos` VALUES (61, '16.1', 'bahia bella', 0, 3);
+INSERT INTO `produtos` VALUES (62, '16.1', '4 A 3 Poli?ster', 0, 3);
+INSERT INTO `produtos` VALUES (63, '16.1', 'CA8 12mm', 0, 3);
+INSERT INTO `produtos` VALUES (64, '16.1', 'CA8 7mm', 0, 3);
+INSERT INTO `produtos` VALUES (65, '16.1', 'Fio 4', 0, 3);
+INSERT INTO `produtos` VALUES (66, '16.1', 'CA1260 2mm', 0, 3);
+INSERT INTO `produtos` VALUES (67, '16.1', 'CA  1260 2mm', 0, 3);
+INSERT INTO `produtos` VALUES (68, '16.1', 'CA 1260 2mm', 0, 3);
+INSERT INTO `produtos` VALUES (69, '16.1', 'A 5 A 4', 0, 3);
+INSERT INTO `produtos` VALUES (70, '16.1', 'A 4 A 3', 0, 3);
+INSERT INTO `produtos` VALUES (71, '16.1', 'Corda de Varal', 0, 3);
+INSERT INTO `produtos` VALUES (72, '16.1', 'D1260 4mm', 0, 3);
+INSERT INTO `produtos` VALUES (76, '16.1', 'Tomada VHF', 2, 4);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `status`
+-- 
+
+CREATE TABLE `status` (
+  `id_status` int(11) NOT NULL auto_increment,
+  `cl_status` varchar(1) collate latin1_general_ci NOT NULL,
+  `nm_status` varchar(50) collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=5 ;
+
+-- 
+-- Extraindo dados da tabela `status`
+-- 
+
+INSERT INTO `status` VALUES (1, '1', 'Administrador');
+INSERT INTO `status` VALUES (2, '1', 'Operador');
+INSERT INTO `status` VALUES (3, '2', 'Ativo');
+INSERT INTO `status` VALUES (4, '2', 'Inativo');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `usuarios`
+-- 
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL auto_increment,
+  `nm_usuario` varchar(50) collate latin1_general_ci NOT NULL,
+  `nm_login` varchar(50) collate latin1_general_ci NOT NULL,
+  `nm_senha` varchar(60) collate latin1_general_ci NOT NULL,
+  `id_status` int(11) NOT NULL default '3',
+  `dt_cadastro` date NOT NULL,
+  PRIMARY KEY  (`id_usuario`),
+  KEY `id_status` (`id_status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=148 ;
+
+-- 
+-- Extraindo dados da tabela `usuarios`
+-- 
+
+INSERT INTO `usuarios` VALUES (143, 'Admin', 'admin', '11', 1, '2013-05-29');
+INSERT INTO `usuarios` VALUES (144, 'Antonio', 'antonio', '33', 3, '0000-00-00');
+INSERT INTO `usuarios` VALUES (145, 'Eliana', 'eliana', '44', 3, '0000-00-00');
+INSERT INTO `usuarios` VALUES (146, 'Jairo Vitorino', 'jairo', '11', 1, '2013-06-01');
+INSERT INTO `usuarios` VALUES (147, 'Valdevino', 'val', '33', 3, '0000-00-00');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `vendas`
+-- 
+
+CREATE TABLE `vendas` (
+  `id_venda` int(11) NOT NULL auto_increment,
+  `dt_venda` date NOT NULL,
+  `hr_venda` varchar(10) collate latin1_general_ci NOT NULL,
+  `dt_entrega` date NOT NULL,
+  `vl_total` varchar(20) collate latin1_general_ci NOT NULL,
+  `nu_nota` varchar(10) collate latin1_general_ci NOT NULL,
+  `nu_prazo` int(11) NOT NULL,
+  `dt_vencto` varchar(30) collate latin1_general_ci NOT NULL,
+  `dt_vencimento` varchar(20) collate latin1_general_ci NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `nu_venda` int(11) NOT NULL,
+  `nu_ano` int(11) NOT NULL,
+  `id_pagamento` int(11) NOT NULL,
+  `te_obs` varchar(50) collate latin1_general_ci NOT NULL,
+  `nm_contato_venda` varchar(50) collate latin1_general_ci NOT NULL,
+  `nm_aplicacao` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_frete` int(11) NOT NULL,
+  `nm_transp` varchar(50) collate latin1_general_ci NOT NULL,
+  `nu_tel_transp` varchar(30) collate latin1_general_ci NOT NULL,
+  `te_msg` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `st_controle` varchar(1) collate latin1_general_ci NOT NULL default '1',
+  `id_status` int(11) NOT NULL default '3',
+  PRIMARY KEY  (`id_venda`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_pagamento` (`id_pagamento`),
+  KEY `id_status` (`id_status`),
+  KEY `id_frete` (`id_frete`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=283 ;
+
+-- 
+-- Extraindo dados da tabela `vendas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estrutura da tabela `vendas_detalhes`
+-- 
+
+CREATE TABLE `vendas_detalhes` (
+  `id_venda_det` int(11) NOT NULL auto_increment,
+  `id_venda` int(11) NOT NULL,
+  `qt_venda` varchar(11) collate latin1_general_ci NOT NULL,
+  `qt_emb` int(11) NOT NULL,
+  `vl_venda` varchar(20) collate latin1_general_ci NOT NULL,
+  `nu_desc` float NOT NULL,
+  `id_produto` int(11) NOT NULL,
+  `id_grandeza` int(11) NOT NULL,
+  `id_cor` int(11) NOT NULL,
+  `id_emb` int(11) NOT NULL,
+  `id_status` int(11) NOT NULL default '3',
+  PRIMARY KEY  (`id_venda_det`),
+  KEY `id_venda` (`id_venda`,`id_produto`,`id_grandeza`),
+  KEY `id_cor` (`id_cor`),
+  KEY `id_status` (`id_status`),
+  KEY `id_emb` (`id_emb`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=315 ;
+
+-- 
+-- Extraindo dados da tabela `vendas_detalhes`
+-- 
+
